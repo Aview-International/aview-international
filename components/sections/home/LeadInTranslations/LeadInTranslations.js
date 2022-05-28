@@ -1,10 +1,10 @@
-import CardRow from "../../../layout/CardRow/CardRow";
+import GraphicCardRow from "../../../layout/GraphicCardRow/GraphicCardRow";
+import GraphicCard from "../../../UI/GraphicCard/GraphicCard";
 
 import fastGraphic from "../../../../public/img/graphics/fast-and-easy.png";
 import flexibleGraphic from "../../../../public/img/graphics/flexible.png";
 import accurateGraphic from "../../../../public/img/graphics/accurate.png";
 import styles from "./LeadInTranslations.module.css";
-import GraphicCard from "../../../UI/GraphicCard/GraphicCard";
 
 const CARD_DATA = [
   {
@@ -46,11 +46,11 @@ function LeadInTranslations() {
         Whether you need subtitles, dubbing, or shorts, AVIEW will help you
         along your journey.
       </p>
-      <CardRow>
+      <GraphicCardRow>
         {CARD_DATA.map((data, i) => (
           <GraphicCard {...data} key={`graphic-card-${i}`} />
         ))}
-      </CardRow>
+      </GraphicCardRow>
     </section>
   );
 }
