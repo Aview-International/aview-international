@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Button from "../../UI/Button/Button";
 
@@ -8,7 +8,7 @@ import logo from "../../../public/img/brand/nav-logo.svg";
 import closeIcon from "../../../public/img/icons/close.svg";
 import styles from "./Navbar.module.css";
 
-const pages = [
+const PAGES = [
   { name: "Home", route: "/" },
   { name: "Creators", route: "/creators" },
   { name: "Translators", route: "/translators" },
@@ -24,6 +24,14 @@ function Navbar() {
   function menuButtonHandler() {
     setMenuOpen((prevMenuOpen) => !prevMenuOpen);
   }
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", closeMenu);
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -56,7 +64,7 @@ function NavbarLinks({ menuOpen }) {
   return (
     <nav className={`${styles.navbar} ${menuOpen && styles["navbar-open"]}`}>
       <ul className={styles["navbar-links"]}>
-        {pages.map((page, i) => (
+        {PAGES.map((page, i) => (
           <li key={`page-${i}`}>
             <Link href={page.route}>
               <a className={styles["navbar-link"]}>{page.name}</a>
@@ -73,7 +81,7 @@ function NavbarLinks({ menuOpen }) {
  */
 function ContactButton() {
   return (
-    <div className="navbar-desktop-only">
+    <div className="desktop-only">
       <Button type="secondary" isRoute={false} link="#generate-aview">
         Contact Us
       </Button>

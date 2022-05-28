@@ -14,15 +14,17 @@ function Home() {
   return (
     <>
       <Navbar />
-      <Landing />
-      <WeTranslate />
-      <LeadInTranslations />
-      <BreadAndButter />
-      <ContentCreators />
-      <Videos />
-      <Generate />
-      <FAQs />
-      <GoGlobal />
+      <main>
+        <Landing />
+        <WeTranslate />
+        <LeadInTranslations />
+        <BreadAndButter />
+        <ContentCreators />
+        <Videos />
+        <Generate />
+        <FAQs />
+        <GoGlobal />
+      </main>
       <Footer />
     </>
   );

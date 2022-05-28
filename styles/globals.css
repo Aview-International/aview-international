@@ -13,12 +13,7 @@
     #00fffc 85.93%
   );
   --secondary-gradient: linear-gradient(335.52deg, #ff00ff 0%, #00ffff 100.91%);
-  --tertiary-gradient: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.15) 0%,
-    rgba(255, 255, 255, 0.075) 52.08%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  --tertiary-gradient: linear-gradient(180deg, #27273a 0%, #000017 100%);
 }
 
 * {

@@ -67,6 +67,8 @@
     transition: all 0.6s cubic-bezier(0.5, 0, 0, 0.75);
     opacity: 0;
     z-index: 10;
+    max-height: 100vh;
+    max-height: calc(var(--vh, 1vh) * 100);
   }
 
   .navbar-open {

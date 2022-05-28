@@ -1,0 +1,42 @@
+.landing-text {
+  text-align: center;
+}
+
+.landing-text .section-title {
+  margin-bottom: 5px;
+}
+
+.section-title {
+  margin-bottom: 5px;
+}
+
+.section-description {
+  margin-bottom: 72px;
+}
+
+.landing-text {
+  margin-bottom: 23px;
+}
+
+.landing-graphic {
+  width: min(100%, 530px);
+  margin: 0 auto -4px;
+}
+
+@media (max-width: 768px) {
+  .landing-text {
+    text-align: left;
+  }
+
+  .section-title {
+    margin-bottom: 10px;
+  }
+
+  .section-description {
+    margin-bottom: 30px;
+  }
+
+  .landing-text {
+    margin-bottom: 35px;
+  }
+}
