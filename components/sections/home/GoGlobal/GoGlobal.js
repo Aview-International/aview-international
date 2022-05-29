@@ -9,6 +9,10 @@ import styles from "./GoGlobal.module.css";
  * Container for Want To Go Global? section of homepage
  */
 function GoGlobal() {
+  function submitHandler(e) {
+    e.preventDefault();
+  }
+
   return (
     <section className={`section`}>
       <GradientFullWidth>
@@ -28,7 +32,7 @@ function GoGlobal() {
             By signing up you agree to receive communications via email. For
             more information please refer to our Privacy Policy.
           </p>
-          <Button type="tertiary" isLink={false} isSubmit={true}>
+          <Button type="tertiary" isOnClick={true} onClick={submitHandler}>
             Subscribe
           </Button>
         </Form>

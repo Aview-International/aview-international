@@ -21,12 +21,7 @@ function Landing() {
           AVIEW is a leading multi-media translation service. We help you expand
           your international viewership.
         </p>
-        <Button
-          type="primary"
-          link="#generate-aview"
-          isForm={false}
-          isLink={true}
-        >
+        <Button type="primary" isRoute={false} link="#generate-aview">
           Start Now!
         </Button>
       </div>

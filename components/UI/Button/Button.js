@@ -9,14 +9,15 @@ import styles from "./Button.module.css";
  *
  * @prop type: Primary (gradient fill), secondary (gradient border, transparent fill), tertiary (white text and fill)
  * @prop isRoute: Whether the button is a route or an external link
- * @prop isSubmit: Whether the button is a form button
  * @prop link: Where button links to
+ * @prop isOnClick: Whether the button runs an function on click
+ * @prop onClick: On click function that the button runs
  * @prop children: Text wrapped by button
  *
  */
-function Button({ type, isRoute, isSubmit, link, children }) {
-  return isSubmit ? (
-    <button type="submit" className={styles[`btn-${type}`]} href="#">
+function Button({ type, isRoute, link, isOnClick, onClick, children }) {
+  return isOnClick ? (
+    <button className={styles[`btn-${type}`]} href="#" onClick={onClick}>
       {children}
     </button>
   ) : isRoute ? (
