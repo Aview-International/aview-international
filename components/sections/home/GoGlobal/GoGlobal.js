@@ -1,9 +1,9 @@
 import GradientFullWidth from "../../../../components/layout/GradientFullWidth/GradientFullWidth";
 import Form from "../../../../components/form/Form/Form";
 import Button from "../../../../components/UI/Button/Button";
+import Input from "../../../form/Input/Input";
 
 import styles from "./GoGlobal.module.css";
-import Input from "../../../form/Input/Input";
 
 /**
  * Container for Want To Go Global? section of homepage

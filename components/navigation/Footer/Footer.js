@@ -31,6 +31,9 @@ function Footer() {
   );
 }
 
+/**
+ * Logos on left side of footer
+ */
 function FooterLogos() {
   return (
     <div className={styles.logos}>
@@ -47,6 +50,9 @@ function FooterLogos() {
   );
 }
 
+/**
+ * Footer links
+ */
 function FooterLinks() {
   return (
     <ul className={styles["footer-links"]}>

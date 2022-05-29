@@ -72,6 +72,9 @@ function ContentCreators() {
   );
 }
 
+/**
+ * Grid of creators
+ */
 function CreatorsGrid() {
   return (
     <div className={styles["creators-grid"]}>

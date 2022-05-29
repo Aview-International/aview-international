@@ -2,6 +2,13 @@ import Border from "../../UI/Border/Border";
 
 import styles from "./Input.module.css";
 
+/**
+ * Text input for forms
+ *
+ * @prop type: Type of text input
+ * @prop placeholder: Placeholder text for input
+ * @prop bgColor: Background color of input (light or dark)
+ */
 function Input({ type, placeholder, bgColor }) {
   return (
     <Border borderRadius="3px" gradientReverse={true}>
