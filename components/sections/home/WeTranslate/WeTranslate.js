@@ -25,7 +25,13 @@ function WeTranslate() {
             competition.
           </p>
           <div className="desktop-only">
-            <Button type="primary" isRoute={false} link="#generate-aview">
+            <Button
+              type="primary"
+              isRoute={false}
+              link="#generate-aview"
+              isForm={false}
+              isLink={true}
+            >
               Go Global Now!
             </Button>
           </div>

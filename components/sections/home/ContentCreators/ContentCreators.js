@@ -60,7 +60,12 @@ function ContentCreators() {
         Worked With
       </h2>
       <CreatorsGrid />
-      <Button type="primary" link="#generate-aview">
+      <Button
+        type="primary"
+        isLink={true}
+        isForm={false}
+        link="#generate-aview"
+      >
         Become a Creator!
       </Button>
     </section>
@@ -77,11 +82,11 @@ function CreatorsGrid() {
             target="_blank"
             rel="noreferrer"
             alt={creator.alt}
-            className={styles["creator-logo"]}
+            className={`${styles["creator-logo"]} shadow-parent`}
           >
             <Image src={creator.logo} alt={creator.alt} />
+            <p className={styles["creator-name"]}>{creator.name}</p>
           </a>
-          <p className={styles["creator-name"]}>{creator.name}</p>
         </div>
       ))}
     </div>

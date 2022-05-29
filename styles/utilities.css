@@ -35,6 +35,10 @@
   bottom: 0;
 }
 
+.shadow-parent {
+  position: relative;
+}
+
 .shadow-parent:hover .shadow {
   opacity: 0.6;
 }

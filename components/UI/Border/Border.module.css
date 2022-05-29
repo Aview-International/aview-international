@@ -3,3 +3,7 @@
   padding: 2px;
   border-radius: 15px;
 }
+
+.reverse {
+  background: var(--secondary-gradient);
+}

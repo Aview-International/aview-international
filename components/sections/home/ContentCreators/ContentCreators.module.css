@@ -15,11 +15,12 @@
 
 .creator-logo {
   max-width: 150px;
-  margin-bottom: 20px;
+
   display: inline-block;
 }
 
 .creator-name {
+  margin-top: 20px;
   color: var(--primary-color);
 }
 

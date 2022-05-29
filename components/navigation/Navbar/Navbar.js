@@ -82,7 +82,12 @@ function NavbarLinks({ menuOpen }) {
 function ContactButton() {
   return (
     <div className="desktop-only">
-      <Button type="secondary" isRoute={false} link="#generate-aview">
+      <Button
+        type="secondary"
+        isRoute={false}
+        isForm={false}
+        link="#generate-aview"
+      >
         Contact Us
       </Button>
     </div>

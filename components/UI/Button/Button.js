@@ -4,8 +4,12 @@ import Shadow from "../Shadow/Shadow";
 
 import styles from "./Button.module.css";
 
-function Button({ type, isRoute, link, children }) {
-  return isRoute ? (
+function Button({ type, isRoute, isSubmit, link, children }) {
+  return isSubmit ? (
+    <button type="submit" className={styles[`btn-${type}`]} href="#">
+      {children}
+    </button>
+  ) : isRoute ? (
     <Link href={link}>
       <a className={styles[`btn-${type}`]}>
         <Shadow />
