@@ -62,7 +62,9 @@
   line-height: 27px;
   font-weight: 400;
 }
-
+iframe body div  {
+  display: none !important;
+}
 @media (max-width: 768px) {
   .section-title {
     font-size: 40px;

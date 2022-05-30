@@ -1,0 +1,50 @@
+.input_container {
+  padding: 1px;
+  width: 100%;
+  color: #fff;
+}
+.input_label {
+  display: block;
+  text-align: left;
+  font-size: 21px;
+  margin: 10px 0;
+}
+.flex_container {
+  display: flex;
+}
+.flex_container > div {
+  position: relative;
+  flex-basis: 87%;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+.highlight {
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+  height: 100%;
+  box-shadow: 0px 1px 14px 1px #fc00ff, 0px 0px 14px 1px #00fffc;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+.input {
+  width: 100%;
+  padding: 8px;
+  background: #090c32;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 21px;
+}
+.input:focus {
+  outline: none;
+}
+.input:focus + .highlight {
+  visibility: visible;
+  opacity: 1;
+}
