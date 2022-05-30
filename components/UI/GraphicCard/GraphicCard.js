@@ -20,7 +20,7 @@ function GraphicCard({ title, description, graphic, alt }) {
         </div>
         <div className={styles.text}>
           <h3 className={styles.title}>{title}</h3>
-          <p className={styles.description}>{description}</p>
+          <p className={`text-regular ${styles.description}`}>{description}</p>
         </div>
       </Card>
     </div>

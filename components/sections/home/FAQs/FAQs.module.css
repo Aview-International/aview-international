@@ -30,7 +30,6 @@
   padding: 30px 0;
   color: var(--white);
   line-height: 33px;
-  font-size: 21px;
 }
 
 .questions_label input {
@@ -108,8 +107,5 @@
   .questions_container h4 {
     font-size: 21px;
     line-height: 28px;
-  }
-  .questions_container p {
-    font-size: 16px;
   }
 }

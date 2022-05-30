@@ -66,8 +66,8 @@
   line-height: 27px;
   font-weight: 400;
 }
-iframe body div  {
-  display: none !important;
+.text-regular {
+  font-size: 21px;
 }
 @media (max-width: 768px) {
   .section-title {
@@ -78,6 +78,9 @@ iframe body div  {
   .section-description {
     font-size: 18px;
     line-height: 23px;
+  }
+  .text-regular {
+    font-size: 16px;
   }
 }
 

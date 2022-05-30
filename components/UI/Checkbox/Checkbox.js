@@ -1,12 +1,12 @@
-import Image from "next/image";
-import Tooltip from "../../../public/img/icons/tooltip.svg";
-import Info from "../../../public/img/icons/info.svg";
-import Border from "../Border/Border";
-import styles from "./Checkbox.module.css";
+import Image from 'next/image';
+import Tooltip from '../../../public/img/icons/tooltip.svg';
+import Info from '../../../public/img/icons/info.svg';
+import Border from '../Border/Border';
+import styles from './Checkbox.module.css';
 
 const CheckBox = ({ label, value, onChange, tooltip }) => {
   return (
-    <label className={styles.checkbox_label}>
+    <label className={`text-regular ${styles.checkbox_label}`}>
       <input type="checkbox" value={value} onChange={(e) => onChange(e)} />
       {label}
       <span className={styles.checkbox_span}>

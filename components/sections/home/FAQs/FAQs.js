@@ -1,34 +1,34 @@
 /**
  * Container for FAQ section of homepage
  */
-import HorizontalLine from "../../../UI/HorizontalLine/HorizontalLine";
-import styles from "./FAQs.module.css";
+import HorizontalLine from '../../../UI/HorizontalLine/HorizontalLine';
+import styles from './FAQs.module.css';
 
 const dataArray = [
   {
-    question: "Who have you worked with?",
+    question: 'Who have you worked with?',
     answer: `We have been generating AVIEW for Logan Paul, Mark Rober, YesTheory, Ninja, Vitalyzdtv, Active Self Protection, Saud Brothers, Amanda Cerny, Marlin and many more! AVIEW has helped these creators expand into international markets and become known worldwide.`,
-    _id: "question3",
+    _id: 'question3',
   },
   {
-    question: "How much does it cost?",
+    question: 'How much does it cost?',
     answer: `AVIEW creates a pricing plan for each creator. We ensure that you see a return on our services! If you would like a quote, please click here!`,
-    _id: "question4",
+    _id: 'question4',
   },
   {
-    question: "How large does my audience need to be?",
+    question: 'How large does my audience need to be?',
     answer: `To see the greatest results, we recommend you have an average of 25,000 views per video`,
-    _id: "question5",
+    _id: 'question5',
   },
   {
-    question: "Can you translate for other platforms like TikTok?",
+    question: 'Can you translate for other platforms like TikTok?',
     answer: `Yes! We are a multimedia translation service. We can translate and edit the content on any platform for you so they are ready to be uploaded.`,
-    _id: "question6",
+    _id: 'question6',
   },
   {
-    question: "How can I get started?",
+    question: 'How can I get started?',
     answer: `Click here to get started!`,
-    _id: "question7",
+    _id: 'question7',
   },
 ];
 
@@ -38,12 +38,12 @@ const FAQs = () => {
       <h2 className={`section-title`}>
         <span className="gradient-text">FAQ</span>
       </h2>
-      <p className={`section-description ${styles["section-description"]}`}>
+      <p className={`section-description ${styles['section-description']}`}>
         Question not answered below? Email us at julia@aviewint.com
       </p>
       <HorizontalLine />
-      <label htmlFor={"question1"} className={styles.questions_label}>
-        <input id={"question1"} type="checkbox" />
+      <label htmlFor={'question1'} className={styles.questions_label}>
+        <input id={'question1'} type="checkbox" />
         <div className={styles.questions_container}>
           <div>
             <h4>How does it work?</h4>
@@ -64,8 +64,8 @@ const FAQs = () => {
         </div>
       </label>
       <HorizontalLine />
-      <label htmlFor={"question2"} className={styles.questions_label}>
-        <input id={"question2"} type="checkbox" />
+      <label htmlFor={'question2'} className={styles.questions_label}>
+        <input id={'question2'} type="checkbox" />
         <div className={styles.questions_container}>
           <div>
             <h4>What are your services?</h4>
@@ -124,7 +124,7 @@ const Questions = ({ _id, question, answer }) => {
               <span></span>
             </div>
           </div>
-          <p>{answer}</p>
+          <p className={`text-regular`}>{answer}</p>
         </div>
       </label>
       <HorizontalLine />
