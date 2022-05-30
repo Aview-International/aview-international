@@ -13,6 +13,6 @@ export function submitForm(name, data) {
       ...data,
     }),
   })
-    .then(() => true)
+    .then(() => console.log('Success'))
     .catch((error) => alert(error));
 }
