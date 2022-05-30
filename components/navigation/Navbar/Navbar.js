@@ -1,18 +1,18 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
-import Button from "../../UI/Button/Button";
+import Button from '../../UI/Button/Button';
 
-import logo from "../../../public/img/brand/nav-logo.svg";
-import closeIcon from "../../../public/img/icons/close.svg";
-import styles from "./Navbar.module.css";
+import logo from '../../../public/img/brand/nav-logo.svg';
+import closeIcon from '../../../public/img/icons/close.svg';
+import styles from './Navbar.module.css';
 
 const PAGES = [
-  { name: "Home", route: "/" },
-  { name: "Creators", route: "/creators" },
-  { name: "Translators", route: "/translators" },
-  { name: "About", route: "/about" },
+  { name: 'Home', route: '/' },
+  // { name: "Creators", route: "/creators" },
+  // { name: "Translators", route: "/translators" },
+  // { name: "About", route: "/about" },
 ];
 
 /**
@@ -30,7 +30,7 @@ function Navbar() {
   }
 
   useEffect(() => {
-    window.addEventListener("resize", closeMenu);
+    window.addEventListener('resize', closeMenu);
   }, []);
 
   return (
@@ -62,12 +62,12 @@ function NavbarLogo() {
  */
 function NavbarLinks({ menuOpen }) {
   return (
-    <nav className={`${styles.navbar} ${menuOpen && styles["navbar-open"]}`}>
-      <ul className={styles["navbar-links"]}>
+    <nav className={`${styles.navbar} ${menuOpen && styles['navbar-open']}`}>
+      <ul className={styles['navbar-links']}>
         {PAGES.map((page, i) => (
           <li key={`page-${i}`}>
             <Link href={page.route}>
-              <a className={styles["navbar-link"]}>{page.name}</a>
+              <a className={styles['navbar-link']}>{page.name}</a>
             </Link>
           </li>
         ))}
@@ -82,12 +82,7 @@ function NavbarLinks({ menuOpen }) {
 function ContactButton() {
   return (
     <div className="desktop-only">
-      <Button
-        type="secondary"
-        isRoute={false}
-        isForm={false}
-        link="#generate-aview"
-      >
+      <Button type="secondary" isRoute={false} link="#generate-aview">
         Contact Us
       </Button>
     </div>
@@ -99,7 +94,7 @@ function ContactButton() {
  */
 function MenuButton({ menuButtonHandler }) {
   return (
-    <div className={styles["menu-btn"]} onClick={menuButtonHandler}>
+    <div className={styles['menu-btn']} onClick={menuButtonHandler}>
       <div></div>
       <div></div>
       <div></div>
@@ -113,8 +108,8 @@ function MenuButton({ menuButtonHandler }) {
 function CloseButton({ menuOpen, menuButtonHandler }) {
   return (
     <div
-      className={`${styles["close-btn"]} ${
-        menuOpen && styles["close-btn-open"]
+      className={`${styles['close-btn']} ${
+        menuOpen && styles['close-btn-open']
       }`}
       onClick={menuButtonHandler}
     >

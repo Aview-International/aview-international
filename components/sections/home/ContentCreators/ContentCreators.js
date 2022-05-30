@@ -60,18 +60,16 @@ function ContentCreators() {
         Worked With
       </h2>
       <CreatorsGrid />
-      <Button
-        type="primary"
-        isLink={true}
-        isForm={false}
-        link="#generate-aview"
-      >
+      <Button type="primary" isRoute={false} link="#generate-aview">
         Become a Creator!
       </Button>
     </section>
   );
 }
 
+/**
+ * Grid of creators
+ */
 function CreatorsGrid() {
   return (
     <div className={styles["creators-grid"]}>

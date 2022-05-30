@@ -1,7 +1,7 @@
 import styles from "./HorizontalLine.module.css";
 
-function HorizontalLine() {
+const HorizontalLine = () => {
   return <hr className={styles.hr} />;
-}
+};
 
 export default HorizontalLine;
