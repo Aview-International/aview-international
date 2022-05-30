@@ -1,19 +1,19 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import HorizontalLine from "../../UI/HorizontalLine/HorizontalLine";
+import HorizontalLine from '../../UI/HorizontalLine/HorizontalLine';
 
-import logo from "../../../public/img/brand/nav-logo.svg";
-import youtubeIcon from "../../../public/img/icons/youtube.svg";
-import linkedinIcon from "../../../public/img/icons/linkedin.svg";
-import styles from "./Footer.module.css";
+import logo from '../../../public/img/brand/nav-logo.svg';
+import youtubeIcon from '../../../public/img/icons/youtube.svg';
+import linkedinIcon from '../../../public/img/icons/linkedin.svg';
+import styles from './Footer.module.css';
 
 const LINKS = [
-  { name: "Creators", route: "/creators" },
-  { name: "Translators", route: "/translators" },
-  { name: "About", route: "/about" },
-  { name: "Contact", route: "/contact" },
-  { name: "Careers", route: "/careers" },
+  // { name: "Creators", route: "/creators" },
+  // { name: "Translators", route: "/translators" },
+  // { name: "About", route: "/about" },
+  // { name: "Contact", route: "/contact" },
+  // { name: "Careers", route: "/careers" },
 ];
 
 /**
@@ -31,6 +31,9 @@ function Footer() {
   );
 }
 
+/**
+ * Logos on left side of footer
+ */
 function FooterLogos() {
   return (
     <div className={styles.logos}>
@@ -47,13 +50,16 @@ function FooterLogos() {
   );
 }
 
+/**
+ * Footer links
+ */
 function FooterLinks() {
   return (
-    <ul className={styles["footer-links"]}>
+    <ul className={styles['footer-links']}>
       {LINKS.map((link, i) => (
         <li key={`footer-link-${i}`}>
           <Link href={link.route}>
-            <a className={styles["footer-link"]}>{link.name}</a>
+            <a className={styles['footer-link']}>{link.name}</a>
           </Link>
         </li>
       ))}

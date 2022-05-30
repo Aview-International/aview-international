@@ -4,7 +4,7 @@
 import Input from "../../../UI/Input/Input";
 import styles from "./Generate.module.css";
 import { useState } from "react";
-import { emailValidator, urlValidator } from "../../../../utils";
+import { emailValidator, urlValidator } from "../../../../utils/regex";
 import CheckBox from "../../../UI/Checkbox/Checkbox";
 import Button from "../../../UI/Button/Button";
 const Generate = () => {
@@ -108,6 +108,7 @@ const Generate = () => {
         {checkboxArray.map((item, index) => (
           <CheckBox onChange={(e) => hanldeCheckBox(e)} key={index} {...item} />
         ))}
+        <br/>
         <Button type="secondary" link="#join-aview">
           Join Now!
         </Button>

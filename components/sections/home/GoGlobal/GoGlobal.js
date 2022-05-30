@@ -1,41 +1,77 @@
+import { useState } from 'react';
+
+import GradientFullWidth from '../../../../components/layout/GradientFullWidth/GradientFullWidth';
+import Form from '../../../../components/form/Form/Form';
+import Input from '../../../form/Input/Input';
+
+import { submitForm } from '../../../../utils/submit-form';
+import styles from './GoGlobal.module.css';
+
 /**
  * Container for Want To Go Global? section of homepage
  */
-import Border from "../../../UI/Border/Border";
-import Button from "../../../UI/Button/Button";
-import style from "./GoGlobal.module.css";
-import { useState } from "react";
+function GoGlobal() {
+  const [formState, setFormState] = useState({
+    email: '',
+    valid: true,
+  });
+  const [inputsValid, setInputsValid] = useState([false]);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
 
-const GoGlobal = () => {
-  const [mail, setMail] = useState("");
+  function changeHandler(e) {
+    console.log(e.target.value);
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value)) {
+      setFormState({ email: e.target.value, valid: true });
+      setInputsValid([true]);
+    } else {
+      setFormState({ email: e.target.value, valid: false });
+      setInputsValid([false]);
+    }
+  }
+
+  function submitHandler(e) {
+    e.preventDefault();
+
+    setHasSubmitted(true);
+
+    if (formState.valid) {
+      submitForm('newsletter', { email: formState.email });
+    }
+  }
+
   return (
-    <section className={`section ${style.section}`}>
-      <h2 className={`section-title  ${style.desktop_text}`}>
-        Want To Go Global?
-      </h2>
-      <h2 className={`section-title ${style.mobile_text}`}>
-        Stay Up to Date with the Latest News
-      </h2>
-      <p className={`section-description`}>
-        Give us your email. We will do the rest.
-      </p>
-      <form autoComplete="on" className={style.form}>
-        <Border>
-          <input
-            type="email"
-            value={mail}
-            onChange={(e) => setMail(e.target.value)}
-            placeholder="Your email address"
-          />
-        </Border>
-        <p>
-          By signing up you agree to receive communications via email. For more
-          information please refer to our Privacy Policy.
+    <section className={`section`}>
+      <GradientFullWidth>
+        <h2 className={`section-title ${styles['section-title']}`}>
+          Want to Go Global?
+        </h2>
+        <p className={`section-description ${styles['section-description']}`}>
+          Give us your email. We will do the rest.
         </p>
-        <Button type="tertiary">Subscribe</Button>
-      </form>
+        <Form
+          name="newsletter"
+          buttonText="Subscribe"
+          buttonType="tertiary"
+          submitHandler={submitHandler}
+        >
+          <Input
+            type="email"
+            placeholder="Your email address"
+            bgColor="light"
+            changeHandler={changeHandler}
+            value={formState.email}
+            valid={inputsValid[0]}
+            hasSubmitted={hasSubmitted}
+            incorrectText="Please submit a properly formatted email."
+          />
+          <p className={styles.agreement}>
+            By signing up you agree to receive communications via email. For
+            more information please refer to our Privacy Policy.
+          </p>
+        </Form>
+      </GradientFullWidth>
     </section>
   );
-};
+}
 
 export default GoGlobal;

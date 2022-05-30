@@ -24,10 +24,10 @@
   background: var(--primary-gradient);
   width: 100% + 3px;
   height: 100% + 3px;
-  filter: blur(20px);
+  filter: blur(15px);
   border-radius: 15px;
   opacity: 0;
-  transition: opacity 0.2s linear;
+  transition: opacity 0.3s linear;
   position: absolute;
   left: 0;
   right: 0;
@@ -35,8 +35,12 @@
   bottom: 0;
 }
 
+.shadow-parent {
+  position: relative;
+}
+
 .shadow-parent:hover .shadow {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* Typography */

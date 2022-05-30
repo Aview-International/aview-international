@@ -8,6 +8,8 @@
   display: inline-block;
   position: relative;
   cursor: pointer;
+  background-color: transparent;
+  font-size: 18px;
 }
 
 .btn-primary:hover .shadow,

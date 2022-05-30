@@ -3,7 +3,7 @@ import Image from "next/image";
 import Button from "../../../UI/Button/Button";
 import Milestones from "../Milestones/Milestones";
 
-import landingGraphic from "../../../../public/img/graphics/hero.png";
+import landingGraphic from "../../../../public/img/graphics/home-landing.png";
 import styles from "./Landing.module.css";
 
 /**
@@ -21,7 +21,7 @@ function Landing() {
           AVIEW is a leading multi-media translation service. We help you expand
           your international viewership.
         </p>
-        <Button type="primary" link="#generate-aview">
+        <Button type="primary" isRoute={false} link="#generate-aview">
           Start Now!
         </Button>
       </div>
