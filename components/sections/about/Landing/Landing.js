@@ -17,7 +17,7 @@ function Landing() {
             ><div class="shadow"></div>
             contact us</a>
         </div>
-        <img src="asset/img/about-landing.png" alt="" class="about-landing-image" />
+        <img src="./public/img/graphics/about-landing.png" alt="" class="about-landing-image" />
       </section>
 
   </React.Fragment>;

@@ -14,7 +14,7 @@ function AboutAview() {
             market and seek international expansion.
           </p>
         </div>
-        <img src="asset/img/about.png" alt="" class="about-image" />
+        <img src="./public/img/graphics/about.png" alt="" class="about-image" />
       </section>
   </React.Fragment>;
 }
