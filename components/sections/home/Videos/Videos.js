@@ -1,43 +1,52 @@
 /**
  * Container for Our Translated Content section of homepage
  */
-import Border from "../../../UI/Border/Border";
-import LoganPaulLogo from "../../../../public/img/logos/logan-paul.png";
-import NinjaLogo from "../../../../public/img/logos/ninja.png";
-import SaudBrothersLogo from "../../../../public/img/logos/saud-brothers.png";
-import WhatIfLogo from "../../../../public/img/logos/what-if.png";
-import Image from "next/image";
-import styles from "./Videos.module.css";
+import Border from '../../../UI/Border/Border';
+import LoganPaulLogo from '../../../../public/img/logos/logan-paul.png';
+import MarkRoberLogo from '../../../../public/img/logos/mark-rober.png';
+import YesTheoryLogo from '../../../../public/img/logos/yes-theory.png';
+import SaudBrothersLogo from '../../../../public/img/logos/saud-brothers.png';
+import Image from 'next/image';
+import styles from './Videos.module.css';
 
+<iframe
+  width="950"
+  height="534"
+  src="https://www.youtube.com/embed/8cvhwquPqJ0"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>;
 const creators = [
   {
-    embed_link: "https://www.youtube.com/embed/D0UnqGm_miA",
+    embed_link: 'https://www.youtube.com/embed/ThMCYT6sbHw',
     logo: LoganPaulLogo,
-    creator_name: "Logan Paul",
-    creator_subscriptions: "XM Subscribers",
-    creator_views: "XM + views",
+    creator_name: 'Logan Paul',
+    creator_subscriptions: '23M+ Subscribers',
+    creator_views: '27M+ views',
   },
 
   {
-    embed_link: "https://www.youtube.com/embed/u31qwQUeGuM",
-    logo: NinjaLogo,
-    creator_name: "Ninja",
-    creator_subscriptions: "XM Subscribers",
-    creator_views: "XM + views",
+    embed_link: 'https://www.youtube.com/embed/tk_ZlWJ3qJI',
+    logo: MarkRoberLogo,
+    creator_name: 'Mark Rober',
+    creator_subscriptions: '21M+ Subscribers',
+    creator_views: '93M+ views',
   },
   {
-    embed_link: "https://youtube.com/embed/nWwpyclIEu4",
+    embed_link: 'https://www.youtube.com/embed/8cvhwquPqJ0',
+    logo: YesTheoryLogo,
+    creator_name: 'Yes Theory',
+    creator_subscriptions: '7M+ Subscribers',
+    creator_views: '16M+ views',
+  },
+  {
+    embed_link: 'https://www.youtube.com/embed/2ov35705pFQ',
     logo: SaudBrothersLogo,
-    creator_name: "Saud Brothers",
-    creator_subscriptions: "XM Subscribers",
-    creator_views: "XM + views",
-  },
-  {
-    embed_link: "https://www.youtube.com/embed/ScMzIvxBSi4",
-    logo: WhatIfLogo,
-    creator_name: "What If",
-    creator_subscriptions: "XM Subscribers",
-    creator_views: "XM + views",
+    creator_name: 'Saud Brothers',
+    creator_subscriptions: '14M+ Subscribers',
+    creator_views: '14M+ views',
   },
 ];
 const Videos = () => {

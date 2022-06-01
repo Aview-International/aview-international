@@ -1,7 +1,7 @@
 .input_container {
   padding: 1px;
   width: 100%;
-  color: #fff;
+  color: var(--primary-color);
   margin: 20px 0;
 }
 .input_label {
@@ -39,7 +39,7 @@
   background: #090c32;
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: var(--primary-color);
   display: block;
 }
 .input:focus {
