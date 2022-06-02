@@ -1,43 +1,43 @@
 /**
  * Container for Our Translated Content section of homepage
  */
-import Border from "../../../UI/Border/Border";
-import LoganPaulLogo from "../../../../public/img/logos/logan-paul.png";
-import NinjaLogo from "../../../../public/img/logos/ninja.png";
-import SaudBrothersLogo from "../../../../public/img/logos/saud-brothers.png";
-import WhatIfLogo from "../../../../public/img/logos/what-if.png";
-import Image from "next/image";
-import styles from "./Videos.module.css";
+import Border from '../../../UI/Border/Border';
+import LoganPaulLogo from '../../../../public/img/creators/logos/logan-paul.png';
+import NinjaLogo from '../../../../public/img/creators/logos/ninja.png';
+import SaudBrothersLogo from '../../../../public/img/creators/logos/saud-brothers.png';
+import WhatIfLogo from '../../../../public/img/creators/logos/what-if.png';
+import Image from 'next/image';
+import styles from './Videos.module.css';
 
 const creators = [
   {
-    embed_link: "https://www.youtube.com/embed/D0UnqGm_miA",
+    embed_link: 'https://www.youtube.com/embed/D0UnqGm_miA',
     logo: LoganPaulLogo,
-    creator_name: "Logan Paul",
-    creator_subscriptions: "XM Subscribers",
-    creator_views: "XM + views",
+    creator_name: 'Logan Paul',
+    creator_subscriptions: 'XM Subscribers',
+    creator_views: 'XM + views',
   },
 
   {
-    embed_link: "https://www.youtube.com/embed/u31qwQUeGuM",
+    embed_link: 'https://www.youtube.com/embed/u31qwQUeGuM',
     logo: NinjaLogo,
-    creator_name: "Ninja",
-    creator_subscriptions: "XM Subscribers",
-    creator_views: "XM + views",
+    creator_name: 'Ninja',
+    creator_subscriptions: 'XM Subscribers',
+    creator_views: 'XM + views',
   },
   {
-    embed_link: "https://youtube.com/embed/nWwpyclIEu4",
+    embed_link: 'https://youtube.com/embed/nWwpyclIEu4',
     logo: SaudBrothersLogo,
-    creator_name: "Saud Brothers",
-    creator_subscriptions: "XM Subscribers",
-    creator_views: "XM + views",
+    creator_name: 'Saud Brothers',
+    creator_subscriptions: 'XM Subscribers',
+    creator_views: 'XM + views',
   },
   {
-    embed_link: "https://www.youtube.com/embed/ScMzIvxBSi4",
+    embed_link: 'https://www.youtube.com/embed/ScMzIvxBSi4',
     logo: WhatIfLogo,
-    creator_name: "What If",
-    creator_subscriptions: "XM Subscribers",
-    creator_views: "XM + views",
+    creator_name: 'What If',
+    creator_subscriptions: 'XM Subscribers',
+    creator_views: 'XM + views',
   },
 ];
 const Videos = () => {
