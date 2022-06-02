@@ -78,8 +78,8 @@ export const Dotted_Border = () => (
         y2="46.4622"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FC00FF" />
-        <stop offset="1" stop-color="#00FFFC" />
+        <stop stopColor="#FC00FF" />
+        <stop offset="1" stopColor="#00FFFC" />
       </linearGradient>
     </defs>
   </svg>

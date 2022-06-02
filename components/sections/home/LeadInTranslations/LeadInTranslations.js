@@ -1,32 +1,29 @@
-import GraphicCardRow from "../../../layout/GraphicCardRow/GraphicCardRow";
-import GraphicCard from "../../../UI/GraphicCard/GraphicCard";
-
-import fastGraphic from "../../../../public/img/graphics/fast-and-easy.png";
-import flexibleGraphic from "../../../../public/img/graphics/flexible.png";
-import accurateGraphic from "../../../../public/img/graphics/accurate.png";
-import styles from "./LeadInTranslations.module.css";
+import fastGraphic from '../../../../public/img/graphics/fast-and-easy.png';
+import flexibleGraphic from '../../../../public/img/graphics/flexible.png';
+import accurateGraphic from '../../../../public/img/graphics/accurate.png';
+import GraphicCardSection from '../../../layout/GraphicCardSection/GraphicCardSection';
 
 const CARD_DATA = [
   {
-    title: "Fast & Easy",
+    title: 'Fast & Easy',
     description:
-      "AVIEW guarantees a 24-hour turnaround on subtitle and 48 hours on dubbed content.",
+      'AVIEW guarantees a 24-hour turnaround on subtitle and 48 hours on dubbed content.',
     graphic: fastGraphic,
-    alt: "Fast graphic",
+    alt: 'Fast graphic',
   },
   {
-    title: "Flexible",
+    title: 'Flexible',
     description:
-      "We offer a personalized payment plan and tailor our process to your needs.",
+      'We offer a personalized payment plan and tailor our process to your needs.',
     graphic: flexibleGraphic,
-    alt: "Flexible graphic",
+    alt: 'Flexible graphic',
   },
   {
-    title: "Accurate",
+    title: 'Accurate',
     description:
-      "We will ensure that our translations are accurate no matter the content. ",
+      'We will ensure that our translations are accurate no matter the content. ',
     graphic: accurateGraphic,
-    alt: "Accurate graphic",
+    alt: 'Accurate graphic',
   },
 ];
 
@@ -35,23 +32,15 @@ const CARD_DATA = [
  */
 function LeadInTranslations() {
   return (
-    <section
-      className={`section m-horizontal ${styles["lead-in-translations"]}`}
-    >
-      <h2 className={`section-title ${styles["section-title"]}`}>
-        Why We <span className="gradient-text">Lead in Translations</span>
-      </h2>
-      <p className={`section-description ${styles["section-description"]}`}>
-        AVIEW focuses on making our services 100% catered to our creators.
-        Whether you need subtitles, dubbing, or shorts, AVIEW will help you
-        along your journey.
-      </p>
-      <GraphicCardRow>
-        {CARD_DATA.map((data, i) => (
-          <GraphicCard {...data} key={`graphic-card-${i}`} />
-        ))}
-      </GraphicCardRow>
-    </section>
+    <GraphicCardSection
+      title={
+        <>
+          Why We <span className="gradient-text">Lead in Translations</span>
+        </>
+      }
+      description="AVIEW focuses on making our services 100% catered to our creators. Whether you need subtitles, dubbing, or shorts, AVIEW will help you along your journey."
+      cardData={CARD_DATA}
+    />
   );
 }
 

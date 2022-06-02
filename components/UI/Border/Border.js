@@ -1,4 +1,4 @@
-import styles from "./Border.module.css";
+import styles from './Border.module.css';
 
 /**
  * Gradient border

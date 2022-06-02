@@ -2,10 +2,10 @@
  * Container for Our Translated Content section of homepage
  */
 import Border from '../../../UI/Border/Border';
-import LoganPaulLogo from '../../../../public/img/logos/logan-paul.png';
-import MarkRoberLogo from '../../../../public/img/logos/mark-rober.png';
-import YesTheoryLogo from '../../../../public/img/logos/yes-theory.png';
-import SaudBrothersLogo from '../../../../public/img/logos/saud-brothers.png';
+import LoganPaulLogo from '../../../../public/img/creators/logos/logan-paul.png';
+import MarkRoberLogo from '../../../../public/img/creators/logos/mark-rober.png';
+import YesTheoryLogo from '../../../../public/img/creators/logos/yes-theory.png';
+import SaudBrothersLogo from '../../../../public/img/creators/logos/saud-brothers.png';
 import Image from 'next/image';
 import styles from './Videos.module.css';
 

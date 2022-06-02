@@ -1,0 +1,23 @@
+.section {
+  text-align: center;
+}
+
+.section-description {
+  margin-top: 15px;
+  display: inline-block;
+  max-width: 755px;
+}
+
+.text {
+  margin-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    text-align: left;
+  }
+
+  .text {
+    margin-bottom: 50px;
+  }
+}

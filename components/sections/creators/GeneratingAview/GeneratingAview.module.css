@@ -1,0 +1,11 @@
+.section-title {
+  text-align: center;
+  display: block;
+  margin-bottom: 70px;
+}
+
+@media (max-width: 50px) {
+  .section-title {
+    margin-bottom: 50px;
+  }
+}
