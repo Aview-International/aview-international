@@ -1,7 +1,7 @@
-import Border from "../Border/Border";
-import Shadow from "../Shadow/Shadow";
+import Border from '../Border/Border';
+import Shadow from '../Shadow/Shadow';
 
-import styles from "./Card.module.css";
+import styles from './Card.module.css';
 
 /**
  * Card container, built-in border and hover shadow

@@ -1,23 +1,23 @@
-.lead-in-translations {
+.section {
   text-align: center;
 }
 
-.section-title {
-  margin-bottom: 15px;
-}
-
 .section-description {
+  margin-top: 15px;
   display: inline-block;
   max-width: 755px;
+}
+
+.text {
   margin-bottom: 80px;
 }
 
 @media (max-width: 768px) {
-  .lead-in-translations {
+  .section {
     text-align: left;
   }
 
-  .section-description {
-    margin-bottom: 75px;
+  .text {
+    margin-bottom: 50px;
   }
 }
