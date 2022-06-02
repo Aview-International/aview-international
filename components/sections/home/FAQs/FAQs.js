@@ -53,7 +53,7 @@ const FAQs = () => {
               <span></span>
             </div>
           </div>
-          <p>
+          <p className={`text-regular`}>
             Three simple steps to increase your international viewership.
             <br />
             1. Select from our translations or voiceover services <br />
@@ -75,7 +75,7 @@ const FAQs = () => {
               <span></span>
             </div>
           </div>
-          <p>
+          <p className={`text-regular`}>
             AVIEW offers 3 services.
             <br />
             <br />

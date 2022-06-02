@@ -6,7 +6,8 @@ import styles from './Generate.module.css';
 import { useState } from 'react';
 import { emailValidator, urlValidator } from '../../../../utils/regex';
 import CheckBox from '../../../UI/Checkbox/Checkbox';
-import Button from '../../../UI/Button/Button';
+import Form from '../../../form/Form/Form';
+import { submitForm } from '../../../../utils/submit-form';
 const Generate = () => {
   const [data, setData] = useState({
     name: '',
@@ -90,12 +91,35 @@ const Generate = () => {
       }));
     }
   };
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    // setHasSubmitted(true);
+    try {
+      if (
+        !data.name ||
+        !data.url ||
+        !data.email ||
+        !data.languages ||
+        data.options.length < 1
+      ) {
+        const res = await submitForm('generate-requests', data);
+        console.log(res);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <section className={`section ${styles.parent}`}>
       <h2 className={`section-title`}>
         <span className="gradient-text">Start Generating AVIEW Today</span>
       </h2>
-      <form autoComplete="on" className={styles.form}>
+      <Form
+        name="newsletter"
+        buttonText="Join Now!"
+        buttonType="secondary"
+        submitHandler={submitHandler}
+      >
         {inputArray.map((item, index) => (
           <Input
             key={`input_${index}`}
@@ -108,11 +132,7 @@ const Generate = () => {
         {checkboxArray.map((item, index) => (
           <CheckBox onChange={(e) => hanldeCheckBox(e)} key={index} {...item} />
         ))}
-        <br />
-        <Button type="secondary" link="#join-aview">
-          Join Now!
-        </Button>
-      </form>
+      </Form>
     </section>
   );
 };

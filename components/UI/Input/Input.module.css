@@ -16,8 +16,7 @@
 }
 .flex_container > div {
   position: relative;
-  flex-basis: 87%;
-  margin-right: 20px;
+  flex-basis: 100%;
   border-radius: 5px;
 }
 .highlight {
@@ -49,14 +48,17 @@
   visibility: visible;
   opacity: 1;
 }
+.validation_icon {
+  position: absolute;
+  right: 12px;
+  top: 6px;
+}
 @media (max-width: 768px) {
   .flex_container > div {
     flex-basis: 100%;
     margin-right: 0px;
   }
   .validation_icon {
-    position: absolute;
-    right: 5px;
-    top: 6px;
+    top: 3px;
   }
 }
