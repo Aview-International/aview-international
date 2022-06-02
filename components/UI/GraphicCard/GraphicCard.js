@@ -1,7 +1,7 @@
-import Image from "next/image";
-import Card from "../Card/Card";
+import Image from 'next/image';
+import Card from '../Card/Card';
 
-import styles from "./GraphicCard.module.css";
+import styles from './GraphicCard.module.css';
 
 /**
  * Graphic cards displayed on homepage
@@ -13,7 +13,7 @@ import styles from "./GraphicCard.module.css";
  */
 function GraphicCard({ title, description, graphic, alt }) {
   return (
-    <div className={styles["graphic-card"]}>
+    <div className={styles['graphic-card']}>
       <Card>
         <div className={styles.graphic}>
           <Image src={graphic} alt={alt} />

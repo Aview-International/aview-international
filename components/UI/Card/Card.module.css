@@ -3,4 +3,5 @@
   background: var(--tertiary-gradient);
   border-radius: 15px;
   min-height: 100%;
+  min-width: 100%;
 }
