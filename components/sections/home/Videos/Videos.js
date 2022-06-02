@@ -9,15 +9,6 @@ import SaudBrothersLogo from '../../../../public/img/logos/saud-brothers.png';
 import Image from 'next/image';
 import styles from './Videos.module.css';
 
-<iframe
-  width="950"
-  height="534"
-  src="https://www.youtube.com/embed/8cvhwquPqJ0"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>;
 const creators = [
   {
     embed_link: 'https://www.youtube.com/embed/ThMCYT6sbHw',
