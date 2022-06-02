@@ -11,7 +11,7 @@
 .services {
   margin-top: 3rem;
   text-align: left;
-  color: #fff;
+  color: var(--primary-color);
 }
 @media (max-width: 768px) {
   .form {

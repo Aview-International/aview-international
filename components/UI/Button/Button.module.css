@@ -10,6 +10,7 @@
   cursor: pointer;
   background-color: transparent;
   font-size: 18px;
+  border: none;
 }
 
 .btn-primary:hover .shadow,
@@ -36,7 +37,7 @@
   left: -3px;
   right: -3px;
   background: var(--primary-gradient);
-  content: "";
+  content: '';
   z-index: -1;
   border-radius: 100px;
 }

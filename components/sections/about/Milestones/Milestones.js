@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Row3 from '../../../layout/Row3/Row3';
 import Card from '../../../UI/Card/Card';
 
@@ -5,27 +6,33 @@ import styles from './Milestones.module.css';
 
 const MILESTONES = [
   {
-    title: '500M+',
+    value: 500,
+    suffix: 'M',
     text: 'International Creator Views',
   },
   {
-    title: '15+',
+    value: 15,
+    suffix: '',
     text: 'Languages',
   },
   {
-    title: '10M+',
+    value: 10,
+    suffix: 'M',
     text: 'International Gained Subscribers',
   },
   {
-    title: '1600+',
+    value: 1600,
+    suffix: '',
     text: 'Completed Videos',
   },
   {
-    title: '400+',
+    value: 400,
+    suffix: '',
     text: 'Hours of Translated Content',
   },
   {
-    title: '100M+',
+    value: 100,
+    suffix: 'M',
     text: 'Client Subscriber Count',
   },
 ];
@@ -47,17 +54,42 @@ function MilestonesGrid() {
   return (
     <Row3>
       {MILESTONES.map((milestone, i) => (
-        <Card key={`milestone-${i}]`}>
-          <div className={styles.milestone}>
-            <h3 className={`gradient-text ${styles.title}`}>
-              {milestone.title}
-            </h3>
-            <p className={styles.description}>{milestone.text}</p>
-          </div>
-        </Card>
+        <Cards key={`milestone-${i}]`} {...milestone} />
       ))}
     </Row3>
   );
 }
 
 export default Milestones;
+
+export const Cards = ({ value, suffix, text, i }) => {
+  const [count, setCount] = useState(0);
+  const updateCount = (i) => {
+    const speed = value * 0.07;
+    const target = value;
+    const increment = Math.trunc(target / speed);
+
+    if (count < target) {
+      if (value < 50) setCount((count += 1));
+      else setCount((count += increment));
+      setTimeout(updateCount, 100);
+    } else {
+      setCount(target);
+    }
+  };
+  const run_count = (i) => {
+    setCount(0);
+    updateCount(i);
+  };
+  return (
+    <Card>
+      <div className={styles.milestone} onMouseEnter={() => run_count(i)}>
+        <h3 className={`gradient-text ${styles.title}`}>
+          {count || value}
+          {`${suffix}+`}
+        </h3>
+        <p className={styles.description}>{text}</p>
+      </div>
+    </Card>
+  );
+};

@@ -64,7 +64,7 @@
 .creator_info > div:first-of-type {
   display: flex;
   align-items: center;
-  color: #fff;
+  color: var(--primary-color);
 }
 .creator_info hr {
   transform: rotate(90deg);

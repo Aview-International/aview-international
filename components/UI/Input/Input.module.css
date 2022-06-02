@@ -1,7 +1,7 @@
 .input_container {
   padding: 1px;
   width: 100%;
-  color: #fff;
+  color: var(--primary-color);
   margin: 20px 0;
 }
 .input_label {
@@ -16,8 +16,7 @@
 }
 .flex_container > div {
   position: relative;
-  flex-basis: 87%;
-  margin-right: 20px;
+  flex-basis: 100%;
   border-radius: 5px;
 }
 .highlight {
@@ -39,7 +38,7 @@
   background: #090c32;
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: var(--primary-color);
   display: block;
 }
 .input:focus {
@@ -49,14 +48,17 @@
   visibility: visible;
   opacity: 1;
 }
+.validation_icon {
+  position: absolute;
+  right: 12px;
+  top: 6px;
+}
 @media (max-width: 768px) {
   .flex_container > div {
     flex-basis: 100%;
     margin-right: 0px;
   }
   .validation_icon {
-    position: absolute;
-    right: 5px;
-    top: 6px;
+    top: 3px;
   }
 }

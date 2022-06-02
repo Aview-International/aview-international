@@ -29,6 +29,7 @@ function Form({ name, buttonText, buttonType, submitHandler, children }) {
       name={name}
       method="POST"
       className={styles.form}
+      autoComplete="on"
       data-netlify="true"
       netlify-honeypot="bot-field"
     >
