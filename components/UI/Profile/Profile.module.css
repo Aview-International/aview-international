@@ -1,3 +1,7 @@
+.profile {
+  position: relative;
+}
+
 .picture {
   width: 125px;
   height: 125px;
@@ -9,8 +13,11 @@
 }
 
 .card {
-  margin-top: -62px;
+  transform: translateY(-62px);
   text-align: center;
+  min-height: calc(100% - 120px);
+  display: flex;
+  min-width: 100%;
 }
 
 .text {
@@ -22,11 +29,13 @@
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 5px;
+  line-height: 38px;
 }
 
 .description {
   color: var(--primary-color);
   font-size: 21px;
+  line-height: 27px;
 }
 
 @media (max-width: 1100px) {
@@ -36,7 +45,8 @@
   }
 
   .card {
-    margin-top: -32px;
+    transform: translateY(-32px);
+    min-height: calc(100% - 70px);
   }
 
   .text {
@@ -45,10 +55,12 @@
 
   .name {
     font-size: 20px;
+    line-height: 25px;
   }
 
   .description {
     font-size: 14px;
+    line-height: 18px;
   }
 }
 
@@ -59,7 +71,8 @@
   }
 
   .card {
-    margin-top: -62px;
+    transform: translateY(-62px);
+    min-height: calc(100% - 120px);
   }
 
   .text {
@@ -68,10 +81,12 @@
 
   .name {
     font-size: 30px;
+    line-height: 38px;
   }
 
   .description {
     font-size: 21px;
+    line-height: 27px;
   }
 }
 
@@ -82,18 +97,21 @@
   }
 
   .card {
-    margin-top: -32px;
+    transform: translateY(-32px);
+    min-height: calc(100% - 70px);
   }
 
   .text {
-    padding: 64px 0 35px;
+    padding: 60px 0 46px;
   }
 
   .name {
     font-size: 20px;
+    line-height: 25px;
   }
 
   .description {
     font-size: 14px;
+    line-height: 18px;
   }
 }
