@@ -1,0 +1,9 @@
+.section-title {
+  margin-bottom: 23px;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    margin-bottom: 15px;
+  }
+}

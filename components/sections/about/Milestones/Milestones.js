@@ -1,84 +1,95 @@
 import { useState } from 'react';
-import GraphicCardRow from '../../../layout/GraphicCardRow/GraphicCardRow';
+import Row3 from '../../../layout/Row3/Row3';
 import Card from '../../../UI/Card/Card';
+
 import styles from './Milestones.module.css';
 
-const Milestones = () => {
-  const achievements = [
-    {
-      fixedValue: 500,
-      symbol: 'M',
-      description: 'International Creator Views',
-    },
-    { fixedValue: 15, symbol: '', description: 'Languages' },
-    {
-      fixedValue: 10,
-      symbol: 'M',
-      description: 'International Gained Subscribers',
-    },
-    { fixedValue: 1600, symbol: '', description: 'Completed Videos' },
-    {
-      fixedValue: 400,
-      symbol: '',
-      description: 'Hours of translated Content',
-    },
-    { fixedValue: 100, symbol: 'M', description: 'Client Subscriber Count' },
-  ];
+const MILESTONES = [
+  {
+    value: 500,
+    suffix: 'M',
+    text: 'International Creator Views',
+  },
+  {
+    value: 15,
+    suffix: '',
+    text: 'Languages',
+  },
+  {
+    value: 10,
+    suffix: 'M',
+    text: 'International Gained Subscribers',
+  },
+  {
+    value: 1600,
+    suffix: '',
+    text: 'Completed Videos',
+  },
+  {
+    value: 400,
+    suffix: '',
+    text: 'Hours of Translated Content',
+  },
+  {
+    value: 100,
+    suffix: 'M',
+    text: 'Client Subscriber Count',
+  },
+];
 
+function Milestones() {
   return (
-    <section className={`section ${styles.section}`}>
-      <h2 className={`section-title ${styles.title}`}>
-        <span className={`gradient-text`}> Aview&apos;s</span> Milestones
-      </h2>
-      <div className={styles.grid_container}>
-        <GraphicCardRow>
-          {achievements.map((item, index) => (
-            <Cards key={`achievements-${index}`} {...item} />
-          ))}
-        </GraphicCardRow>
-      </div>
-    </section>
+    <>
+      <section className="m-horizontal section">
+        <h2 className={`section-title ${styles['section-title']}`}>
+          <span className="gradient-text">Aview&apos;s</span> Milestones
+        </h2>
+        <MilestonesGrid />
+      </section>
+    </>
   );
-};
+}
+
+function MilestonesGrid() {
+  return (
+    <Row3>
+      {MILESTONES.map((milestone, i) => (
+        <Cards key={`milestone-${i}]`} {...milestone} />
+      ))}
+    </Row3>
+  );
+}
 
 export default Milestones;
 
-export const Cards = ({ description, fixedValue, symbol }) => {
+export const Cards = ({ value, suffix, text, i }) => {
   const [count, setCount] = useState(0);
-  const speed = fixedValue * 0.07;
-  const updateCount = () => {
-    const target = fixedValue;
+  const updateCount = (i) => {
+    const speed = value * 0.07;
+    const target = value;
     const increment = Math.trunc(target / speed);
 
     if (count < target) {
-      if (fixedValue < 50) setCount((count += 1));
+      if (value < 50) setCount((count += 1));
       else setCount((count += increment));
       setTimeout(updateCount, 100);
     } else {
       setCount(target);
     }
   };
-  const run_count = () => {
+  const run_count = (i) => {
     setCount(0);
-    updateCount();
+    updateCount(i);
   };
   return (
-    <div className={styles.container}>
-      <Card>
-        <div
-          className={styles.card}
-          onMouseEnter={run_count}
-          // onMouseLeave={() => {
-          //   setCount(fixedValue);
-          // }}
-        >
-          <span className={`gradient-text section-title`}>
-            {count || fixedValue}
-            {`${symbol}+`}
-          </span>
-          <p className={`text-regular`}>{description}</p>
-        </div>
-      </Card>
-    </div>
+    <Card>
+      <div className={styles.milestone} onMouseEnter={() => run_count(i)}>
+        <h3 className={`gradient-text ${styles.title}`}>
+          {count || value}
+          {`${suffix}+`}
+        </h3>
+        <p className={styles.description}>{text}</p>
+      </div>
+    </Card>
   );
 };
