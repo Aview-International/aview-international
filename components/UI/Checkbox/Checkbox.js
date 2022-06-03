@@ -4,10 +4,15 @@ import Info from '../../../public/img/icons/info.svg';
 import Border from '../Border/Border';
 import styles from './Checkbox.module.css';
 
-const CheckBox = ({ label, value, onChange, tooltip }) => {
+const CheckBox = ({ label, value, onChange, tooltip, name }) => {
   return (
     <label className={`text-regular ${styles.checkbox_label}`}>
-      <input type="checkbox" value={value} onChange={(e) => onChange(e)} />
+      <input
+        type="checkbox"
+        value={value}
+        onChange={(e) => onChange(e)}
+        name={name}
+      />
       {label}
       <span className={styles.checkbox_span}>
         <span></span>
