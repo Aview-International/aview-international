@@ -14,42 +14,42 @@ import styles from './GeneratingAview.module.css';
 const CREATORS = [
   {
     name: 'Logan Paul',
-    description: 'Lorem ipsum',
+    description: '23.4M Subs',
     picture: loganIcon,
   },
   {
     name: 'Ninja',
-    description: 'Lorem ipsum',
+    description: '23.9M Subs',
     picture: ninjaIcon,
   },
   {
     name: 'Saud Brothers',
-    description: 'Lorem ipsum',
+    description: '6.53M Subs',
     picture: saudBrothersIcon,
   },
   {
     name: 'What If',
-    description: 'Lorem ipsum',
+    description: '6.39M Subs',
     picture: whatIfIcon,
   },
   {
     name: 'Yes Theory',
-    description: 'Lorem ipsum',
+    description: '7.48M Subs',
     picture: yesTheoryIcon,
   },
   {
     name: 'Mark Rober',
-    description: 'Lorem ipsum',
+    description: '22M Subs',
     picture: markRoberIcon,
   },
   {
     name: 'Good Simple Living',
-    description: 'Lorem ipsum',
+    description: '393K Subs',
     picture: goodSimpleLivingIcon,
   },
   {
     name: 'Mr. Build It',
-    description: 'Lorem ipsum',
+    description: '665K Subs',
     picture: mrBuildItIcon,
   },
 ];
