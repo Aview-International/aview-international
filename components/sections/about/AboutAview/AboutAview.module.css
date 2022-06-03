@@ -1,0 +1,25 @@
+.section-title {
+    margin-bottom: 30px;
+  }
+
+  .about-graphic {
+    max-width: 80%;
+    justify-self: end;
+  }
+  
+  @media (max-width: 768px) {
+    .section-title {
+      text-align: center;
+    }
+
+    .about-graphic {
+      margin-top: 60px;
+      justify-self: center;
+      margin-bottom: 50px;
+    }
+
+    .section-description {
+      text-align: center;
+    }
+  }
+  

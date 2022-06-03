@@ -1,0 +1,12 @@
+.border {
+  background: var(--primary-gradient);
+  padding: 2px;
+  border-radius: 15px;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+}
+
+.reverse {
+  background: var(--secondary-gradient);
+}

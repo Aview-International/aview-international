@@ -1,0 +1,47 @@
+.milestones {
+  border-radius: 15px;
+  display: flex;
+  padding: 28px 6% 22px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.milestone-item {
+  text-align: center;
+  max-width: 190px;
+  margin: 0 auto;
+}
+
+.milestone-title {
+  display: block;
+  font-weight: 700;
+  font-size: 48px;
+  margin-bottom: 5px;
+}
+
+.milestone-description {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--primary-color);
+  line-height: 30px;
+}
+
+@media (max-width: 1200px) {
+  .milestones {
+    padding: 28px 3% 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .milestones {
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 65px;
+    padding: 36px 0;
+  }
+
+  .m-milestones {
+    max-width: min(90%, 360px);
+    margin: 0 auto;
+  }
+}

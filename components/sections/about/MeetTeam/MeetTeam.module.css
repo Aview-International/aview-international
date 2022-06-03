@@ -1,0 +1,32 @@
+.section {
+  text-align: center;
+}
+
+.section-title {
+  display: inline-block;
+  margin-bottom: 87px;
+}
+
+.team-group:not(:last-of-type) {
+  margin-bottom: 161px;
+}
+
+.role {
+  color: var(--primary-color);
+  font-size: 36px;
+  margin-bottom: 23px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    text-align: left;
+  }
+
+  .section-title {
+    margin-bottom: 50px;
+  }
+
+  .team-group:not(:last-of-type) {
+    margin-bottom: 50px;
+  }
+}
