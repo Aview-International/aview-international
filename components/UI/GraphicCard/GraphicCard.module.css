@@ -17,16 +17,63 @@
   line-height: 27px;
 }
 
+.horizontal {
+  display: flex;
+  align-items: center;
+  padding: 58px 30px;
+  gap: 20px;
+}
+
+.horizontal .graphic {
+  max-width: 180px;
+}
+
+.horizontal .text {
+  text-align: left;
+  padding: 0;
+}
+
 @media (max-width: 1200px) {
-  .graphic-card:last-of-type {
+  .graphic-card:not(.horizontal-card):last-of-type {
     grid-column-start: 1;
     grid-column-end: 3;
     max-width: calc((min(100%, 760px) - 40px) / 2 - 4px);
     margin: 0 auto;
   }
+
+  .horizontal .graphic {
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .horizontal .graphic {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 840px) {
+  .horizontal .graphic {
+    max-width: 180px;
+  }
 }
 
 @media (max-width: 768px) {
+  .horizontal {
+    display: block;
+    padding: 0;
+  }
+
+  .horizontal .graphic {
+    max-width: 80%;
+    margin: 10px auto 10px;
+  }
+
+  .horizontal .text {
+    text-align: center;
+    padding: 0 22px 60px;
+  }
+
   .text {
     padding: 0 22px 60px;
   }
@@ -53,6 +100,7 @@
 }
 
 @media (max-width: 360px) {
+  .horizontal .text,
   .text {
     padding: 0 22px 50px;
   }

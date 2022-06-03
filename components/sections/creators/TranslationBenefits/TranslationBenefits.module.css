@@ -1,0 +1,11 @@
+.section-title {
+  margin-bottom: 80px;
+  text-align: center;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    text-align: left;
+  }
+}
