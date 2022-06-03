@@ -1,22 +1,29 @@
+import Image from "next/image";
+import TextWithImage from "../../../layout/TextWithImage/TextWithImage";
+import aboutGraphic from "../../../../public/img/graphics/about.png";
 import styles from "./AboutAview.module.css";
 
 function AboutAview() {
-  return <React.Fragment>
-       <section class="about-aview m-horizontal">
+  return (
+       <section className="section m-horizontal">
+         <TextWithImage>
         <div>
-          <h1 class="section-title">
-            About <span class="gradient-text">Aview</span>
-          </h1>
-          <p class="section-description">
+        <h2 className={`section-title ${styles["section-title"]}`}>
+            About <span className="gradient-text">Aview</span>
+        </h2>
+        <div className={styles["about-graphic"]}>
+          <Image src={aboutGraphic} alt="about graphic" />
+        </div>
+          <p className="section-description">
             Aview is a multimedia translation company designed to help content creators 
             and entertainers expand their fan base through social media platforms. Aview 
             focuses on content creators who have developed a loyal fan base in their local 
             market and seek international expansion.
           </p>
-        </div>
-        <img src="./public/img/graphics/about.png" alt="" class="about-image" />
-      </section>
-  </React.Fragment>;
+          </div>
+  </TextWithImage>
+  </section>
+  );
 }
 
 export default AboutAview;

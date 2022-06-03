@@ -1,26 +1,32 @@
+import Image from "next/image";
+import TextWithImage from "../../../layout/TextWithImage/TextWithImage";
+import Button from "../../../../components/UI/Button/Button";
+import aboutlandingGraphic from "../../../../public/img/graphics/about-landing.png";
 import styles from "./Landing.module.css";
 
 function Landing() {
-  return 
-  <React.Fragment>
-    <section class="our-mission m-horizontal">
-        <div>
-          <h1 class="about-section-title">
+  return (
+    <section className="section m-horizontal">
+      <TextWithImage>
+          <div>
+          <h2 className={`section-title ${styles["section-title"]}`}>
             Our Mission
-          </h1>
-          <p class="about-section-description">
+          </h2>
+          <p className={`section-description ${styles["section-description"]}`}>
             To help build content creator brands globally through translated 
             subtitles and voiceovers; a client, a language, and
-            <span class="gradient-text"> Aview </span> at a time.
+            <span className="gradient-text"> Aview </span> at a time.
           </p>
-          <a href="#generate-aview" class="btn-primary"
-            ><div class="shadow"></div>
-            contact us</a>
+            <Button type="primary" isRoute={false} link="#generate-aview">
+              Contact Us
+            </Button>
         </div>
-        <img src="./public/img/graphics/about-landing.png" alt="" class="about-landing-image" />
-      </section>
-
-  </React.Fragment>;
+        <div className={styles["about-landing-graphic"]}>
+          <Image src={aboutlandingGraphic} alt="about landing graphic" />
+        </div>
+      </TextWithImage>
+    </section>
+  );
 }
 
 export default Landing;
