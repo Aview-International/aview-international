@@ -12,7 +12,7 @@ const PAGES = [
   { name: 'Home', route: '/' },
   { name: 'Creators', route: '/creators' },
   // { name: "Translators", route: "/translators" },
-  // { name: 'About', route: '/about' },
+  { name: 'About', route: '/about' },
 ];
 
 /**

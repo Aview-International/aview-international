@@ -20,10 +20,10 @@ function Home() {
       <LeadInTranslations />
       <BreadAndButter />
       <ContentCreators />
-      {/* <Videos />
+      <Videos />
       <Generate />
       <FAQs />
-      <GoGlobal /> */}
+      <GoGlobal />
       <Footer />
       <Blobs />
     </>
