@@ -130,7 +130,7 @@ const Generate = () => {
         ))}
         <p className={`text-regular ${styles.services}`}>Services</p>
         {checkboxArray.map((item, index) => (
-          <CheckBox onChange={(e) => hanldeCheckBox(e)} key={index} {...item} />
+          <CheckBox name="services[]" onChange={(e) => hanldeCheckBox(e)} key={index} {...item} />
         ))}
       </Form>
     </section>
