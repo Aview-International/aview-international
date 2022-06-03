@@ -11,9 +11,6 @@ function AboutAview() {
         <h2 className={`section-title ${styles["section-title"]}`}>
             About <span className="gradient-text">Aview</span>
         </h2>
-        <div className={styles["about-graphic"]}>
-          <Image src={aboutGraphic} alt="about graphic" />
-        </div>
           <p className="section-description">
             Aview is a multimedia translation company designed to help content creators 
             and entertainers expand their fan base through social media platforms. Aview 
@@ -21,6 +18,9 @@ function AboutAview() {
             market and seek international expansion.
           </p>
           </div>
+          <div className={styles["about-graphic"]}>
+          <Image src={aboutGraphic} alt="about graphic" />
+        </div>
   </TextWithImage>
   </section>
   );
