@@ -56,7 +56,7 @@ const CREATORS = [
 
 function GeneratingAview() {
   return (
-    <section className="section m-horizontal">
+    <section className="section m-horizontal" id="generate-aview">
       <h2 className={`gradient-text section-title ${styles['section-title']}`}>
         Generating Aview For
       </h2>

@@ -11,7 +11,7 @@ import styles from './Footer.module.css';
 const LINKS = [
   { name: 'Creators', route: '/creators' },
   // { name: "Translators", route: "/translators" },
-  { name: 'About', route: '/about' },
+  // { name: 'About', route: '/about' },
   // { name: "Contact", route: "/contact" },
   // { name: "Careers", route: "/careers" },
 ];
