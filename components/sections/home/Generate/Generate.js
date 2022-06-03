@@ -115,7 +115,7 @@ const Generate = () => {
         <span className="gradient-text">Start Generating AVIEW Today</span>
       </h2>
       <Form
-        name="newsletter"
+        name="generate-requests"
         buttonText="Join Now!"
         buttonType="secondary"
         submitHandler={submitHandler}
