@@ -1,0 +1,29 @@
+.blob {
+  position: absolute;
+  z-index: -100;
+  pointer-events: none;
+}
+
+.blob-1 {
+  width: 70vw;
+  right: -5%;
+  top: -5%;
+}
+
+.blob-2 {
+  top: 80vh;
+  left: -30vw;
+  width: 70vw;
+}
+
+.blob-3 {
+  width: 90vw;
+  top: 270vh;
+  right: -30vw;
+}
+
+.blob-4 {
+  width: 80vw;
+  bottom: -40vh;
+  left: -40vw;
+}

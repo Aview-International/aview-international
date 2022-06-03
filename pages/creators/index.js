@@ -9,6 +9,7 @@ import GeneratingAview from '../../components/sections/creators/GeneratingAview/
 import GrowthWithAview from '../../components/sections/creators/GrowthWithAview/GrowthWithAview';
 import GenerateAview from '../../components/sections/creators/GenerateAview/GenerateAview';
 import Footer from '../../components/navigation/Footer/Footer';
+import Blobs from '../../components/UI/Blobs/Blobs';
 
 function Creators() {
   return (
@@ -24,6 +25,7 @@ function Creators() {
       <GrowthWithAview />
       <GenerateAview />
       <Footer />
+      <Blobs />
     </>
   );
 }
