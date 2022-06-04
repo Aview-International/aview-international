@@ -7,10 +7,12 @@ import Border from '../../../UI/Border/Border';
 import Input from '../../../UI/Input/Input';
 import styles from './JoinTeam.module.css';
 import Image from 'next/image';
-import { submitForm } from '../../../../utils/submit-form';
+import { uploadResume } from '../../../../utils/submit-form';
 import { Dotted_Border } from '../../../../utils/svgs';
+import FormData from 'form-data';
 
 const JoinTeam = () => {
+  let formData = new FormData();
   const [data, setData] = useState({
     name: '',
     country: '',
@@ -37,8 +39,14 @@ const JoinTeam = () => {
       ) {
         return;
       }
-      const res = await submitForm('team-application', data);
-      console.log("sent");
+      formData.append('name', data.name);
+      formData.append('country', data.country);
+      formData.append('email', data.email);
+      formData.append('linkedin_url', data.linkedin_url);
+      formData.append('positions', data.positions);
+      formData.append('resume', data.resume);
+      const res = await uploadResume('team-application', formData);
+      console.log('sent');
     } catch (error) {
       console.log(error);
     }
@@ -55,7 +63,7 @@ const JoinTeam = () => {
         Join the Team
       </h2>
       <File_Form
-        name="team application"
+        name="team-application"
         buttonText="Send Message"
         buttonType="primary"
         submitHandler={submitHandler}
