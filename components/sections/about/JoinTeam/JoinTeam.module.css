@@ -40,6 +40,19 @@
 .file_label input {
   display: none;
 }
+.file_name {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.file_name:hover span {
+  display: inline;
+}
+.file_name span {
+  margin-left: 20px;
+  font-size: 21px;
+  display: none;
+}
 @media (max-width: 768px) {
   .section_title {
     text-align: left;

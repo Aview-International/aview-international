@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { country_list } from '../../../../constants';
 import { emailValidator, urlValidator } from '../../../../utils/regex';
 import Incorrect from '../../../../public/img/icons/incorrect.svg';
-import Form from '../../../form/Form/Form';
+import { File_Form } from '../../../form/Form/Form';
 import Border from '../../../UI/Border/Border';
 import Input from '../../../UI/Input/Input';
 import styles from './JoinTeam.module.css';
@@ -17,24 +17,28 @@ const JoinTeam = () => {
     email: '',
     linkedin_url: '',
     positions: '',
-    resume: undefined,
+    resume: '',
   });
   const [valid, setValid] = useState(true);
   const submitHandler = async (e) => {
     e.preventDefault();
+    console.log(data);
     !data.country ? setValid(false) : null;
     try {
       if (
-        !data.name ||
-        !data.country ||
-        !data.email ||
-        !data.linkedin_url ||
-        !data.positions
+        !(
+          data.name &&
+          data.country &&
+          data.email &&
+          data.linkedin_url &&
+          data.positions &&
+          data.resume
+        )
       ) {
         return;
       }
       const res = await submitForm('team-application', data);
-      console.log(res);
+      console.log("sent");
     } catch (error) {
       console.log(error);
     }
@@ -47,9 +51,11 @@ const JoinTeam = () => {
   };
   return (
     <section className={`section m-horizontal ${styles.section}`}>
-      <h2 className={`section-title gradient-text ${styles.section_title}`}>Join the Team</h2>
-      <Form
-        name="newsletter"
+      <h2 className={`section-title gradient-text ${styles.section_title}`}>
+        Join the Team
+      </h2>
+      <File_Form
+        name="team application"
         buttonText="Send Message"
         buttonType="primary"
         submitHandler={submitHandler}
@@ -128,12 +134,32 @@ const JoinTeam = () => {
           <input
             id="file_upload"
             type="file"
+            name="resume"
             accept="application/doc, application/docx, application/pdf"
+            onChange={handleChange}
+            value={data.resume}
           />
           <Dotted_Border />
         </label>
         <br />
-      </Form>
+        {data.resume !== undefined && (
+          <div className={styles.file_name}>
+            <p className="text-regular">{data.resume}</p>
+            <span
+              className="gradient-text"
+              onClick={() =>
+                setData((prevState) => ({
+                  ...prevState,
+                  resume: '',
+                }))
+              }
+            >
+              X
+            </span>
+          </div>
+        )}
+        <br />
+      </File_Form>
     </section>
   );
 };
