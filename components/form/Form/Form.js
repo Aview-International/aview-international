@@ -72,7 +72,7 @@ export const File_Form = ({
   }
   return (
     <form
-      name="fileForm"
+      name="team-application"
       method="POST"
       encType="multipart/form-data"
       className={styles.form}
