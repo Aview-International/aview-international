@@ -28,7 +28,6 @@ function Form({ name, buttonText, buttonType, submitHandler, children }) {
     <form
       name={name}
       method="POST"
-      enctype="multipart/form-data"
       className={styles.form}
       autoComplete="on"
       data-netlify="true"
@@ -75,6 +74,7 @@ export const File_Form = ({
     <form
       name="fileForm"
       method="POST"
+      encType="multipart/form-data"
       className={styles.form}
       autoComplete="on"
       data-netlify="true"
