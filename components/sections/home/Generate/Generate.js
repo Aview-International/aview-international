@@ -14,9 +14,9 @@ const Generate = () => {
     url: '',
     email: '',
     languages: '',
-    ['Translations/Subtitles']: false,
-    Dubbing: false,
-    Shorts: false,
+    'Translations/Subtitles': 'No',
+    Dubbing: 'No',
+    Shorts: 'No',
   });
 
   const inputArray = [
@@ -84,10 +84,17 @@ const Generate = () => {
     }));
   };
   const hanldeCheckBox = (e) => {
-    setData((prevState) => ({
-      ...prevState,
-      [e.target.name]: !prevState[e.target.name],
-    }));
+    if (e.target.checked) {
+      setData((prevState) => ({
+        ...prevState,
+        [e.target.name]: 'Yes',
+      }));
+    } else {
+      setData((prevState) => ({
+        ...prevState,
+        [e.target.name]: 'No',
+      }));
+    }
   };
 
   const submitHandler = async (e) => {
