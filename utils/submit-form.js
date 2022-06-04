@@ -16,3 +16,17 @@ export function submitForm(name, data) {
     .then(() => console.log('Success'))
     .catch((error) => alert(error));
 }
+
+export const uploadResume = (data) => {
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'multipart/form-data' },
+    body: data,
+  })
+    .then(() => {
+      console.log('Success');
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
