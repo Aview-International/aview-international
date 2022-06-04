@@ -14,8 +14,11 @@ const Generate = () => {
     url: '',
     email: '',
     languages: '',
-    options: [],
+    ['Translations/Subtitles']: false,
+    Dubbing: false,
+    Shorts: false,
   });
+
   const inputArray = [
     {
       validator: (value) => value.length >= 3,
@@ -53,18 +56,21 @@ const Generate = () => {
 
   const checkboxArray = [
     {
+      name: 'Translations/Subtitles',
       label: 'Translations/Subtitles',
       value: 'Translations/Subtitles',
       tooltip:
         'Receive a translation file that can be uploaded directly to your YouTube video.',
     },
     {
+      name: 'Dubbing',
       label: 'Dubbing',
       value: 'Dubbing',
       tooltip:
         'Receive your videos completely translated with voice-overs in the language of your choosing.',
     },
     {
+      name: 'Shorts',
       label: 'Shorts',
       value: 'Shorts',
       tooltip:
@@ -78,32 +84,17 @@ const Generate = () => {
     }));
   };
   const hanldeCheckBox = (e) => {
-    if (!!e.target.checked) {
-      setData((prevState) => ({
-        ...prevState,
-        options: [...data.options, e.target.value],
-      }));
-    } else {
-      const newArr = data.options.filter((item) => item !== e.target.value);
-      setData((prevState) => ({
-        ...prevState,
-        options: newArr,
-      }));
-    }
+    setData((prevState) => ({
+      ...prevState,
+      [e.target.name]: !prevState[e.target.name],
+    }));
   };
+
   const submitHandler = async (e) => {
     e.preventDefault();
     // setHasSubmitted(true);
     try {
-      if (
-        !!(
-          data.name &&
-          data.url &&
-          data.email &&
-          data.languages &&
-          data.options.length > 0
-        )
-      ) {
+      if (!!(data.name && data.url && data.email && data.languages)) {
         submitForm('generate-requests', data);
       }
     } catch (error) {
@@ -125,7 +116,7 @@ const Generate = () => {
           <Input
             key={`input_${index}`}
             isValid={item.validator(data[item.name])}
-            onChange={(e) => handleChange(e)}
+            onChange={handleChange}
             {...item}
           />
         ))}
@@ -133,7 +124,7 @@ const Generate = () => {
         {checkboxArray.map((item, index) => (
           <CheckBox
             name="services[]"
-            onChange={(e) => hanldeCheckBox(e)}
+            onChange={hanldeCheckBox}
             key={index}
             {...item}
           />
