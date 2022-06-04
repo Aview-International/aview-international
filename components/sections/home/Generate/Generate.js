@@ -96,14 +96,15 @@ const Generate = () => {
     // setHasSubmitted(true);
     try {
       if (
-        !data.name ||
-        !data.url ||
-        !data.email ||
-        !data.languages ||
-        data.options.length < 1
+        !!(
+          data.name &&
+          data.url &&
+          data.email &&
+          data.languages &&
+          data.options.length > 0
+        )
       ) {
-        const res = await submitForm('generate-requests', data);
-        console.log(res);
+        submitForm('generate-requests', data);
       }
     } catch (error) {
       console.log(error);
@@ -130,7 +131,12 @@ const Generate = () => {
         ))}
         <p className={`text-regular ${styles.services}`}>Services</p>
         {checkboxArray.map((item, index) => (
-          <CheckBox name="services[]" onChange={(e) => hanldeCheckBox(e)} key={index} {...item} />
+          <CheckBox
+            name="services[]"
+            onChange={(e) => hanldeCheckBox(e)}
+            key={index}
+            {...item}
+          />
         ))}
       </Form>
     </section>
