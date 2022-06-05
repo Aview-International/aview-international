@@ -12,7 +12,7 @@ import { Dotted_Border } from '../../../../utils/svgs';
 import FormData from 'form-data';
 
 const JoinTeam = () => {
-  let formData = new FormData();
+  let formdata = new FormData();
   const [data, setData] = useState({
     name: '',
     country: '',
@@ -39,13 +39,14 @@ const JoinTeam = () => {
       ) {
         return;
       }
-      formData.append('name', data.name);
-      formData.append('country', data.country);
-      formData.append('email', data.email);
-      formData.append('linkedin_url', data.linkedin_url);
-      formData.append('positions', data.positions);
-      formData.append('resume', data.resume);
-      const res = await uploadResume('team-application', formData);
+      formdata.append('name', data.name);
+      formdata.append('country', data.country);
+      formdata.append('email', data.email);
+      formdata.append('linkedin_url', data.linkedin_url);
+      formdata.append('positions', data.positions);
+      formdata.append('resume', data.resume);
+      console.log(formdata);
+      const res = await uploadResume(formdata);
       console.log('sent');
     } catch (error) {
       console.log(error);
