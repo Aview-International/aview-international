@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { country_list } from '../../../../constants';
 import { emailValidator, urlValidator } from '../../../../utils/regex';
 import Incorrect from '../../../../public/img/icons/incorrect.svg';
@@ -13,6 +13,7 @@ import FormData from 'form-data';
 
 const JoinTeam = () => {
   let formdata = new FormData();
+  const formRef = useRef();
   const [data, setData] = useState({
     name: '',
     country: '',
@@ -39,14 +40,7 @@ const JoinTeam = () => {
       ) {
         return;
       }
-      formdata.append('name', data.name);
-      formdata.append('country', data.country);
-      formdata.append('email', data.email);
-      formdata.append('linkedin_url', data.linkedin_url);
-      formdata.append('positions', data.positions);
-      formdata.append('resume', data.resume);
-      console.log(formdata);
-      const res = await uploadResume(formdata);
+      const res = await uploadResume(new FormData(formRef.current));
       console.log('sent');
     } catch (error) {
       console.log(error);
@@ -64,6 +58,7 @@ const JoinTeam = () => {
         Join the Team
       </h2>
       <File_Form
+        formRef={formRef}
         name="team-application"
         buttonText="Send Message"
         buttonType="primary"
