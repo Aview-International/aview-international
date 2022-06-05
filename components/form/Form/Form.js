@@ -54,6 +54,7 @@ function Form({ name, buttonText, buttonType, submitHandler, children }) {
 export default Form;
 
 export const File_Form = ({
+  formRef,
   buttonText,
   buttonType,
   submitHandler,
@@ -72,6 +73,7 @@ export const File_Form = ({
   }
   return (
     <form
+      ref={formRef}
       name="team-application"
       method="POST"
       encType="multipart/form-data"
