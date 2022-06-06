@@ -32,43 +32,53 @@ function GoGlobal() {
   function submitHandler(e) {
     e.preventDefault();
 
-    setHasSubmitted(true);
-
+    
     if (formState.valid) {
       submitForm('newsletter', { email: formState.email });
+      setHasSubmitted(true);
     }
   }
 
   return (
     <section className={`section`}>
       <GradientFullWidth>
-        <h2 className={`section-title ${styles['section-title']}`}>
-          Want to Go Global?
-        </h2>
-        <p className={`section-description ${styles['section-description']}`}>
-          Give us your email. We will do the rest.
-        </p>
-        <Form
-          name="newsletter"
-          buttonText="Subscribe"
-          buttonType="tertiary"
-          submitHandler={submitHandler}
-        >
-          <Input
-            type="email"
-            placeholder="Your email address"
-            bgColor="light"
-            changeHandler={changeHandler}
-            value={formState.email}
-            valid={inputsValid[0]}
-            hasSubmitted={hasSubmitted}
-            incorrectText="Please submit a properly formatted email."
-          />
-          <p className={styles.agreement}>
-            By signing up you agree to receive communications via email. For
-            more information please refer to our Privacy Policy.
-          </p>
-        </Form>
+        {!hasSubmitted ? (
+          <>
+            <h2 className={`section-title ${styles['section-title']}`}>
+              Want to Go Global?
+            </h2>
+            <p
+              className={`section-description ${styles['section-description']}`}
+            >
+              Give us your email. We will do the rest.
+            </p>
+            <Form
+              name="newsletter"
+              buttonText="Subscribe"
+              buttonType="tertiary"
+              submitHandler={submitHandler}
+            >
+              <Input
+                type="email"
+                placeholder="Your email address"
+                bgColor="light"
+                changeHandler={changeHandler}
+                value={formState.email}
+                valid={inputsValid[0]}
+                hasSubmitted={hasSubmitted}
+                incorrectText="Please submit a properly formatted email."
+              />
+              <p className={styles.agreement}>
+                By signing up you agree to receive communications via email. For
+                more information please refer to our Privacy Policy.
+              </p>
+            </Form>
+          </>
+        ) : (
+          <h2 className={`section-title ${styles['section-title']}`}>
+            You’ve subscribed to our newsletter!
+          </h2>
+        )}
       </GradientFullWidth>
     </section>
   );

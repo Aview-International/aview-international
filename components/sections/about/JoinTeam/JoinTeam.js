@@ -12,7 +12,6 @@ import { Dotted_Border } from '../../../../utils/svgs';
 import FormData from 'form-data';
 
 const JoinTeam = () => {
-  let formdata = new FormData();
   const formRef = useRef();
   const [data, setData] = useState({
     name: '',
@@ -25,26 +24,21 @@ const JoinTeam = () => {
   const [valid, setValid] = useState(true);
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(data);
     !data.country ? setValid(false) : null;
-    try {
-      if (
-        !(
-          data.name &&
-          data.country &&
-          data.email &&
-          data.linkedin_url &&
-          data.positions &&
-          data.resume
-        )
-      ) {
-        return;
-      }
-      const res = await uploadResume(new FormData(formRef.current));
-      console.log('sent');
-    } catch (error) {
-      console.log(error);
+    if (
+      !(
+        data.name &&
+        data.country &&
+        data.email &&
+        data.linkedin_url &&
+        data.positions &&
+        data.resume
+      )
+    ) {
+      return;
     }
+    uploadResume(data);
+    console.log('sent');
   };
   const handleChange = (e) => {
     setData((prevState) => ({
@@ -148,7 +142,7 @@ const JoinTeam = () => {
         <br />
         {data.resume !== undefined && (
           <div className={styles.file_name}>
-            <p className="text-regular">{data.resume}</p>
+            <p className="text-regular">{data.resume.name}</p>
             <span
               className="gradient-text"
               onClick={() =>

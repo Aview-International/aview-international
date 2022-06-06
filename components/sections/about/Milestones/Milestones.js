@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Row3 from '../../../layout/Row3/Row3';
 import Card from '../../../UI/Card/Card';
-
 import styles from './Milestones.module.css';
 
 const MILESTONES = [
@@ -64,7 +63,7 @@ export default Milestones;
 
 export const Cards = ({ value, suffix, text, i }) => {
   const [count, setCount] = useState(0);
-  const updateCount = (i) => {
+  const updateCount = () => {
     const speed = value * 0.07;
     const target = value;
     const increment = Math.trunc(target / speed);
@@ -77,13 +76,13 @@ export const Cards = ({ value, suffix, text, i }) => {
       setCount(target);
     }
   };
-  const run_count = (i) => {
+  const run_count = () => {
     setCount(0);
-    updateCount(i);
+    updateCount();
   };
   return (
     <Card>
-      <div className={styles.milestone} onMouseEnter={() => run_count(i)}>
+      <div className={styles.milestone} onMouseEnter={run_count}>
         <h3 className={`gradient-text ${styles.title}`}>
           {count || value}
           {`${suffix}+`}

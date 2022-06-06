@@ -1,10 +1,11 @@
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
-}
-
 export function submitForm(name, data) {
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&');
+  };
   fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -18,10 +19,16 @@ export function submitForm(name, data) {
 }
 
 export const uploadResume = (data) => {
+  const encode = (data) => {
+    const formData = new FormData();
+    Object.keys(data).forEach((k) => {
+      formData.append(k, data[k]);
+    });
+    return formData;
+  };
   fetch('/', {
     method: 'POST',
-    headers: { 'Content-Type': 'multipart/form-data' },
-    body: data,
+    body: encode(data),
   })
     .then(() => {
       console.log('Success');
