@@ -21,7 +21,7 @@ function Home() {
       <BreadAndButter />
       <ContentCreators />
       <Videos />
-      <Generate />
+      <Generate title="Start Generating AVIEW Today" />
       <FAQs />
       <GoGlobal />
       <Footer />

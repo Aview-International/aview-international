@@ -8,7 +8,7 @@ import { emailValidator, urlValidator } from '../../../../utils/regex';
 import CheckBox from '../../../UI/Checkbox/Checkbox';
 import Form from '../../../form/Form/Form';
 import { submitForm } from '../../../../utils/submit-form';
-const Generate = () => {
+const Generate = ({title}) => {
   const [data, setData] = useState({
     name: '',
     url: '',
@@ -111,7 +111,7 @@ const Generate = () => {
   return (
     <section className={`section ${styles.parent}`}>
       <h2 className={`section-title`}>
-        <span className="gradient-text">Start Generating AVIEW Today</span>
+        <span className="gradient-text">{title}</span>
       </h2>
       <Form
         name="generate-requests"

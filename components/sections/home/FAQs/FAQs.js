@@ -34,7 +34,7 @@ const dataArray = [
 
 const FAQs = () => {
   return (
-    <section className={`section ${styles.parent}`}>
+    <section className={`section m-horizontal ${styles.parent}`}>
       <h2 className={`section-title`}>
         <span className="gradient-text">FAQ</span>
       </h2>
