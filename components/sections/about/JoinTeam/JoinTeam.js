@@ -48,8 +48,8 @@ const JoinTeam = () => {
   };
   return (
     <section className={`section m-horizontal ${styles.section}`}>
-      <h2 className={`section-title gradient-text ${styles.section_title}`}>
-        Join the Team
+      <h2 className={`section-title ${styles.section_title}`}>
+        <span className={`gradient-text`}>Join the Team</span>
       </h2>
       <File_Form
         formRef={formRef}
