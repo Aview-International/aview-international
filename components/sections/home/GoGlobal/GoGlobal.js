@@ -32,7 +32,6 @@ function GoGlobal() {
   function submitHandler(e) {
     e.preventDefault();
 
-    
     if (formState.valid) {
       submitForm('newsletter', { email: formState.email });
       setHasSubmitted(true);
@@ -68,14 +67,14 @@ function GoGlobal() {
                 hasSubmitted={hasSubmitted}
                 incorrectText="Please submit a properly formatted email."
               />
-              <p className={styles.agreement}>
+              <p className={`text-regular ${styles.agreement}`}>
                 By signing up you agree to receive communications via email. For
                 more information please refer to our Privacy Policy.
               </p>
             </Form>
           </>
         ) : (
-          <h2 className={`section-title ${styles['section-title']}`}>
+          <h2 className={`section-title`}>
             You’ve subscribed to our newsletter!
           </h2>
         )}

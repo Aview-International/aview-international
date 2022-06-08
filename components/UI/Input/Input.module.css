@@ -34,7 +34,8 @@
 }
 .input {
   width: 100%;
-  padding: 8px;
+  padding: 8px 15px 7px;
+  /* padding: 8px; */
   background: var(--bg-color);
   border: none;
   border-radius: 5px;
