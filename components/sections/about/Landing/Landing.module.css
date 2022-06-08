@@ -1,0 +1,27 @@
+.section-title {
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 27px;
+  }
+  
+  .section-description {
+    margin-bottom: 62px;
+    font-size: 48px;
+    line-height: 61px;
+    font-weight: 700;
+  }
+  
+  .about-landing-graphic {
+    max-width: 120%;
+    justify-self: end;
+    margin-right: -15%;
+    margin-top: 20%;
+  }
+  
+  @media (max-width: 768px) {
+    .global-landing-graphic {
+      justify-self: center;
+    }
+  }
+  
