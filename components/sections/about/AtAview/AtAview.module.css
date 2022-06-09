@@ -1,0 +1,16 @@
+.subheading {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.title {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .subheading {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+}
