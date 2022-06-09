@@ -7,7 +7,7 @@ import HowItWorks from '../../components/sections/creators/HowItWorks/HowItWorks
 import AnySize from '../../components/sections/creators/AnySize/AnySize';
 import GeneratingAview from '../../components/sections/home/Generate/Generate';
 import GrowthWithAview from '../../components/sections/creators/GrowthWithAview/GrowthWithAview';
-import GenerateAview from '../../components/sections/creators/GenerateAview/GenerateAview';
+// import GenerateAview from '../../components/sections/creators/GenerateAview/GenerateAview';
 import Footer from '../../components/navigation/Footer/Footer';
 import Blobs from '../../components/UI/Blobs/Blobs';
 

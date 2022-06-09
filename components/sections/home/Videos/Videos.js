@@ -42,7 +42,7 @@ const creators = [
 ];
 const Videos = () => {
   return (
-    <section className={`section`}>
+    <section className={`section m-horizontal`}>
       <h2 className={`section-title ${styles.title}`}>
         Our Translated <span className={`gradient-text`}> Content</span>
       </h2>

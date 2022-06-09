@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { DetectScrollIntoView } from '../../../../utils/regex';
 import Row3 from '../../../layout/Row3/Row3';
 import Card from '../../../UI/Card/Card';
 import styles from './Milestones.module.css';
@@ -63,26 +64,35 @@ export default Milestones;
 
 export const Cards = ({ value, suffix, text, i }) => {
   const [count, setCount] = useState(0);
-  const updateCount = () => {
-    const speed = value * 0.07;
-    const target = value;
-    const increment = Math.trunc(target / speed);
+  const ref = useRef();
 
-    if (count < target) {
-      if (value < 50) setCount((count += 1));
-      else setCount((count += increment));
-      setTimeout(updateCount, 100);
-    } else {
-      setCount(target);
-    }
-  };
-  const run_count = () => {
-    setCount(0);
+  const inViewport = DetectScrollIntoView(ref, '-150px');
+  useEffect(() => {
+    console.log(inViewport);
+    const updateCount = () => {
+      if (inViewport) {
+        const speed = value * 0.07;
+        const target = value;
+        const increment = Math.trunc(target / speed);
+
+        if (count < target) {
+          if (value < 50) {
+            setCount((count += 1));
+            setTimeout(updateCount, 500);
+          } else {
+            setCount((count += increment));
+            setTimeout(updateCount, 150);
+          }
+        } else {
+          setCount(target);
+        }
+      }
+    };
     updateCount();
-  };
+  }, [inViewport]);
   return (
     <Card>
-      <div className={styles.milestone} onMouseEnter={run_count}>
+      <div className={styles.milestone} ref={ref}>
         <h3 className={`gradient-text ${styles.title}`}>
           {count || value}
           {`${suffix}+`}
