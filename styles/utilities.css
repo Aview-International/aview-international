@@ -4,6 +4,23 @@
   margin: 0 auto;
 }
 
+.m-left {
+  margin-left: 5%;
+}
+
+@media (min-width: 1400px) {
+  .m-left {
+    margin-left: calc((100% - 1250px) / 2);
+  }
+}
+
+@media (max-width: 1200px) {
+  .m-left {
+    max-width: min(90%, 1250px);
+    margin: 0 auto;
+  }
+}
+
 .section:not(:first-of-type) {
   padding-top: 60px;
 }
