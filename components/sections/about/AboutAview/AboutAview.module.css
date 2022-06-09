@@ -1,0 +1,31 @@
+.section {
+  display: grid;
+  grid-template-columns: 11fr 10fr;
+  gap: 120px;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1200px) {
+  .section {
+    gap: 80px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    display: block;
+  }
+
+  .text {
+    margin-bottom: 50px;
+  }
+
+  .image {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
