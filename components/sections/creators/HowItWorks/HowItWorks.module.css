@@ -1,0 +1,215 @@
+.section {
+    color: var(--primary-color);
+    line-height: 27px;
+    overflow:hidden;
+  }
+  .section-title {
+    text-align: center;
+    margin-bottom: 110px;
+  }
+  .section h3 {
+    font-size: 32px;
+    display: block;
+    padding: 20px 0;
+    line-height: 35px;
+    margin-bottom: 30px;
+  }
+
+  .text {
+      padding: 50px;
+      max-width: 1050px;
+  }
+  
+  .border {
+    display: flex;
+    background-color: var(--bg-color);
+    padding: 2px;
+    border-radius: 15px;
+    min-height: 100%;
+    min-width: 100%;
+    flex-direction: column;
+  }
+
+  .container {
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 5rem;
+    text-align: center;
+    border-radius: 5px;
+    overflow:hidden;
+  }
+
+  .container .section-title {
+    margin-bottom: 40px;
+  }
+
+  .header {
+    border: 1px solid var(--bg-color);
+    background-color: var(--bg-color);
+    position: relative;
+    border-width: 20px;
+    top: -50px;
+    margin:auto;
+    border-radius: 25px;
+  }
+
+  .card1 {
+    float: left;
+    max-height: 300px;
+    width: 40%;    
+  }
+
+  .card2 {
+    float: right;
+    width: 40%;
+  }
+
+  .arrow{
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  .arrow_top{
+    background: var(--bg-color);
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 0
+  }
+
+  .border1 {
+        background: #00fffc;
+        padding: 2px;
+        border-radius: 15px;
+        min-height: 100%;
+        min-width: 100%;
+        display: flex;
+      }
+      
+      .reverse {
+        background: var(--secondary-gradient);
+      }
+      
+
+  .point{
+    position:relative;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #00fffc;
+    margin: auto;  
+    top: 100%;   
+  }
+
+  .point_bot{
+    position:relative;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #FC00FF;
+    margin: auto;  
+    top: 100%;   
+  }
+
+  .point_left{
+    position:relative;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #00fffc;
+    margin: auto;  
+    top: 100%;   
+    right: 13px;
+    float: left;
+  }
+
+  .point_right{
+    position:relative;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #00fffc;
+    margin: auto;  
+    top: 100%;  
+    left: 13px; 
+    float: right;
+  }
+  
+  .line {
+    position:relative;
+    width: 5px;
+    background: #00fffc;
+    height: 120px;
+    margin: auto;  
+    bottom: 30%;   
+  }
+
+  .line_bot {
+    position:relative;
+    width: 5px;
+    background: #FC00FF;
+    height: 120px;
+    margin: auto;  
+    bottom: 30%;   
+  }
+
+  .line_top {
+    position:relative;
+    width: 5px;
+    background: #00fffc;
+    height: 130px;
+    margin: auto;  
+    bottom: 30%;   
+  }
+
+  .arrow_middle {
+    max-width: 600px;
+    height: 100px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px; 
+    border: 5px solid #00fffc;
+    border-bottom: 0;
+    margin: auto;
+    margin-bottom: 0px;
+  }
+
+  @media (max-width: 768px) {
+
+    .section h3 {
+      font-size: 21px;
+    }
+    .container {
+        display: block;
+        justify-content: center;
+        padding-right: 10px;
+        padding-left: 10px;
+        text-align: center;
+    }
+    .arrow_middle {
+        max-width: 50%;
+      }
+
+    .card1 {
+        margin-left: auto;
+        margin-bottom: 50px;
+        justify-content: center;
+    }
+    .card2 {
+        margin-right: auto;
+        justify-content: center;
+     
+    }
+  }
