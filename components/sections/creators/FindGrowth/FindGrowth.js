@@ -57,8 +57,8 @@ function FindGrowth() {
           <div className={`shadow-parent ${styles.flexContainer}`}>
             <Shadow />
             <div className={styles.slider}>
-              {sliders.map((item) => (
-                <Slider {...item} />
+              {sliders.map((item, i) => (
+                <Slider key={`slider${i}`} {...item} />
               ))}
             </div>
             <span></span>
