@@ -76,7 +76,7 @@ const FindGrowth = () => {
             </div>
           </div>
         </Border>
-        <Button type="secondary" isOnClick>
+        <Button type="secondary" isOnClick={true}>
           Contact Us
         </Button>
       </div>
