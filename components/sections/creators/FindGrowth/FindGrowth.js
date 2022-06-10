@@ -70,13 +70,15 @@ const FindGrowth = () => {
               <p className="text-regular">growth in international views</p>
               <HorizontalLine />
               <h3>
-                <span className="gradient-text">XXX%</span>
+                <span className="gradient-text">$XXX</span>
               </h3>
-              <p className="text-regular">growth in international views</p>
+              <p className="text-regular">potential revenue</p>
             </div>
           </div>
         </Border>
-        <Button type="secondary" isOnClick>Contact Us</Button>
+        <Button type="secondary" isOnClick>
+          Contact Us
+        </Button>
       </div>
     </section>
   );
