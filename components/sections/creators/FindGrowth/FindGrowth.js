@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import Slider from '../../../form/Slider/Slider';
 import Border from '../../../UI/Border/Border';
+import Button from '../../../UI/Button/Button';
 import HorizontalLine from '../../../UI/HorizontalLine/HorizontalLine';
 import Shadow from '../../../UI/Shadow/Shadow';
 import styles from './FindGrowth.module.css';
 
-function FindGrowth() {
+const FindGrowth = () => {
   const [ranges, setRanges] = useState({
     uploadsPerMonth: 8,
     numberOfSubs: 100,
@@ -75,9 +76,10 @@ function FindGrowth() {
             </div>
           </div>
         </Border>
+        <Button type="secondary" isOnClick>Contact Us</Button>
       </div>
     </section>
   );
-}
+};
 
 export default FindGrowth;
