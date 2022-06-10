@@ -2,6 +2,7 @@ import styles from './HowItWorks.module.css';
 import Card from '../../../UI/Card/Card';
 import Row2 from '../../../layout/Row2/Row2';
 import Border from '../../../UI/Border/Border';
+import Shadow from '../../../UI/Shadow/Shadow';
 
 
 
@@ -51,10 +52,6 @@ function HowItWorks() {
           <h3 className={`section-title ${styles['section-title']}`}>
             Upload to Main Channel
           </h3>
-          <div className={styles.arrow}>
-        <div className={styles.point_bot} />
-        <div className={styles.line_bot} />
-         </div>
           </div>
       </div>
       </div>
