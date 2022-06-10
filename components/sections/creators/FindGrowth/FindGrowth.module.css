@@ -41,6 +41,10 @@
 .data p {
   margin-top: 10px;
 }
+.section button {
+    margin: 40px auto;
+    display: block;
+  }
 @media (max-width: 768px) {
   .section > h2,
   .section > p {
