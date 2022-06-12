@@ -9,7 +9,6 @@ import styles from './FindGrowth.module.css';
 const FindGrowth = () => {
   const [ranges, setRanges] = useState({
     uploadsPerMonth: 1,
-    numberOfSubs: 1,
     averageViewCount: 1,
     languages: 1,
   });
@@ -18,23 +17,13 @@ const FindGrowth = () => {
     {
       label: 'Uploads per month',
       value: ranges.uploadsPerMonth,
-      min: 1,
       max: 30,
       values: false,
       name: 'uploadsPerMonth',
     },
-    // {
-    //   label: 'Number of subs',
-    //   value: ranges.numberOfSubs,
-    //   min: 0,
-    //   max: 10,
-    //   suffix: 'k',
-    //   name: 'numberOfSubs',
-    // },
     {
       label: 'Average View Count',
       value: ranges.averageViewCount,
-      min: 0,
       values: [
         '1K',
         '2K',
@@ -63,7 +52,6 @@ const FindGrowth = () => {
       label: 'Languages',
       value: ranges.languages,
       values: false,
-      min: 1,
       max: 10,
       name: 'languages',
     },

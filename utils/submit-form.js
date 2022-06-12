@@ -18,7 +18,7 @@ export function submitForm(name, data) {
     .catch((error) => alert(error));
 }
 
-export const uploadResume = (data) => {
+export const submitFormData = (data) => {
   const encode = (data) => {
     const formData = new FormData();
     Object.keys(data).forEach((k) => {
@@ -27,8 +27,8 @@ export const uploadResume = (data) => {
     return formData;
   };
   fetch('/', {
-    method: 'POST',
     body: encode(data),
+    method: 'POST',
   })
     .then(() => {
       console.log('Success');
