@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Slider from '../../../form/Slider/Slider';
 import Border from '../../../UI/Border/Border';
 import Button from '../../../UI/Button/Button';
@@ -8,42 +8,70 @@ import styles from './FindGrowth.module.css';
 
 const FindGrowth = () => {
   const [ranges, setRanges] = useState({
-    uploadsPerMonth: 8,
-    numberOfSubs: 100,
-    averageViewCount: 250,
-    languages: 3,
+    uploadsPerMonth: 1,
+    numberOfSubs: 1,
+    averageViewCount: 1,
+    languages: 1,
   });
 
   const sliders = [
     {
       label: 'Uploads per month',
       value: ranges.uploadsPerMonth,
-      min: 0,
-      max: 10,
-      suffix: '',
+      min: 1,
+      max: 30,
+      values: false,
+      name: 'uploadsPerMonth',
     },
-    {
-      label: 'Number of subs',
-      value: ranges.numberOfSubs,
-      min: 0,
-      max: 10,
-      suffix: 'k',
-    },
+    // {
+    //   label: 'Number of subs',
+    //   value: ranges.numberOfSubs,
+    //   min: 0,
+    //   max: 10,
+    //   suffix: 'k',
+    //   name: 'numberOfSubs',
+    // },
     {
       label: 'Average View Count',
       value: ranges.averageViewCount,
       min: 0,
-      max: 10,
-      suffix: 'k',
+      values: [
+        '1K',
+        '2K',
+        '3.5K',
+        '5K',
+        '7.5K',
+        '10K',
+        '20K',
+        '35k',
+        '50K',
+        '75K',
+        '100K',
+        '200K',
+        '350k',
+        '500K',
+        '750k',
+        '1M',
+        '2M',
+        '5M',
+        '5M+',
+      ],
+      max: 18,
+      name: 'averageViewCount',
     },
     {
       label: 'Languages',
       value: ranges.languages,
-      min: 0,
+      values: false,
+      min: 1,
       max: 10,
-      suffix: '',
+      name: 'languages',
     },
   ];
+
+  const growth = useMemo(() => {
+    return ranges.uploadsPerMonth * ranges.averageViewCount * ranges.languages;
+  }, [ranges]);
   return (
     <section className={`m-horizontal section ${styles.section}`}>
       <h2 className="section-title">
@@ -59,18 +87,20 @@ const FindGrowth = () => {
             <Shadow />
             <div className={styles.slider}>
               {sliders.map((item, i) => (
-                <Slider key={`slider${i}`} {...item} />
+                <Slider setRanges={setRanges} key={`slider${i}`} {...item} />
               ))}
             </div>
             <span></span>
             <div className={styles.data}>
               <h3>
-                <span className="gradient-text">XXX%</span>
+                <span className="gradient-text">{`${growth}%`}</span>
               </h3>
               <p className="text-regular">growth in international views</p>
               <HorizontalLine />
               <h3>
-                <span className="gradient-text">$XXX</span>
+                <span className="gradient-text">
+                  ${growth * 15}
+                </span>
               </h3>
               <p className="text-regular">potential revenue</p>
             </div>
