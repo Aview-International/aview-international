@@ -4,11 +4,20 @@ import Card from '../Card/Card';
 
 import styles from './Profile.module.css';
 
+/**
+ * Profile including picutre, name, etc.
+ *
+ * @prop name
+ * @prop description
+ * @prop picture
+ *
+ * @author Andrew Qiao
+ */
 function Profile({ name, description, picture }) {
   return (
     <div className={styles.profile}>
       <div className={styles.picture}>
-        <Image src={picture} alt={`${name} picuture`} />
+        <Image src={picture} alt={`${name} picture`} />
       </div>
       <div className={styles.card}>
         <Card>

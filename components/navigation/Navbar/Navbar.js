@@ -17,6 +17,8 @@ const PAGES = [
 
 /**
  * Top navbar
+ *
+ * @author Andrew Qiao
  */
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,6 +48,8 @@ function Navbar() {
 
 /**
  * AVIEW logo on left side of Navbar
+ *
+ * @author Andrew Qiao
  */
 function NavbarLogo() {
   return (
@@ -59,6 +63,8 @@ function NavbarLogo() {
 
 /**
  * Page links in navbar
+ *
+ * @author Andrew Qiao
  */
 function NavbarLinks({ menuOpen }) {
   return (
@@ -78,6 +84,8 @@ function NavbarLinks({ menuOpen }) {
 
 /**
  * Contact Us button on right side of desktop navbar
+ *
+ * @author Andrew Qiao
  */
 function ContactButton() {
   return (
@@ -91,6 +99,8 @@ function ContactButton() {
 
 /**
  * Menu button on right side of mobile navbar
+ *
+ * @author Andrew Qiao
  */
 function MenuButton({ menuButtonHandler }) {
   return (
@@ -104,6 +114,8 @@ function MenuButton({ menuButtonHandler }) {
 
 /**
  * Close button on top right of open mobile menu
+ *
+ * @author Andrew Qiao
  */
 function CloseButton({ menuOpen, menuButtonHandler }) {
   return (

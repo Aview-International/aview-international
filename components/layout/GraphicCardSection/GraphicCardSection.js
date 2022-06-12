@@ -3,6 +3,15 @@ import GraphicCard from '../../UI/GraphicCard/GraphicCard';
 
 import styles from './GraphicCardSection.module.css';
 
+/**
+ * Section of graphic cards. Includes the title, description, and row of cards
+ *
+ * @prop title: Title of the section
+ * @prop description: Description of section
+ * @prop cardData: Data for cards
+ *
+ * @author Andrew Qiao
+ */
 function GraphicCardSection({ title, description, cardData }) {
   return (
     <section className={`section m-horizontal ${styles.section}`}>
