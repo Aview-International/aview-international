@@ -27,7 +27,6 @@ function Form({ name, buttonText, buttonType, submitHandler, children }) {
   return (
     <form
       name={name}
-      method="POST"
       className={styles.form}
       autoComplete="on"
       data-netlify="true"
