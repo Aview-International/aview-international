@@ -22,11 +22,8 @@ function HowItWorks() {
       <h3 className={`section-title ${styles['section-title']}`}>
         Translations <br/>Completed
       </h3>
-
-      <div className={styles.arrow_top}>
+      
         <div className={styles.line_top} />
-         </div>
-
          <div className={styles.arrow_middle}>
          <div className={styles.point_left} />
          <div className={styles.point_right} />
@@ -45,7 +42,7 @@ function HowItWorks() {
           <h3 className={`section-title ${styles['section-title']}`}>
             Sent to Creator
           </h3>
-          <div className={styles.arrow}>
+          <div className={styles.arrow_bot}>
         <div className={styles.point_bot} />
         <div className={styles.line_bot} />
          </div>
@@ -69,21 +66,21 @@ function HowItWorks() {
           <h3 className={`section-title ${styles['section-title']}`}>
             Voice Actors
           </h3>
-          <div className={styles.arrow}>
+          <div className={styles.arrow_bot}>
         <div className={styles.point_bot} />
         <div className={styles.line_bot} />
          </div>
           <h3 className={`section-title ${styles['section-title']}`}>
             Video Editing
           </h3>
-          <div className={styles.arrow}>
+          <div className={styles.arrow_bot}>
         <div className={styles.point_bot} />
         <div className={styles.line_bot} />
          </div>
           <h3 className={`section-title ${styles['section-title']}`}>
             Sent to creator
           </h3>
-          <div className={styles.arrow}>
+          <div className={styles.arrow_bot}>
         <div className={styles.point_bot} />
         <div className={styles.line_bot} />
          </div>
