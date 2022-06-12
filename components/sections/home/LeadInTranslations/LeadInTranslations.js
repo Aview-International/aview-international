@@ -29,6 +29,8 @@ const CARD_DATA = [
 
 /**
  * Container for Why We Lead in Translations section of homepage
+ *
+ * @author Andrew Qiao
  */
 function LeadInTranslations() {
   return (

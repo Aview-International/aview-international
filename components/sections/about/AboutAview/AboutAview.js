@@ -3,6 +3,9 @@ import Image from 'next/image';
 import styles from './AboutAview.module.css';
 import image from '../../../../public/img/graphics/about.png';
 
+/**
+ * Top navbar
+ */
 function AboutAview() {
   return (
     <section className={`section m-horizontal ${styles.section}`}>

@@ -54,6 +54,9 @@ const CREATORS = [
   },
 ];
 
+/**
+ * @author Andrew Qiao
+ */
 function GeneratingAview() {
   return (
     <section className="section m-horizontal">

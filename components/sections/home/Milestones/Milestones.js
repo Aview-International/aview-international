@@ -23,6 +23,8 @@ const MILESTONES = [
 
 /**
  * Container for Milestones component of homepage
+ *
+ * @author Andrew Qiao, Victor Ogunjobi
  */
 function Milestones({}) {
   return (

@@ -36,6 +36,9 @@ const CARD_CONTENT = [
   },
 ];
 
+/**
+ * @author Andrew Qiao
+ */
 function TranslationBenefits() {
   return (
     <section className="section m-horizontal">

@@ -27,6 +27,9 @@ const CARD_DATA = [
   },
 ];
 
+/**
+ * @author Andrew Qiao
+ */
 function OurServices() {
   return (
     <GraphicCardSection

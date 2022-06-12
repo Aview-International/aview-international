@@ -3,6 +3,9 @@ import Image from 'next/image';
 import roadmap from '../../../../public/img/graphics/roadmap.png';
 import styles from './HowItWorks.module.css';
 
+/**
+ * @author Andrew Qiao
+ */
 function HowItWorks() {
   return (
     <section className={`section m-horizontal ${styles.section}`}>
