@@ -1,0 +1,76 @@
+.container {
+  margin: 2rem 0 4rem 0;
+}
+.container label {
+  display: block;
+  margin-bottom: 12px;
+  text-align: left;
+}
+.sliderParent {
+  position: relative;
+  width: 90%;
+}
+.sliderParent input {
+  width: 100%;
+}
+.track,
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  border-radius: 30px;
+}
+.slider {
+  background: var(--track-bg);
+  border: 1px solid var(--primary-color);
+}
+.track {
+  background: var(--primary-gradient);
+  display: block;
+  z-index: 2;
+}
+.slider,
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+/* For Chrome browsers */
+.slider::-webkit-slider-thumb {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  pointer-events: all;
+  position: relative;
+  z-index: 10;
+}
+
+/* For Firefox browsers */
+.slider::-moz-range-thumb {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  pointer-events: all;
+  position: relative;
+  z-index: 10;
+}
+.value {
+  position: absolute;
+  right: -65px;
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .sliderParent {
+    width: 80%;
+  }
+  .value {
+    right: -25%;
+  }
+}
