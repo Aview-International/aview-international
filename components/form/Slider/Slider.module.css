@@ -28,7 +28,7 @@
 .track {
   background: var(--primary-gradient);
   display: block;
-  z-index: 2;
+  /* z-index: 2; */
 }
 .slider,
 .slider::-webkit-slider-thumb {
