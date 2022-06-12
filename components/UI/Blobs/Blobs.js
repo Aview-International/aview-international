@@ -6,6 +6,11 @@ import blob3 from '../../../public/img/blobs/blob-3.png';
 import blob4 from '../../../public/img/blobs/blob-4.png';
 import styles from './Blobs.module.css';
 
+/**
+ * Gradient blobs on each page
+ *
+ * @author Andrew Qiao
+ */
 function Blobs() {
   return (
     <>
