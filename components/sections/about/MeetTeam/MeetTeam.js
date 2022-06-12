@@ -83,6 +83,9 @@ const TEAM = [
   },
 ];
 
+/**
+ * @author Andrew Qiao
+ */
 function MeetTeam() {
   return (
     <>

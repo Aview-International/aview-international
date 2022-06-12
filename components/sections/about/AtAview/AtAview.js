@@ -1,6 +1,9 @@
 import GradientFullWidth from '../../../layout/GradientFullWidth/GradientFullWidth';
 import styles from './AtAview.module.css';
 
+/**
+ * @author Andrew Qiao
+ */
 function AtAview() {
   return (
     <section className="section">

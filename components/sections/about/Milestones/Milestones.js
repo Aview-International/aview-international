@@ -37,6 +37,9 @@ const MILESTONES = [
   },
 ];
 
+/**
+ * @author Andrew Qiao, Victor Ogunjobi
+ */
 function Milestones() {
   return (
     <>

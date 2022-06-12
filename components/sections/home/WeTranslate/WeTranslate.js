@@ -1,24 +1,26 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import TextWithImage from "../../../layout/TextWithImage/TextWithImage";
-import Button from "../../../../components/UI/Button/Button";
+import TextWithImage from '../../../layout/TextWithImage/TextWithImage';
+import Button from '../../../../components/UI/Button/Button';
 
-import globalGraphic from "../../../../public/img/graphics/global.png";
-import styles from "./WeTranslate.module.css";
+import globalGraphic from '../../../../public/img/graphics/global.png';
+import styles from './WeTranslate.module.css';
 
 /**
  * Container for You Create. We Translate. section of homepage
+ *
+ * @author Andrew Qiao
  */
 function WeTranslate() {
   return (
     <section className="section m-horizontal">
       <TextWithImage>
         <div>
-          <h2 className={`section-title ${styles["section-title"]}`}>
+          <h2 className={`section-title ${styles['section-title']}`}>
             You <span className="gradient-text">Create.</span> We
             <span className="gradient-text"> Translate.</span>
           </h2>
-          <p className={`section-description ${styles["section-description"]}`}>
+          <p className={`section-description ${styles['section-description']}`}>
             AVIEW hand picks the best translators and voice actors for your
             content. We cater our approach to each individual creator and their
             brand. Our team is ready to help you gain a AVIEW on your
@@ -30,7 +32,7 @@ function WeTranslate() {
             </Button>
           </div>
         </div>
-        <div className={styles["global-graphic"]}>
+        <div className={styles['global-graphic']}>
           <Image src={globalGraphic} alt="Global graphic" />
         </div>
       </TextWithImage>

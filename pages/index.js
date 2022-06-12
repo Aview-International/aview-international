@@ -16,14 +16,13 @@ function Home() {
     <>
       <Navbar />
       <Landing />
-      <WeTranslate />
-      <LeadInTranslations />
-      <BreadAndButter />
       <ContentCreators />
       <Videos />
+      <BreadAndButter />
+      <WeTranslate />
+      <LeadInTranslations />
       <Generate title="Start Generating AVIEW Today" />
       <FAQs />
-      <GoGlobal />
       <Footer />
       <Blobs />
     </>

@@ -3,6 +3,9 @@ import Button from '../../../UI/Button/Button';
 
 import styles from './AnySize.module.css';
 
+/**
+ * @author Andrew Qiao
+ */
 function AnySize() {
   return (
     <section className="section">

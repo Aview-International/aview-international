@@ -18,6 +18,9 @@ const CORE_VALUES = [
   },
 ];
 
+/**
+ * @author Andrew Qiao
+ */
 function CoreValues() {
   return (
     <section className={`section m-horizontal`}>
