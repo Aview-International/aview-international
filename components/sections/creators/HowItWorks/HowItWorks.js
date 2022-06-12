@@ -4,8 +4,6 @@ import Row2 from '../../../layout/Row2/Row2';
 import Border from '../../../UI/Border/Border';
 import Shadow from '../../../UI/Shadow/Shadow';
 
-
-
 function HowItWorks() {
   return (
     <section className={`section m-horizontal ${styles.section} `}>
@@ -22,7 +20,7 @@ function HowItWorks() {
       <h3 className={`section-title ${styles['section-title']}`}>
         Translations <br/>Completed
       </h3>
-      
+
         <div className={styles.line_top} />
          <div className={styles.arrow_middle}>
          <div className={styles.point_left} />
@@ -92,8 +90,6 @@ function HowItWorks() {
       </div>
       </div>
       </div>
-   
-
     </section>
   );
 };
