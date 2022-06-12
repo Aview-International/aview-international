@@ -30,6 +30,15 @@
     flex-direction: column;
   }
 
+  .border1 {
+    background: #00fffc;
+    padding: 2px;
+    border-radius: 15px;
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+  }    
+
   .container {
     display: flex;
     align-items: top;
@@ -82,16 +91,7 @@
     margin-right: auto;
     margin-top: 50px;
     margin-bottom: 30px;
-  }
-
-  .border1 {
-        background: #00fffc;
-        padding: 2px;
-        border-radius: 15px;
-        min-height: 100%;
-        min-width: 100%;
-        display: flex;
-      }      
+  }  
 
   .point{
     position:relative;
@@ -186,7 +186,6 @@
       .point_bot {
             top: 6.8vw;   
           }
-
       }
 
   @media (max-width: 840px) {
