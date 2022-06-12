@@ -33,7 +33,7 @@ function GoGlobal() {
     e.preventDefault();
 
     if (formState.valid) {
-      submitForm('newsletter', { email: formState.email });
+      submitForm({ 'form-name': 'newsletter', email: formState.email });
       setHasSubmitted(true);
     }
   }

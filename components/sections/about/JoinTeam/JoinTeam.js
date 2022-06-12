@@ -7,7 +7,7 @@ import Border from '../../../UI/Border/Border';
 import Input from '../../../UI/Input/Input';
 import styles from './JoinTeam.module.css';
 import Image from 'next/image';
-import { uploadResume } from '../../../../utils/submit-form';
+import { submitFormData } from '../../../../utils/submit-form';
 import { Dotted_Border } from '../../../../utils/svgs';
 import FormData from 'form-data';
 
@@ -37,7 +37,7 @@ const JoinTeam = () => {
     ) {
       return;
     }
-    uploadResume(data);
+    submitFormData(data);
     console.log('sent');
   };
   const handleChange = (e) => {

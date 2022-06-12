@@ -1,19 +1,15 @@
-// import { useState } from 'react';
 import { useMemo } from 'react';
 import styles from './Slider.module.css';
 
 const Slider = ({
   label,
   name,
-  min,
   max,
   setRanges,
   value,
   values,
 }) => {
-  // const [bar, setBar] = useState(0);
   const handleChange = (e) => {
-    // setBar(e.target.value);
     setRanges((prevState) => ({
       ...prevState,
       [name]: e.target.value,
@@ -21,10 +17,8 @@ const Slider = ({
   };
   const width = useMemo(() => {
     if (value > max / 2) {
-      console.log((value * 100) / max);
       return (value * 100) / max;
     } else {
-      console.log((value * 100) / max) + 2;
       return (value * 100) / max + 2;
     }
   }, [value]);
