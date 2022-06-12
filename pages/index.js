@@ -23,6 +23,7 @@ function Home() {
       <LeadInTranslations />
       <Generate title="Start Generating AVIEW Today" />
       <FAQs />
+      <GoGlobal />
       <Footer />
       <Blobs />
     </>
