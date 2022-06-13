@@ -7,13 +7,13 @@ import Border from '../../../UI/Border/Border';
 import Input from '../../../UI/Input/Input';
 import styles from './JoinTeam.module.css';
 import Image from 'next/image';
-import { submitFormData } from '../../../../utils/submit-form';
+import { submitFile } from '../../../../utils/submit-form';
 import { Dotted_Border } from '../../../../utils/svgs';
-import FormData from 'form-data';
 
 const JoinTeam = () => {
   const formRef = useRef();
   const [data, setData] = useState({
+    'form-name': 'team-application',
     name: '',
     country: '',
     email: '',
@@ -37,7 +37,7 @@ const JoinTeam = () => {
     ) {
       return;
     }
-    submitFormData(data);
+    submitFile(data);
     console.log('sent');
   };
   const handleChange = (e) => {

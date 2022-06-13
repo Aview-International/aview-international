@@ -18,7 +18,7 @@ export function submitForm(name, data) {
     .catch((error) => alert(error));
 }
 
-export const submitFormData = (data) => {
+export const submitFile = (data) => {
   const encode = (data) => {
     const formData = new FormData();
     Object.keys(data).forEach((k) => {
