@@ -31,14 +31,18 @@ function GoGlobal() {
 
   function submitHandler(e) {
     e.preventDefault();
+    try {
+      if (formState.valid) {
+        const data = {
+          'form-name': 'newsletter',
+          email: formState.email,
+        };
+        submitForm('newsletter', data);
+        setHasSubmitted(true);
+      }
+    } catch (error) {
+      console.log(error);
 
-    if (formState.valid) {
-      const data = {
-        'form-name': 'newsletter',
-        email: formState.email,
-      };
-      submitForm("newsletter",data);
-      setHasSubmitted(true);
     }
   }
 

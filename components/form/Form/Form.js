@@ -27,11 +27,11 @@ function Form({ name, buttonText, buttonType, submitHandler, children }) {
   return (
     <form
       name={name}
+      method="POST"
       className={styles.form}
       autoComplete="on"
       data-netlify="true"
       netlify-honeypot="bot-field"
-      onSubmit={onSubmit}
     >
       <div className={styles.hidden}>
         <label>
@@ -44,7 +44,7 @@ function Form({ name, buttonText, buttonType, submitHandler, children }) {
         </label>
       </div>
       {children}
-      <Button type={buttonType} isOnClick={true}>
+      <Button type={buttonType} isOnClick={true} onClick={onSubmit}>
         {buttonText}
       </Button>
     </form>
