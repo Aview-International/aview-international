@@ -60,7 +60,7 @@ function GoGlobal() {
               Give us your email. We will do the rest.
             </p>
             <Form
-              name="newsletter"
+              name="generate-requests"
               buttonText="Subscribe"
               buttonType="tertiary"
               submitHandler={submitHandler}
