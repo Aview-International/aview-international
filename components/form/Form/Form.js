@@ -11,19 +11,7 @@ import styles from './Form.module.css';
  * @prop formState: State containing form inputs
  * @prop children: Form input elements
  */
-function Form({ name, buttonText, buttonType, submitHandler, children }) {
-  const [honeypot, setHoneypot] = useState('');
-
-  function honeypotChangeHandler(e) {
-    setHoneypot(e.target.value);
-  }
-
-  function onSubmit(e) {
-    if (honeypot === '') {
-      submitHandler(e);
-    }
-  }
-
+function Form({ name, buttonText, buttonType, children }) {
   return (
     <form
       name={name}
@@ -37,15 +25,11 @@ function Form({ name, buttonText, buttonType, submitHandler, children }) {
       <div className={styles.hidden}>
         <label>
           Don&apos;t fill this out if you&apos;re human:
-          <input
-            name="bot-field"
-            value={honeypot}
-            onChange={honeypotChangeHandler}
-          />
+          <input name="bot-field" />
         </label>
       </div>
       {children}
-      <Button type={buttonType} isOnClick={true} onClick={onSubmit}>
+      <Button type={buttonType} isSubmit={true}>
         {buttonText}
       </Button>
     </form>
@@ -54,24 +38,7 @@ function Form({ name, buttonText, buttonType, submitHandler, children }) {
 
 export default Form;
 
-export const File_Form = ({
-  name,
-  buttonText,
-  buttonType,
-  submitHandler,
-  children,
-}) => {
-  const [honeypot, setHoneypot] = useState('');
-
-  function honeypotChangeHandler(e) {
-    setHoneypot(e.target.value);
-  }
-
-  function onSubmit(e) {
-    if (honeypot === '') {
-      submitHandler(e);
-    }
-  }
+export const File_Form = ({ name, buttonText, buttonType, children }) => {
   return (
     <form
       name={name}
@@ -81,19 +48,16 @@ export const File_Form = ({
       autoComplete="on"
       data-netlify="true"
       netlify-honeypot="bot-field"
+      action="/success"
     >
       <div className={styles.hidden}>
         <label>
           Don&apos;t fill this out if you&apos;re human:
-          <input
-            name="bot-field"
-            value={honeypot}
-            onChange={honeypotChangeHandler}
-          />
+          <input name="bot-field" />
         </label>
       </div>
       {children}
-      <Button type={buttonType} isOnClick={true} onClick={onSubmit}>
+      <Button type={buttonType} isSubmit={true}>
         {buttonText}
       </Button>
     </form>

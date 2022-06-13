@@ -16,8 +16,20 @@ import styles from './Button.module.css';
  *
  * @author Andrew Qiao
  */
-function Button({ type, isRoute, link, isOnClick, onClick, children }) {
-  return isOnClick ? (
+function Button({
+  type,
+  isSubmit,
+  isRoute,
+  link,
+  isOnClick,
+  onClick,
+  children,
+}) {
+  return isSubmit ? (
+    <button className={styles[`btn-${type}`]} type="submit">
+      {children}
+    </button>
+  ) : isOnClick ? (
     <button className={styles[`btn-${type}`]} href="#" onClick={onClick}>
       {children}
     </button>
