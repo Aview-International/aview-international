@@ -1,15 +1,15 @@
+/**
+ * Container for Want To Go Global? section of homepage
+ */
 import { useState } from 'react';
 
 import GradientFullWidth from '../../../../components/layout/GradientFullWidth/GradientFullWidth';
 import Form from '../../../../components/form/Form/Form';
 import Input from '../../../form/Input/Input';
 
-import { submitFormData } from '../../../../utils/submit-form';
+import { submitForm } from '../../../../utils/submit-form';
 import styles from './GoGlobal.module.css';
 
-/**
- * Container for Want To Go Global? section of homepage
- */
 function GoGlobal() {
   const [formState, setFormState] = useState({
     email: '',
@@ -33,7 +33,11 @@ function GoGlobal() {
     e.preventDefault();
 
     if (formState.valid) {
-      submitFormData({ 'form-name': 'newsletter', email: formState.email });
+      const data = {
+        'form-name': 'newsletter',
+        email: formState.email,
+      };
+      submitForm("newsletter",data);
       setHasSubmitted(true);
     }
   }
@@ -75,7 +79,7 @@ function GoGlobal() {
           </>
         ) : (
           <h2 className={`section-title`}>
-            You’ve subscribed to our newsletter!
+            You&apos;ve subscribed to our newsletter!
           </h2>
         )}
       </GradientFullWidth>
