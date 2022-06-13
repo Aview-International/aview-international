@@ -19,7 +19,7 @@ const JoinTeam = () => {
     email: '',
     linkedin_url: '',
     positions: '',
-    resume: '',
+    file: '',
   });
   const [valid, setValid] = useState(true);
   const submitHandler = async (e) => {
@@ -32,7 +32,7 @@ const JoinTeam = () => {
         data.email &&
         data.linkedin_url &&
         data.positions &&
-        data.resume
+        data.file
       )
     ) {
       return;
@@ -132,7 +132,7 @@ const JoinTeam = () => {
           <input
             id="file_upload"
             type="file"
-            name="resume"
+            name="file"
             accept="application/doc, application/docx, application/pdf"
             onChange={handleChange}
             value={data.resume}
