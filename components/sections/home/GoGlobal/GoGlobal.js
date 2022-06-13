@@ -37,7 +37,7 @@ function GoGlobal() {
           'form-name': 'newsletter',
           email: formState.email,
         };
-        submitForm('newsletter', data);
+        submitForm('generate-requests', data);
         setHasSubmitted(true);
       }
     } catch (error) {
