@@ -34,10 +34,10 @@ function GoGlobal() {
     try {
       if (formState.valid) {
         const data = {
-          'form-name': 'generate-requests',
+          'form-name': 'newsletter',
           email: formState.email,
         };
-        submitForm('generate-requests', data);
+        submitForm('newsletter', data);
         setHasSubmitted(true);
       }
     } catch (error) {
@@ -60,7 +60,7 @@ function GoGlobal() {
               Give us your email. We will do the rest.
             </p>
             <Form
-              name="generate-requests"
+              name="newsletter"
               buttonText="Subscribe"
               buttonType="tertiary"
               submitHandler={submitHandler}
@@ -73,6 +73,7 @@ function GoGlobal() {
                 value={formState.email}
                 valid={inputsValid[0]}
                 hasSubmitted={hasSubmitted}
+                name="email"
                 incorrectText="Please submit a properly formatted email."
               />
               <p className={`text-regular ${styles.agreement}`}>
