@@ -1,3 +1,6 @@
+/**
+ * Container for Want To Go Global? section of homepage
+ */
 import { useState } from 'react';
 
 import GradientFullWidth from '../../../../components/layout/GradientFullWidth/GradientFullWidth';
@@ -7,9 +10,6 @@ import Input from '../../../form/Input/Input';
 import { submitForm } from '../../../../utils/submit-form';
 import styles from './GoGlobal.module.css';
 
-/**
- * Container for Want To Go Global? section of homepage
- */
 function GoGlobal() {
   const [formState, setFormState] = useState({
     email: '',
@@ -31,11 +31,10 @@ function GoGlobal() {
 
   function submitHandler(e) {
     e.preventDefault();
-
-    if (formState.valid) {
-      submitForm('newsletter', { email: formState.email });
-      setHasSubmitted(true);
-    }
+      if (formState.valid) {
+        submitForm('newsletter-submission', { email: formState.email });
+        setHasSubmitted(true);
+      }
   }
 
   return (
@@ -52,7 +51,7 @@ function GoGlobal() {
               Give us your email. We will do the rest.
             </p>
             <Form
-              name="newsletter"
+              name="newsletter-submission"
               buttonText="Subscribe"
               buttonType="tertiary"
               submitHandler={submitHandler}
@@ -65,6 +64,7 @@ function GoGlobal() {
                 value={formState.email}
                 valid={inputsValid[0]}
                 hasSubmitted={hasSubmitted}
+                name="email"
                 incorrectText="Please submit a properly formatted email."
               />
               <p className={`text-regular ${styles.agreement}`}>
@@ -75,7 +75,7 @@ function GoGlobal() {
           </>
         ) : (
           <h2 className={`section-title`}>
-            You’ve subscribed to our newsletter!
+            You&apos;ve subscribed to our newsletter!
           </h2>
         )}
       </GradientFullWidth>
