@@ -1,3 +1,5 @@
+import FormData from 'form-data';
+
 export function submitForm(name, data) {
   const encode = (data) => {
     return Object.keys(data)
