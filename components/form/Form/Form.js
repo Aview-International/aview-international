@@ -32,7 +32,6 @@ function Form({ name, buttonText, buttonType, submitHandler, children }) {
       autoComplete="on"
       data-netlify="true"
       netlify-honeypot="bot-field"
-      action="/success"
     >
       <div className={styles.hidden}>
         <label>
