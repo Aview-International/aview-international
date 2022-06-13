@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { country_list } from '../../../../constants';
 import { emailValidator, urlValidator } from '../../../../utils/regex';
 import Incorrect from '../../../../public/img/icons/incorrect.svg';
@@ -11,7 +11,6 @@ import { submitFile } from '../../../../utils/submit-form';
 import { Dotted_Border } from '../../../../utils/svgs';
 
 const JoinTeam = () => {
-  const formRef = useRef();
   const [data, setData] = useState({
     'form-name': 'team-application',
     name: '',
@@ -38,7 +37,6 @@ const JoinTeam = () => {
       return;
     }
     submitFile(data);
-    console.log('sent');
   };
   const handleChange = (e) => {
     setData((prevState) => ({
@@ -52,7 +50,6 @@ const JoinTeam = () => {
         <span className={`gradient-text`}>Join the Team</span>
       </h2>
       <File_Form
-        formRef={formRef}
         name="team-application"
         buttonText="Send Message"
         buttonType="primary"
@@ -134,21 +131,25 @@ const JoinTeam = () => {
             type="file"
             name="file"
             accept="application/doc, application/docx, application/pdf"
-            onChange={handleChange}
-            value={data.resume}
+            onChange={(e) =>
+              setData((prevState) => ({
+                ...prevState,
+                file: e.target.files[0],
+              }))
+            }
           />
           <Dotted_Border />
         </label>
         <br />
-        {data.resume !== undefined && (
+        {data.file !== null && (
           <div className={styles.file_name}>
-            <p className="text-regular">{data.resume.name}</p>
+            <p className="text-regular">{data.file.name}</p>
             <span
               className="gradient-text"
               onClick={() =>
                 setData((prevState) => ({
                   ...prevState,
-                  resume: '',
+                  file: '',
                 }))
               }
             >
