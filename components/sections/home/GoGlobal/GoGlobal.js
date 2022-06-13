@@ -34,7 +34,7 @@ function GoGlobal() {
     try {
       if (formState.valid) {
         const data = {
-          'form-name': 'newsletter',
+          'form-name': 'generate-requests',
           email: formState.email,
         };
         submitForm('generate-requests', data);
