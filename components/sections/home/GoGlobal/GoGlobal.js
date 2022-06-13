@@ -31,14 +31,10 @@ function GoGlobal() {
 
   function submitHandler(e) {
     e.preventDefault();
-    try {
       if (formState.valid) {
         submitForm('newsletter-submission', { email: formState.email });
         setHasSubmitted(true);
       }
-    } catch (error) {
-      console.log(error);
-    }
   }
 
   return (
