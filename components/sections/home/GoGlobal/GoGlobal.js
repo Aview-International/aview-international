@@ -4,7 +4,7 @@ import GradientFullWidth from '../../../../components/layout/GradientFullWidth/G
 import Form from '../../../../components/form/Form/Form';
 import Input from '../../../form/Input/Input';
 
-import { submitForm } from '../../../../utils/submit-form';
+import { submitFormData } from '../../../../utils/submit-form';
 import styles from './GoGlobal.module.css';
 
 /**
@@ -33,7 +33,7 @@ function GoGlobal() {
     e.preventDefault();
 
     if (formState.valid) {
-      submitForm('newsletter', { email: formState.email });
+      submitFormData({ 'form-name': 'newsletter', email: formState.email });
       setHasSubmitted(true);
     }
   }
