@@ -33,16 +33,11 @@ function GoGlobal() {
     e.preventDefault();
     try {
       if (formState.valid) {
-        const data = {
-          'form-name': 'newsletter',
-          email: formState.email,
-        };
-        submitForm('newsletter', data);
+        submitForm('newsletter-submission', { email: formState.email });
         setHasSubmitted(true);
       }
     } catch (error) {
       console.log(error);
-
     }
   }
 
@@ -60,7 +55,7 @@ function GoGlobal() {
               Give us your email. We will do the rest.
             </p>
             <Form
-              name="newsletter"
+              name="newsletter-submission"
               buttonText="Subscribe"
               buttonType="tertiary"
               submitHandler={submitHandler}
