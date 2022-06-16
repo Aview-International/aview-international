@@ -71,7 +71,6 @@ export const Cards = ({ value, suffix, text, i }) => {
 
   const inViewport = DetectScrollIntoView(ref, '-150px');
   useEffect(() => {
-    console.log(inViewport);
     const updateCount = () => {
       if (inViewport) {
         const speed = value * 0.07;

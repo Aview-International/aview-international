@@ -23,6 +23,7 @@ function Input({
   valid,
   hasSubmitted,
   name,
+  required,
 }) {
   return (
     <div className={styles['input-container']}>
@@ -30,10 +31,11 @@ function Input({
         <input
           type={type}
           placeholder={placeholder}
-          className={`${styles.input} ${styles[bgColor]}`}
+          className={`text-regular ${styles.input} ${styles[bgColor]}`}
           onChange={changeHandler}
           value={value}
           name={name}
+          required={required}
         />
       </Border>
       {!valid && hasSubmitted && (

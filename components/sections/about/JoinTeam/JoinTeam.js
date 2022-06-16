@@ -21,6 +21,7 @@ const JoinTeam = () => {
     file: '',
   });
   const [valid, setValid] = useState(true);
+  const [hasSubmitted, setHasSubmitted] = useState(true);
   const submitHandler = async (e) => {
     e.preventDefault();
     !data.country ? setValid(false) : null;
@@ -34,6 +35,7 @@ const JoinTeam = () => {
         data.file
       )
     ) {
+      setHasSubmitted(false);
       return;
     }
     submitFile(data);
@@ -64,6 +66,7 @@ const JoinTeam = () => {
             placeholder="Your name"
             name="name"
             type="text"
+            hasSubmitted={hasSubmitted}
           />
           <div>
             <p className="text-regular">Country</p>
@@ -105,6 +108,7 @@ const JoinTeam = () => {
           placeholder="Your email address"
           name="email"
           type="email"
+          hasSubmitted={hasSubmitted}
         />
         <Input
           isValid={urlValidator(data.linkedin_url)}
@@ -114,6 +118,7 @@ const JoinTeam = () => {
           placeholder="Linkedin URL"
           name="linkedin_url"
           type="text"
+          hasSubmitted={hasSubmitted}
         />
 
         <Input
@@ -124,6 +129,7 @@ const JoinTeam = () => {
           placeholder="Type position(s) here"
           name="positions"
           type="text"
+          hasSubmitted={hasSubmitted}
         />
         <label htmlFor="file_upload" className={styles.file_label}>
           <input
@@ -139,17 +145,22 @@ const JoinTeam = () => {
             }
           />
           <Dotted_Border />
+          {!hasSubmitted && !data.file && (
+            <span className={styles.file_error}>
+              <Image src={Incorrect} alt="Incorrect" width={35} height={35} />
+            </span>
+          )}
         </label>
         <br />
-        {data.file !== null && (
+        {!!data.file && (
           <div className={styles.file_name}>
-            <p className="text-regular">{data.file.name}</p>
+            <p className="text-regular">{data.file?.name}</p>
             <span
               className="gradient-text"
               onClick={() =>
                 setData((prevState) => ({
                   ...prevState,
-                  file: '',
+                  file: undefined,
                 }))
               }
             >

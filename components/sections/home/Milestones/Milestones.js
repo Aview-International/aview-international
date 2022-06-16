@@ -46,7 +46,6 @@ function MilestoneItem({ number, suffix, description }) {
 
   const inViewport = DetectScrollIntoView(ref, '-10px');
   useEffect(() => {
-    console.log(inViewport);
     const updateCount = () => {
       if (inViewport) {
         const speed = number * 0.07;

@@ -5,11 +5,20 @@ import Correct from '../../../public/img/icons/correct.svg';
 import Incorrect from '../../../public/img/icons/incorrect.svg';
 import { useState } from 'react';
 
-const Input = ({ isValid, _id, label, onChange, placeholder, name, type }) => {
-  const [valid, setValid] = useState(undefined);
+const Input = ({
+  isValid,
+  _id,
+  label,
+  onChange,
+  placeholder,
+  name,
+  type,
+  hasSubmitted,
+}) => {
+  const [valid, setValid] = useState(false);
   const handleBlur = () => {
-    if (!!isValid) setValid('correct');
-    else setValid('incorrect');
+    if (!!isValid) setValid(true);
+    else setValid(false);
   };
   return (
     <div className={styles.input_container}>
@@ -30,12 +39,13 @@ const Input = ({ isValid, _id, label, onChange, placeholder, name, type }) => {
           <span className={styles.highlight}></span>
         </Border>
         <span className={styles.validation_icon}>
-          {valid === 'correct' && (
+          {valid && (
             <Image src={Correct} alt="Correct" width={35} height={35} />
           )}
-          {valid === 'incorrect' && (
-            <Image src={Incorrect} alt="Incorrect" width={35} height={35} />
-          )}
+          {!hasSubmitted &&
+            (!valid && (
+              <Image src={Incorrect} alt="Incorrect" width={35} height={35} />
+            ))}
         </span>
       </div>
     </div>

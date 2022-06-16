@@ -1,3 +1,7 @@
+.section > div {
+  padding: 74px 0;
+}
+
 .section-title {
   margin-bottom: 10px;
 }
