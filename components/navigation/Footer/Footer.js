@@ -12,6 +12,7 @@ const LINKS = [
   { name: 'Creators', route: '/creators' },
   // { name: "Translators", route: "/translators" },
   { name: 'About', route: '/about' },
+  { name: 'Translators', route: '/translators' },
   // { name: "Contact", route: "/contact" },
   // { name: "Careers", route: "/careers" },
 ];
