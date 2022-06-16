@@ -66,8 +66,7 @@ const FindGrowth = () => {
         <span className="gradient-text">Find Your International Growth!</span>
       </h2>
       <p className="text-regular">
-        Use the calculator below to discover your increase in views and
-        potential revenue!
+        Use the calculator below to discover your increase in potential revenue!
       </p>
       <div>
         <Border borderRadius="5px">
@@ -86,9 +85,7 @@ const FindGrowth = () => {
               <p className="text-regular">growth in international views</p>
               <HorizontalLine /> */}
               <h3>
-                <span className="gradient-text">
-                  ${growth * 25}
-                </span>
+                <span className="gradient-text">${growth * 22.5}</span>
               </h3>
               <p className="text-regular">potential monthly revenue</p>
             </div>
