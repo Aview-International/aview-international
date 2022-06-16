@@ -13,6 +13,7 @@ const PAGES = [
   { name: 'Creators', route: '/creators' },
   // { name: "Translators", route: "/translators" },
   { name: 'About', route: '/about' },
+  { name: 'Translators', route: '/translators' },
 ];
 
 /**
