@@ -1,0 +1,44 @@
+.section {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  align-items: center;
+}
+
+.text {
+  position: relative;
+}
+
+.mission {
+  font-size: 21px;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+.title {
+  margin-bottom: 49px;
+}
+
+@media (max-width: 1200px) {
+  .section {
+    display: block;
+  }
+
+  .landing-image {
+    max-width: min(90%, 700px);
+    margin: 0 auto;
+  }
+
+  .text {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission {
+    margin-bottom: 15px;
+  }
+
+  .title {
+    margin-bottom: 30px;
+  }
+}

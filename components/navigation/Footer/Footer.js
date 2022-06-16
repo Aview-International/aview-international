@@ -18,6 +18,8 @@ const LINKS = [
 
 /**
  * Footer
+ *
+ * @author Andrew Qiao
  */
 function Footer() {
   return (
@@ -33,6 +35,8 @@ function Footer() {
 
 /**
  * Logos on left side of footer
+ *
+ * @author Andrew Qiao
  */
 function FooterLogos() {
   return (

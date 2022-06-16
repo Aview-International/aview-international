@@ -51,6 +51,8 @@ const CONTENT_CREATORS = [
 
 /**
  * Container for Content Creators We’ve Worked With section of homepage
+ *
+ * @author Andrew Qiao
  */
 function ContentCreators() {
   return (

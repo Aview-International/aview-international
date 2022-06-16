@@ -8,6 +8,8 @@ import styles from './Card.module.css';
  * Only contains background gradient, doesn't contain padding
  *
  * @prop children: Elements to be wrapped by card
+ *
+ * @author Andrew Qiao
  */
 function Card({ children }) {
   return (

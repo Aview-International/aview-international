@@ -11,6 +11,8 @@ import styles from './GraphicCard.module.css';
  * @prop graphic: Image of card
  * @prop alt: Alt text of card image
  * @prop horizontal: Whether the card is horizontal on desktop or not
+ *
+ * @author Andrew Qiao
  */
 function GraphicCard({ title, description, graphic, alt, horizontal }) {
   return (

@@ -1,3 +1,4 @@
+import SEO from '../components/SEO/SEO';
 import Navbar from '../components/navigation/Navbar/Navbar';
 import Landing from '../components/sections/home/Landing/Landing';
 import WeTranslate from '../components/sections/home/WeTranslate/WeTranslate';
@@ -14,13 +15,14 @@ import Blobs from '../components/UI/Blobs/Blobs';
 function Home() {
   return (
     <>
+      <SEO title="" description="" url="" index={true} showSchema={true} />
       <Navbar />
       <Landing />
-      <WeTranslate />
-      <LeadInTranslations />
-      <BreadAndButter />
       <ContentCreators />
       <Videos />
+      <BreadAndButter />
+      <WeTranslate />
+      <LeadInTranslations />
       <Generate title="Start Generating AVIEW Today" />
       <FAQs />
       <GoGlobal />

@@ -2,6 +2,9 @@ import GradientFullWidth from '../../../layout/GradientFullWidth/GradientFullWid
 
 import styles from './YouCreate.module.css';
 
+/**
+ * @author Andrew Qiao
+ */
 function YouCreate() {
   return (
     <section className="section">

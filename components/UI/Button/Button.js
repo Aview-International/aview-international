@@ -1,11 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import Shadow from "../Shadow/Shadow";
+import Shadow from '../Shadow/Shadow';
 
-import styles from "./Button.module.css";
+import styles from './Button.module.css';
 
 /**
- * Button
+ * Button component
  *
  * @prop type: Primary (gradient fill), secondary (gradient border, transparent fill), tertiary (white text and fill)
  * @prop isRoute: Whether the button is a route or an external link
@@ -14,6 +14,7 @@ import styles from "./Button.module.css";
  * @prop onClick: On click function that the button runs
  * @prop children: Text wrapped by button
  *
+ * @author Andrew Qiao
  */
 function Button({ type, isRoute, link, isOnClick, onClick, children }) {
   return isOnClick ? (
@@ -22,7 +23,7 @@ function Button({ type, isRoute, link, isOnClick, onClick, children }) {
     </button>
   ) : isRoute ? (
     <Link href={link}>
-      <a className={styles[`btn-${type}`]}>
+      <a className={`${styles[`btn-${type}`]} shadow-parent`}>
         <Shadow />
         {children}
       </a>

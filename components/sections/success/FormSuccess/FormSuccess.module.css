@@ -1,0 +1,28 @@
+.container {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  display: grid;
+  place-content: center;
+}
+
+.success {
+  text-align: center;
+  margin: 0 20px;
+}
+
+.image {
+  max-width: 300px;
+  margin: 0 auto 30px;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 21px;
+  max-width: 320px;
+  margin: 0 auto 30px;
+  line-height: 27px;
+}
