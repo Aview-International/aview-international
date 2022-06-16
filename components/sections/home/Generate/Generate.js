@@ -8,7 +8,10 @@ import { emailValidator, urlValidator } from '../../../../utils/regex';
 import CheckBox from '../../../UI/Checkbox/Checkbox';
 import Form from '../../../form/Form/Form';
 import { submitForm } from '../../../../utils/submit-form';
-const Generate = ({title}) => {
+import { useRouter } from 'next/router';
+
+const Generate = ({ title }) => {
+  const router = useRouter();
   const [data, setData] = useState({
     name: '',
     url: '',
@@ -99,15 +102,16 @@ const Generate = ({title}) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    // setHasSubmitted(true);
     try {
       if (!!(data.name && data.url && data.email && data.languages)) {
         submitForm('generate-requests', data);
+        router.push('/success?from=generate-requests');
       }
     } catch (error) {
       console.log(error);
     }
   };
+  
   return (
     <section className={`section m-horizontal ${styles.parent}`}>
       <h2 className={`section-title`}>

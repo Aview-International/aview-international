@@ -1,6 +1,20 @@
 import { useMemo } from 'react';
 import styles from './Slider.module.css';
 
+
+
+/**
+ * Input Slider component
+ * @prop label: String, to display the label of the input
+ * @prop name: The name of the input, for events handling
+ * @prop max: The maximum value of the slider
+ * @prop setRanges: A function to set the value of the slider
+ * @prop value: Value of the a single input
+ * @prop values: Value to be used for number that don't grow mathematically
+ *
+ * @author Victor Ogunjobi
+ */
+
 const Slider = ({
   label,
   name,

@@ -22,7 +22,7 @@ const FindGrowth = () => {
       name: 'uploadsPerMonth',
     },
     {
-      label: 'Average View Count',
+      label: 'Average View Count per Month',
       value: ranges.averageViewCount,
       values: [
         '1K',
@@ -80,17 +80,17 @@ const FindGrowth = () => {
             </div>
             <span></span>
             <div className={styles.data}>
-              <h3>
+              {/* <h3>
                 <span className="gradient-text">{`${growth}%`}</span>
               </h3>
               <p className="text-regular">growth in international views</p>
-              <HorizontalLine />
+              <HorizontalLine /> */}
               <h3>
                 <span className="gradient-text">
-                  ${growth * 15}
+                  ${growth * 25}
                 </span>
               </h3>
-              <p className="text-regular">potential revenue</p>
+              <p className="text-regular">potential monthly revenue</p>
             </div>
           </div>
         </Border>
