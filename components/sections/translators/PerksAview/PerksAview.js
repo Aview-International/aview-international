@@ -23,7 +23,6 @@ const PERKS = [
   },
 ];
 
-
 function PerksAview() {
   return (
     <section className={`section m-horizontal ${styles.section}`}>
@@ -33,7 +32,7 @@ function PerksAview() {
       </h2>
       {PERKS.map((list, i) => (
         <div className={styles.list} key={`list-${i}`}>
-          <h1 className={`section-title ${styles.perkslist}`}>
+          <h1 className='section-title'>
             <span className="gradient-text">{list.number}</span>
           </h1>
           <div className='list-info'>
@@ -47,7 +46,6 @@ function PerksAview() {
           <Image src={image} alt="perks" />
         </div>
     </section>
-
   );
 }
 
