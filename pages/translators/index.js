@@ -12,6 +12,7 @@ function Translators() {
   return (
     <>
       <Navbar />
+      <FavoriteInfluencer />
       <PerksAview />
       <MakeImpact />
       <CompanyCulture />
