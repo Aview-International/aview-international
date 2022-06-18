@@ -27,7 +27,7 @@ function PerksAview() {
   return (
     <section className={`section m-horizontal ${styles.section}`}>
       <div className='index'>
-      <h2 className={`gradient-text section-title ${styles['section-title']}`}>
+      <h2 className={`gradient-text section-title ${styles.section_title}`}>
         Perks of Being with Aview
       </h2>
       {PERKS.map((list, i) => (
