@@ -24,10 +24,19 @@
   @media (max-width: 1200px) {
     .section {
       display: block;
-      justify-content: space-between;
     }
+    
+    .section_title {
+      display: flex;
+      justify-content: center;
+    }
+
+    .list {
+      justify-content: center;
+    }
+
     .image {
-        max-width: min(90%, 700px);
+        max-width: min(90%, 600px);
         margin: auto;
         margin-top: 40px;
       }
@@ -35,7 +44,7 @@
   
   @media (max-width: 768px) {
     .list {
-        margin-top: 20px;
+        margin-top: 25px;
         display: grid;
         grid-template-columns: 100px 1fr;
         align-items: top;
@@ -43,14 +52,16 @@
 
     .list h1 {
         font-size: 60px;
-        margin-top: 30px;
+        margin-top: 10px;
       }
       
     .list h3 {
         font-size: 32px;
+        line-height: 40px;
       }
 
     .list p {
+        margin-top: 3px;
         font-size: 18px;
       }
   }
