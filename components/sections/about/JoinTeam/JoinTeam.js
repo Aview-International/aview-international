@@ -8,8 +8,8 @@ import Input from '../../../UI/Input/Input';
 import styles from './JoinTeam.module.css';
 import Image from 'next/image';
 import { submitFile } from '../../../../utils/submit-form';
-import { Dotted_Border } from '../../../../utils/svgs';
-
+import DottedBorder from '../../../UI/DottedBorder/DottedBorder';
+import Upload from '../../../../public/img/icons/uploadIcon1.svg';
 const JoinTeam = () => {
   const [data, setData] = useState({
     'form-name': 'team-application',
@@ -21,9 +21,10 @@ const JoinTeam = () => {
     file: '',
   });
   const [valid, setValid] = useState(true);
-  const [hasSubmitted, setHasSubmitted] = useState(true);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
   const submitHandler = async (e) => {
     e.preventDefault();
+    setHasSubmitted(true);
     !data.country ? setValid(false) : null;
     if (
       !(
@@ -35,7 +36,6 @@ const JoinTeam = () => {
         data.file
       )
     ) {
-      setHasSubmitted(false);
       return;
     }
     submitFile(data);
@@ -144,8 +144,13 @@ const JoinTeam = () => {
               }))
             }
           />
-          <Dotted_Border />
-          {!hasSubmitted && !data.file && (
+          <div className={styles.upload}>
+            <DottedBorder>
+              <Image src={Upload} alt="Upload" width={20} height={20} />
+              <p className="text-regular">Upload Resume</p>
+            </DottedBorder>
+          </div>
+          {hasSubmitted && !data.file && (
             <span className={styles.file_error}>
               <Image src={Incorrect} alt="Incorrect" width={35} height={35} />
             </span>

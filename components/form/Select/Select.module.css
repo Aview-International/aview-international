@@ -1,0 +1,49 @@
+.dropdown {
+  display: block;
+  position: relative;
+  margin: 35px 0;
+}
+.dropdown > p {
+  margin-bottom: 18px;
+}
+.container {
+  background-color: var(--bg-color);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+}
+.modal {
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 95px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  height: 0rem;
+  opacity: 0;
+  visibility: hidden;
+}
+.open {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+.modal p {
+  background-color: var(--bg-color);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  display: block;
+  cursor: pointer;
+}
+.image {
+  transition: transform 0.5s ease-in-out;
+  margin-left: auto;
+}
+.reverse {
+  transform: rotate(180deg);
+}
+.modal > div {
+  display: block;
+}

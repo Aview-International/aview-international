@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 
 const Generate = ({ title }) => {
   const router = useRouter();
+  const [hasSubmitted, setHasSubmitted] = useState(false);
   const [data, setData] = useState({
     name: '',
     url: '',
@@ -102,8 +103,16 @@ const Generate = ({ title }) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    setHasSubmitted(true);
     try {
-      if (!!(data.name && data.url && data.email && data.languages)) {
+      if (
+        !!(
+          data.name &&
+          data.url &&
+          emailValidator(data.email) &&
+          data.languages
+        )
+      ) {
         submitForm('generate-requests', data);
         router.push('/success?from=generate-requests');
       }
@@ -111,7 +120,7 @@ const Generate = ({ title }) => {
       console.log(error);
     }
   };
-  
+
   return (
     <section className={`section m-horizontal ${styles.parent}`}>
       <h2 className={`section-title`}>
@@ -128,6 +137,7 @@ const Generate = ({ title }) => {
             key={`input_${index}`}
             isValid={item.validator(data[item.name])}
             onChange={handleChange}
+            hasSubmitted={hasSubmitted}
             {...item}
           />
         ))}

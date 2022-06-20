@@ -15,11 +15,6 @@ const Input = ({
   type,
   hasSubmitted,
 }) => {
-  const [valid, setValid] = useState(false);
-  const handleBlur = () => {
-    if (!!isValid) setValid(true);
-    else setValid(false);
-  };
   return (
     <div className={styles.input_container}>
       <label htmlFor={_id} className={`text-regular ${styles.input_label}`}>
@@ -34,18 +29,16 @@ const Input = ({
             placeholder={placeholder}
             className={`text-regular ${styles.input}`}
             onChange={(e) => onChange(e)}
-            onBlur={handleBlur}
           />
           <span className={styles.highlight}></span>
         </Border>
         <span className={styles.validation_icon}>
-          {valid && (
+          {isValid && (
             <Image src={Correct} alt="Correct" width={35} height={35} />
           )}
-          {!hasSubmitted &&
-            (!valid && (
-              <Image src={Incorrect} alt="Incorrect" width={35} height={35} />
-            ))}
+          {hasSubmitted && !isValid && (
+            <Image src={Incorrect} alt="Incorrect" width={35} height={35} />
+          )}
         </span>
       </div>
     </div>

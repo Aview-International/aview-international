@@ -52,7 +52,7 @@
 .validation_icon {
   position: absolute;
   right: 12px;
-  top: 6px;
+  top: 5px;
 }
 @media (max-width: 768px) {
   .flex_container > div {
@@ -60,6 +60,6 @@
     margin-right: 0px;
   }
   .validation_icon {
-    top: 3px;
+    top: 2.5px;
   }
 }
