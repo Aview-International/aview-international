@@ -2,9 +2,11 @@
   display: block;
   position: relative;
   margin: 35px 0;
+  cursor: pointer;
 }
 .dropdown > p {
   margin-bottom: 18px;
+  line-height: 30px;
 }
 .container {
   background-color: var(--bg-color);
@@ -12,6 +14,12 @@
   padding: 1rem;
   border-radius: 5px;
   display: flex;
+  position: relative;
+}
+.incorrect {
+  position: absolute;
+  right: -45px;
+  top: 10px;
 }
 .modal {
   transition: all 0.3s ease-in-out;
@@ -19,7 +27,7 @@
   top: 95px;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
   height: 0rem;
   opacity: 0;
   visibility: hidden;
@@ -35,7 +43,6 @@
   padding: 1rem;
   border-radius: 5px;
   display: block;
-  cursor: pointer;
 }
 .image {
   transition: transform 0.5s ease-in-out;
@@ -46,4 +53,9 @@
 }
 .modal > div {
   display: block;
+}
+@media (max-width: 767px) {
+  .incorrect {
+    right: -35px;
+  }
 }
