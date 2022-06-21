@@ -58,7 +58,22 @@ const FindGrowth = () => {
   ];
 
   const growth = useMemo(() => {
-    return ranges.uploadsPerMonth * ranges.averageViewCount * ranges.languages;
+    if (ranges.averageViewCount <= 6) {
+      return (
+        ranges.uploadsPerMonth *
+        ranges.averageViewCount *
+        ranges.languages *
+        22.5
+      );
+    } else if (ranges.averageViewCount >= 14) {
+      return (
+        ranges.uploadsPerMonth * ranges.averageViewCount * ranges.languages * 35
+      );
+    } else {
+      return (
+        ranges.uploadsPerMonth * ranges.averageViewCount * ranges.languages * 47.5
+      );
+    }
   }, [ranges]);
   return (
     <section className={`m-horizontal section ${styles.section}`}>
@@ -85,7 +100,7 @@ const FindGrowth = () => {
               <p className="text-regular">growth in international views</p>
               <HorizontalLine /> */}
               <h3>
-                <span className="gradient-text">${growth * 22.5}</span>
+                <span className="gradient-text">${Math.trunc(growth)}</span>
               </h3>
               <p className="text-regular">potential monthly revenue</p>
             </div>

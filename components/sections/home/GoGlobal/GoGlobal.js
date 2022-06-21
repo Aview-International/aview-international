@@ -67,7 +67,7 @@ function GoGlobal() {
                 hasSubmitted={hasSubmitted}
                 name="email"
                 incorrectText="Please submit a properly formatted email."
-                required={'true'}
+                required={true}
               />
               <p className={`text-regular ${styles.agreement}`}>
                 By signing up you agree to receive communications via email. For
