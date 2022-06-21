@@ -27,7 +27,7 @@ const Select = ({ label, options, handleClick }) => {
         <Border borderRadius="5px">
           <OutsideClickHandler onOutsideClick={() => setDropdown(false)}>
             {options.map((option, i) => (
-              <div>
+              <div key={`option-${i}`}>
                 <p onClick={() => handleClick(i)}>{option}</p>
                 <HorizontalLine />
               </div>
