@@ -10,10 +10,13 @@ import DottedBorder from '../../../UI/DottedBorder/DottedBorder';
 import Upload1 from '../../../../public/img/icons/uploadIcon1.svg';
 import Upload2 from '../../../../public/img/icons/uploadIcon2.svg';
 import Select from '../../../form/Select/Select';
+import { useRouter } from 'next/router';
 
 const JoinTeam = () => {
+  const router = useRouter();
+
   const [data, setData] = useState({
-    'form-name': 'team-application',
+    'form-name': 'translator-application',
     name: '',
     email: '',
     languages: '',
@@ -43,10 +46,10 @@ const JoinTeam = () => {
       validator: (value) => emailValidator(value),
     },
     {
-      _id: 'position',
+      _id: 'languages',
       label: 'Which languages can you translate?',
       placeholder: 'Type language(s) here',
-      name: 'position',
+      name: 'languages',
       type: 'text',
       validator: (value) => value.length > 2,
     },
@@ -58,20 +61,25 @@ const JoinTeam = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     setHasSubmitted(true);
-    !data.country ? setValid(false) : null;
     if (
       !(
         data.name &&
-        data.country &&
         data.email &&
-        data.linkedin_url &&
+        data.languages &&
+        data['voice_acting/dubbing'] &&
         data.position &&
-        data.file
+        data.resume &&
+        data.coverLetter
       )
     ) {
       return;
     }
-    submitFile(data);
+    try {
+      submitFile(data);
+      router.push('/success');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleChange = (e) => {
@@ -104,19 +112,23 @@ const JoinTeam = () => {
           <Select
             options={selectArray[0]}
             label="Can you do voice acting/dubbing?"
+            hasSubmitted={hasSubmitted}
             handleClick={(index) =>
-              setData({
+              setData((prevState) => ({
+                ...prevState,
                 'voice_acting/dubbing': selectArray[0][index],
-              })
+              }))
             }
           />
           <Select
             options={selectArray[1]}
+            hasSubmitted={hasSubmitted}
             label="What position are you applying to?"
             handleClick={(index) =>
-              setData({
+              setData((prevState) => ({
+                ...prevState,
                 position: selectArray[1][index],
-              })
+              }))
             }
           />
         </div>
@@ -124,22 +136,22 @@ const JoinTeam = () => {
           <div>
             <div className={styles.upload}>
               <DottedBorder>
-                <label htmlFor="file_upload" className={styles.file_label}>
+                <label htmlFor="resume" className={styles.file_label}>
                   <input
-                    id="file_upload"
+                    id="resume"
                     type="file"
-                    name="file"
+                    name="resume"
                     accept="application/doc, application/docx, application/pdf"
                     onChange={(e) =>
                       setData((prevState) => ({
                         ...prevState,
-                        file: e.target.files[0],
+                        resume: e.target.files[0],
                       }))
                     }
                   />
                   <Image src={Upload1} alt="Upload" width={20} height={20} />
                   <p className="text-regular">Upload Resume</p>
-                  {hasSubmitted && !data.file && (
+                  {hasSubmitted && !data.resume && (
                     <span className={styles.file_error}>
                       <Image
                         src={Incorrect}
@@ -153,15 +165,17 @@ const JoinTeam = () => {
               </DottedBorder>
             </div>
             <br />
-            {!!data.file && (
+            {!!data.resume && (
               <div className={styles.file_name}>
-                <p className="text-regular">{data.file?.name}</p>
+                <p className="text-regular">
+                  {data.resume?.name.substring(0, 15)}...
+                </p>
                 <span
                   className="gradient-text"
                   onClick={() =>
                     setData((prevState) => ({
                       ...prevState,
-                      file: undefined,
+                      resume: undefined,
                     }))
                   }
                 >
@@ -173,22 +187,22 @@ const JoinTeam = () => {
           <div>
             <div className={styles.upload}>
               <DottedBorder>
-                <label htmlFor="file_upload" className={styles.file_label}>
+                <label htmlFor="coverLetter" className={styles.file_label}>
                   <input
-                    id="file_upload"
+                    id="coverLetter"
                     type="file"
-                    name="file"
+                    name="coverLetter"
                     accept="application/doc, application/docx, application/pdf"
                     onChange={(e) =>
                       setData((prevState) => ({
                         ...prevState,
-                        file: e.target.files[0],
+                        coverLetter: e.target.files[0],
                       }))
                     }
                   />
                   <Image src={Upload2} alt="Upload" width={20} height={20} />
                   <p className="text-regular">Upload Cover Letter</p>
-                  {hasSubmitted && !data.file && (
+                  {hasSubmitted && !data.coverLetter && (
                     <span className={styles.file_error}>
                       <Image
                         src={Incorrect}
@@ -202,15 +216,17 @@ const JoinTeam = () => {
               </DottedBorder>
             </div>
             <br />
-            {!!data.file && (
+            {!!data.coverLetter && (
               <div className={styles.file_name}>
-                <p className="text-regular">{data.file?.name}</p>
+                <p className="text-regular">
+                  {data.coverLetter?.name.substring(0, 15)}...
+                </p>
                 <span
                   className="gradient-text"
                   onClick={() =>
                     setData((prevState) => ({
                       ...prevState,
-                      file: undefined,
+                      coverLetter: undefined,
                     }))
                   }
                 >

@@ -3,8 +3,10 @@ import Image from 'next/image';
 import thankYou from '../../../../public/img/graphics/thank-you.png';
 import Button from '../../../UI/Button/Button';
 import styles from './FormSuccess.module.css';
+import { useRouter } from 'next/router';
 
 function FormSuccess() {
+  const router = useRouter();
   return (
     <div className={styles.container}>
       <div className={styles.success}>
@@ -17,8 +19,8 @@ function FormSuccess() {
         <p className={`section-description ${styles.description}`}>
           We have received your message. We&apos;ll get back to you shortly!
         </p>
-        <Button type="primary" isRoute={true} link="/" isOnClick={false}>
-          Go Home
+        <Button type="primary" isOnClick={true} onClick={() => router.back()}>
+          Go Back
         </Button>
       </div>
     </div>
