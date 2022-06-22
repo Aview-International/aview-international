@@ -14,8 +14,8 @@ function Landing() {
         <p className={styles.mission}>Our Mission</p>
         <p className={`section-title ${styles.title}`}>
           To help build content creator brands globally through translated
-          subtitles and voiceovers; a client, a language, and
-          <span className="gradient-text"> Aview</span> at a time.
+          subtitles and voiceovers; a client, a language, and&nbsp;
+          <span className="gradient-text">Aview</span> at a time.
         </p>
         <Button type="primary" link="/">
           Contact Us

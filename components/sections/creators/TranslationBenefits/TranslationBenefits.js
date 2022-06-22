@@ -42,8 +42,8 @@ const CARD_CONTENT = [
 function TranslationBenefits() {
   return (
     <section className="section m-horizontal">
-      <h2 className={`gradient-text section-title ${styles['section-title']}`}>
-        Benefits of Translations
+      <h2 className={`section-title ${styles['section-title']}`}>
+        <span className="gradient-text">Benefits of Translations</span>
       </h2>
       <Row2>
         {CARD_CONTENT.map((content, i) => (

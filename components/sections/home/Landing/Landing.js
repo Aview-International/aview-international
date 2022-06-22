@@ -16,8 +16,8 @@ function Landing() {
     <section className={`section`}>
       <div className={`m-horizontal ${styles['landing-text']}`}>
         <h1 className={`section-title ${styles['section-title']}`}>
-          Translate your
-          <span className="gradient-text"> Social Media Content</span>
+          Translate your&nbsp;
+          <span className="gradient-text">Social Media Content</span>
         </h1>
         <p className={`section-description ${styles['section-description']}`}>
           AVIEW is a leading multi-media translation service. We help you expand
