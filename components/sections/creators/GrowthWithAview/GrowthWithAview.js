@@ -43,7 +43,7 @@ const GrowthWithAview = () => {
   return (
     <section className={`section m-horizontal ${styles.parent}`}>
       <h2 className={`section-title ${styles['title']}`}>
-        <span className="gradient-text">Growth </span>with Aview
+        <span className="gradient-text">Growth&nbsp;</span>with Aview
       </h2>
 
       <div>

@@ -17,8 +17,8 @@ function WeTranslate() {
       <TextWithImage>
         <div>
           <h2 className={`section-title ${styles['section-title']}`}>
-            You <span className="gradient-text">Create.</span> We
-            <span className="gradient-text"> Translate.</span>
+            You <span className="gradient-text">Create.</span> We&nbsp;
+            <span className="gradient-text">Translate.</span>
           </h2>
           <p className={`section-description ${styles['section-description']}`}>
             AVIEW hand picks the best translators and voice actors for your
