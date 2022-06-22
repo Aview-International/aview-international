@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
+import { useRouter } from 'next/router';
+
 import Button from '../../UI/Button/Button';
 
 import logo from '../../../public/img/brand/nav-logo.svg';
@@ -13,7 +15,6 @@ const PAGES = [
   { name: 'Creators', route: '/creators' },
   { name: 'Translators', route: '/translators' },
   { name: 'About', route: '/about' },
-
 ];
 
 /**
@@ -72,16 +73,35 @@ function NavbarLinks({ menuOpen }) {
     <nav className={`${styles.navbar} ${menuOpen && styles['navbar-open']}`}>
       <ul className={styles['navbar-links']}>
         {PAGES.map((page, i) => (
-          <li key={`page-${i}`}>
-            <Link href={page.route}>
-              <a className={styles['navbar-link']}>{page.name}</a>
-            </Link>
-          </li>
+          <NavbarLink key={`page-${i}`} {...page} />
         ))}
       </ul>
     </nav>
   );
 }
+
+/**
+ * Single link in navbar
+ * Seperated from the above component to enable gradient text on hover
+ * @author Victor Ogunjobi
+ */
+const NavbarLink = ({ name, route }) => {
+  let { pathname } = useRouter();
+  const [hover, setHover] = useState(false);
+  return (
+    <li
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      className={`${hover ? 'gradient-text' : ''}  ${
+        pathname === route ? `gradient-text` : ''
+      }`}
+    >
+      <Link href={route}>
+        <a className={styles['navbar-link']}>{name}</a>
+      </Link>
+    </li>
+  );
+};
 
 /**
  * Contact Us button on right side of desktop navbar
@@ -91,7 +111,7 @@ function NavbarLinks({ menuOpen }) {
 function ContactButton() {
   return (
     <div className="desktop-only">
-      <Button type="secondary" isRoute={false} link="#generate-aview">
+      <Button type="secondary" isRoute={true} link="/#generate-aview">
         Contact Us
       </Button>
     </div>

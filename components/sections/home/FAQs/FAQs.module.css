@@ -23,7 +23,9 @@
   max-height: 1.4rem;
   margin: 0 30px;
 }
-
+.questions_container a {
+  text-decoration: underline;
+}
 .questions_label p {
   /* transition: all 0.8s ease-in; */
   visibility: hidden;
@@ -104,8 +106,8 @@
     width: 90%;
   }
   .questions_container {
-  margin: 0 5px;
-  max-height: 3.1rem;
+    margin: 0 5px;
+    max-height: 3.1rem;
   }
   .questions_container h4 {
     font-size: 21px;

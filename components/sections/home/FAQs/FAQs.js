@@ -1,6 +1,7 @@
 /**
  * Container for FAQ section of homepage
  */
+import Link from 'next/link';
 import HorizontalLine from '../../../UI/HorizontalLine/HorizontalLine';
 import styles from './FAQs.module.css';
 
@@ -24,11 +25,6 @@ const dataArray = [
     question: 'Can you translate for other platforms like TikTok?',
     answer: `Yes! We are a multimedia translation service. We can translate and edit the content on any platform for you so they are ready to be uploaded.`,
     _id: 'question6',
-  },
-  {
-    question: 'How can I get started?',
-    answer: `Click here to get started!`,
-    _id: 'question7',
   },
 ];
 
@@ -104,6 +100,27 @@ const FAQs = () => {
       {dataArray.map((item, i) => (
         <Questions question={item.question} key={`label-${i}`} {...item} />
       ))}
+      <label htmlFor={'question7'} className={styles.questions_label}>
+        <input id={'question7'} type="checkbox" />
+        <div className={styles.questions_container}>
+          <div>
+            <h4>How can I get started?</h4>
+            <span className={styles.minus_sign}></span>
+            <div className={styles.plus_sign}>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <p className={`text-regular`}>
+            Click{' '}
+            <Link href="/#generate-aview">
+              <a>here</a>
+            </Link>{' '}
+            to get started!
+          </p>
+        </div>
+      </label>
+      <HorizontalLine />
     </section>
   );
 };

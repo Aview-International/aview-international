@@ -9,6 +9,7 @@ import whatIfLogo from '../../../../public/img/creators/logos/what-if.png';
 import yesTheoryLogo from '../../../../public/img/creators/logos/yes-theory.png';
 import markRoberLogo from '../../../../public/img/creators/logos/mark-rober.png';
 import styles from './ContentCreators.module.css';
+import { useState } from 'react';
 
 const CONTENT_CREATORS = [
   {
@@ -76,21 +77,37 @@ function CreatorsGrid() {
   return (
     <div className={styles['creators-grid']}>
       {CONTENT_CREATORS.map((creator, i) => (
-        <div className={styles.creator} key={`creator-${i}`}>
-          <a
-            href={creator.link}
-            target="_blank"
-            rel="noreferrer"
-            alt={creator.alt}
-            className={`${styles['creator-logo']} shadow-parent`}
-          >
-            <Image src={creator.logo} alt={creator.alt} />
-            <p className={styles['creator-name']}>{creator.name}</p>
-          </a>
-        </div>
+        <SingleCreator key={`creator-${i}`} {...creator} />
       ))}
     </div>
   );
 }
 
+const SingleCreator = ({ link, logo, alt, name }) => {
+  const [hover, setHover] = useState(false);
+  return (
+    <div
+      className={styles.creator}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <a
+        href={link}
+        target="_blank"
+        rel="noreferrer"
+        alt={alt}
+        className={`${styles['creator-logo']} text-regular`}
+      >
+        <Image src={logo} alt={alt} />
+        <p
+          className={`${hover ? 'gradient-text' : ''} ${
+            styles['creator-name']
+          }`}
+        >
+          {name}
+        </p>
+      </a>
+    </div>
+  );
+};
 export default ContentCreators;

@@ -37,7 +37,6 @@ body {
 }
 
 body {
-  position: relative;
   background-color: var(--bg-color);
   line-height: 1;
   scroll-behavior: smooth;
