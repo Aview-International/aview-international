@@ -122,10 +122,7 @@ const Generate = ({ title }) => {
   };
 
   return (
-    <section
-      className={`section m-horizontal ${styles.parent}`}
-      id="generate-aview"
-    >
+    <section className={`section m-horizontal ${styles.parent}`}>
       <h2 className={`section-title`}>
         <span className="gradient-text">{title}</span>
       </h2>
