@@ -29,10 +29,12 @@ function Button({ type, isRoute, link, isOnClick, onClick, children }) {
       </a>
     </Link>
   ) : (
-    <a href={link} className={`${styles[`btn-${type}`]} shadow-parent`}>
-      <Shadow />
-      {children}
-    </a>
+    <Link href={link}>
+      <a className={`${styles[`btn-${type}`]} shadow-parent`}>
+        <Shadow />
+        {children}
+      </a>
+    </Link>
   );
 }
 

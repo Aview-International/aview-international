@@ -31,18 +31,17 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   overflow-x: hidden;
-  width: 100vw;
-  max-width: 100%;
 }
 
 body {
-  position: relative;
   background-color: var(--bg-color);
-  line-height: 1;
-  scroll-behavior: smooth;
-  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
   min-height: 100vh;
+  overflow: hidden;
+  line-height: 1;
 }
 
 a {
