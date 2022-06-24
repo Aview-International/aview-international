@@ -71,7 +71,10 @@ const FindGrowth = () => {
       );
     } else {
       return (
-        ranges.uploadsPerMonth * ranges.averageViewCount * ranges.languages * 47.5
+        ranges.uploadsPerMonth *
+        ranges.averageViewCount *
+        ranges.languages *
+        47.5
       );
     }
   }, [ranges]);
@@ -106,7 +109,7 @@ const FindGrowth = () => {
             </div>
           </div>
         </Border>
-        <Button type="secondary" isOnClick={true}>
+        <Button type="secondary" link="/creators#generate-aview">
           Contact Us
         </Button>
       </div>

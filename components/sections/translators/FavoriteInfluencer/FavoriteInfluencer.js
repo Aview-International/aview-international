@@ -15,7 +15,7 @@ function FavoriteInfluencer() {
         <p className={`section-description ${styles.description}`}>
           Apply now to join our team of translators, dubbers and editors.
         </p>
-        <Button type="primary" link="/">
+        <Button type="primary" link="/translators#apply-today">
           Contact Us
         </Button>
       </div>

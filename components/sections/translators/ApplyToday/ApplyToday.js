@@ -89,7 +89,10 @@ const JoinTeam = () => {
     }));
   };
   return (
-    <section className={`section m-horizontal ${styles.section}`}>
+    <section
+      className={`section m-horizontal ${styles.section}`}
+      id="apply-today"
+    >
       <h2 className={`section-title ${styles.section_title}`}>
         <span className={`gradient-text`}>Apply Now!</span>
       </h2>

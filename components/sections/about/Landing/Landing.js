@@ -17,7 +17,7 @@ function Landing() {
           subtitles and voiceovers; a client, a language, and&nbsp;
           <span className="gradient-text">Aview</span> at a time.
         </p>
-        <Button type="primary" link="/">
+        <Button type="primary" link="/#generate-aview">
           Contact Us
         </Button>
       </div>

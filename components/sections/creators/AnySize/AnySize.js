@@ -17,7 +17,9 @@ function AnySize() {
         <p className={`section-description ${styles['section-description']}`}>
           Want to learn more about our services? Contact us below!
         </p>
-        <Button type="tertiary">Contact Us</Button>
+        <Button type="tertiary" link="/#generate-aview">
+          Contact Us
+        </Button>
       </GradientFullWidth>
     </section>
   );

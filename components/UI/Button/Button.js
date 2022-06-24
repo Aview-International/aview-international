@@ -16,23 +16,18 @@ import styles from './Button.module.css';
  *
  * @author Andrew Qiao
  */
-function Button({ type, isRoute, link, isOnClick, onClick, children }) {
+function Button({ type, link, isOnClick, onClick, children }) {
   return isOnClick ? (
     <button className={styles[`btn-${type}`]} href="#" onClick={onClick}>
       {children}
     </button>
-  ) : isRoute ? (
+  ) : (
     <Link href={link}>
       <a className={`${styles[`btn-${type}`]} shadow-parent`}>
         <Shadow />
         {children}
       </a>
     </Link>
-  ) : (
-    <a href={link} className={`${styles[`btn-${type}`]} shadow-parent`}>
-      <Shadow />
-      {children}
-    </a>
   );
 }
 
