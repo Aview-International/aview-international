@@ -7,10 +7,12 @@ import Process from '../../components/sections/translators/Process/Process';
 import ApplyToday from '../../components/sections/translators/ApplyToday/ApplyToday';
 import Footer from '../../components/navigation/Footer/Footer';
 import Blobs from '../../components/UI/Blobs/Blobs';
+import SEO from '../../components/SEO/SEO';
 
 function Translators() {
   return (
     <>
+      <SEO title="AVIEW International | Translators" />
       <Navbar />
       <FavoriteInfluencer />
       <PerksAview />

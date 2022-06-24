@@ -15,7 +15,13 @@ import Blobs from '../components/UI/Blobs/Blobs';
 function Home() {
   return (
     <>
-      <SEO title="" description="" url="" index={true} showSchema={true} />
+      <SEO
+        title="AVIEW International | Home"
+        description=""
+        url=""
+        index={true}
+        showSchema={true}
+      />
       <Navbar />
       <Landing />
       <ContentCreators />

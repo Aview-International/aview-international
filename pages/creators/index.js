@@ -10,10 +10,12 @@ import GrowthWithAview from '../../components/sections/creators/GrowthWithAview/
 // import GenerateAview from '../../components/sections/creators/GenerateAview/GenerateAview';
 import Footer from '../../components/navigation/Footer/Footer';
 import Blobs from '../../components/UI/Blobs/Blobs';
+import SEO from '../../components/SEO/SEO';
 
 function Creators() {
   return (
     <>
+      <SEO title="AVIEW International | Creators" />
       <Navbar />
       <FindGrowth />
       <OurServices />

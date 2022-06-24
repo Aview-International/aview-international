@@ -10,10 +10,12 @@ import Name from '../../components/sections/about/Name/Name';
 import JoinTeam from '../../components/sections/about/JoinTeam/JoinTeam';
 import Footer from '../../components/navigation/Footer/Footer';
 import Blobs from '../../components/UI/Blobs/Blobs';
+import SEO from '../../components/SEO/SEO';
 
 function About() {
   return (
     <>
+      <SEO title="AVIEW International | About" />
       <Navbar />
       <Landing />
       <AboutAview />
