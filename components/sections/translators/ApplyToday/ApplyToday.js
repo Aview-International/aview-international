@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { emailValidator, urlValidator } from '../../../../utils/regex';
+import { emailValidator } from '../../../../utils/regex';
 import Incorrect from '../../../../public/img/icons/incorrect.svg';
 import { File_Form } from '../../../form/Form/Form';
 import Input from '../../../UI/Input/Input';
@@ -25,7 +25,6 @@ const JoinTeam = () => {
     resume: '',
     coverLetter: '',
   });
-  const [valid, setValid] = useState(true);
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const inputArray = [
@@ -97,7 +96,7 @@ const JoinTeam = () => {
         <span className={`gradient-text`}>Apply Now!</span>
       </h2>
       <File_Form
-        name="team-application"
+        name="translator-application"
         buttonText="Send Message"
         buttonType="primary"
         submitHandler={submitHandler}

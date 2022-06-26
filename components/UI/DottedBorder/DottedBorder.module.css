@@ -1,6 +1,6 @@
 .DottedBorder {
   border: 3px dashed #000017;
   border-radius: 15px;
-  background: linear-gradient(#000017, #000017) padding-box,
-    linear-gradient(131.68deg, #fc00ff 10.68%, #00fffc 85.93%) border-box;
+  background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+    var(--primary-gradient) border-box;
 }

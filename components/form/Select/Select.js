@@ -7,6 +7,20 @@ import HorizontalLine from '../../UI/HorizontalLine/HorizontalLine';
 import OutsideClickHandler from 'react-outside-click-handler';
 import Incorrect from '../../../public/img/icons/incorrect.svg';
 
+/**
+ * Custom Select Input Component
+ *
+ * @prop label - Label for the input
+ * @prop options - Array of options to be displayed
+ * @prop handleClick - Function to be called when an option is selected,
+ * @prop hasSubmitted - Boolean to determine if the input has been submitted
+ * 
+ * check Apply Now section on Translators page to see example usage
+ *
+ * @author Victor Ogunjobi
+ * 
+ */
+
 const Select = ({ label, options, handleClick, hasSubmitted }) => {
   const [dropdown, setDropdown] = useState(false);
   const [answer, setAnswer] = useState('');
