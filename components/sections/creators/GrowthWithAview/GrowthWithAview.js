@@ -14,7 +14,7 @@ const GrowthWithAview = () => {
   const creators = [
     {
       name: 'Logan Paul',
-      subscribers: '2M+',
+      subscribers: '23.5M+',
       picture: LoganPaulLogo,
       summary: LoganPaulSummary,
       growth1: 'XXX%',
@@ -23,7 +23,7 @@ const GrowthWithAview = () => {
     },
     {
       name: 'Yes Theory',
-      subscribers: '2M+',
+      subscribers: '7.5M+',
       picture: YesTheoryLogo,
       summary: YesTheorySummary,
       growth1: 'XXX%',
@@ -32,7 +32,7 @@ const GrowthWithAview = () => {
     },
     {
       name: 'Active Self Protection',
-      subscribers: '2M+',
+      subscribers: '2.62M+',
       picture: ActiveSelfProtectionLogo,
       summary: ActiveSelfProtectionSummary,
       growth1: 'XXX%',
@@ -81,7 +81,7 @@ const Cards = ({
               <p className="text-regular">{subscribers} Subscribers</p>
             </div>
           </div>
-          <div className={styles.stats_container}>
+          {/* <div className={styles.stats_container}>
             <Border borderRadius="5px">
               <div className={`${styles.profile_stats} shadow-parent`}>
                 <Shadow />
@@ -99,7 +99,7 @@ const Cards = ({
                 </div>
               </div>
             </Border>
-          </div>
+          </div> */}
         </div>
         <Border borderRadius="5px">
           <div className={`shadow-parent ${styles.iframe_container}`}>
