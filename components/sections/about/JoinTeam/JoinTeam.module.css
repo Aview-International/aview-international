@@ -17,7 +17,7 @@
 }
 .flex_container > div:last-of-type {
   flex-basis: 30%;
-  margin: 20px 0 20px 20px;
+  margin: 10px 0 10px 20px;
   position: relative;
 }
 .flex_container p {

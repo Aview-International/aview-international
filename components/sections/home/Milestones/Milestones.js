@@ -53,13 +53,13 @@ function MilestoneItem({ number, suffix, description }) {
         const increment = Math.trunc(target / speed);
 
         if (count < target) {
-          if (number < 50) {
+          // if (number < 50) {
             setCount((count += 1));
             setTimeout(updateCount, 500);
-          } else {
-            setCount((count += increment));
-            setTimeout(updateCount, 150);
-          }
+          // } else {
+          //   setCount((count += increment));
+          //   setTimeout(updateCount, 150);
+          // }
         } else {
           setCount(target);
         }
