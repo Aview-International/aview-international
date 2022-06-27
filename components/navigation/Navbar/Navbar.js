@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 import Button from '../../UI/Button/Button';
 
-import logo from '../../../public/img/brand/nav-logo.svg';
+import logo from '../../../public/img/brand/logo.png';
 import closeIcon from '../../../public/img/icons/close.svg';
 import styles from './Navbar.module.css';
 

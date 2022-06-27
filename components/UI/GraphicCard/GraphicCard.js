@@ -22,6 +22,7 @@ function GraphicCard({ title, description, graphic, alt, horizontal }) {
       }`}
     >
       <Card>
+        <div className={styles.gradient}></div>
         <div className={horizontal && styles.horizontal}>
           <div className={styles.graphic}>
             <Image src={graphic} alt={alt} />

@@ -14,7 +14,7 @@ import styles from './Blobs.module.css';
 function Blobs() {
   return (
     <>
-      {/* <div className={`${styles.blob} ${styles['blob-1']}`}>
+      <div className={`${styles.blob} ${styles['blob-1']}`}>
         <Image src={blob1} alt="blob1" />
       </div>
       <div className={`${styles.blob} ${styles['blob-2']}`}>
@@ -25,7 +25,7 @@ function Blobs() {
       </div>
       <div className={`${styles.blob} ${styles['blob-4']}`}>
         <Image src={blob4} alt="blob4" />
-      </div> */}
+      </div>
     </>
   );
 }
