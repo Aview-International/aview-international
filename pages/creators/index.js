@@ -15,7 +15,7 @@ import SEO from '../../components/SEO/SEO';
 function Creators() {
   return (
     <>
-      <SEO title="AVIEW International | Creators" />
+      <SEO title="Creators - AVIEW" />
       <Navbar />
       <FindGrowth />
       <OurServices />

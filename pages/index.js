@@ -15,13 +15,7 @@ import Blobs from '../components/UI/Blobs/Blobs';
 function Home() {
   return (
     <>
-      <SEO
-        title="AVIEW International | Home"
-        description=""
-        url=""
-        index={true}
-        showSchema={true}
-      />
+      <SEO title="Video Translation & Subtitling - AVIEW" />
       <Navbar />
       <Landing />
       <ContentCreators />
