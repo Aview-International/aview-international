@@ -110,7 +110,7 @@ const FindGrowth = () => {
           </div>
         </Border>
         <Button type="secondary" link="/creators#generate-aview">
-          Contact Us
+          Start Now
         </Button>
       </div>
     </section>

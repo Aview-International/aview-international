@@ -16,6 +16,10 @@
   gap: 20px;
 }
 
+.logo {
+  max-width: 100px;
+}
+
 .socials {
   display: flex;
   flex-direction: row;
