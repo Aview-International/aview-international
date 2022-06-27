@@ -16,8 +16,15 @@
   font-size: 15px;
   text-align: left;
 }
-
+.section form {
+  padding: 2rem;
+  
+}
 @media (max-width: 768px) {
+  .section form {
+    padding: 1rem;
+  /* text-align: center; */
+  }
   .section-description {
     margin-bottom: 34px;
   }

@@ -78,13 +78,13 @@ export const Cards = ({ value, suffix, text, i }) => {
         const increment = Math.trunc(target / speed);
 
         if (count < target) {
-          if (value < 50) {
+          // if (value < 50) {
             setCount((count += 1));
             setTimeout(updateCount, 500);
-          } else {
-            setCount((count += increment));
-            setTimeout(updateCount, 150);
-          }
+          // } else {
+          //   setCount((count += increment));
+          //   setTimeout(updateCount, 150);
+          // }
         } else {
           setCount(target);
         }

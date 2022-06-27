@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { submitFile } from '../../../../utils/submit-form';
 import DottedBorder from '../../../UI/DottedBorder/DottedBorder';
 import Upload from '../../../../public/img/icons/uploadIcon1.svg';
+
 const JoinTeam = () => {
   const [data, setData] = useState({
     'form-name': 'team-application',

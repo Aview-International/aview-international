@@ -67,14 +67,14 @@ const FindGrowth = () => {
       );
     } else if (ranges.averageViewCount >= 14) {
       return (
-        ranges.uploadsPerMonth * ranges.averageViewCount * ranges.languages * 35
+        ranges.uploadsPerMonth * ranges.averageViewCount * ranges.languages * 47.5
       );
     } else {
       return (
         ranges.uploadsPerMonth *
         ranges.averageViewCount *
         ranges.languages *
-        47.5
+        35
       );
     }
   }, [ranges]);

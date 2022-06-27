@@ -24,6 +24,7 @@
 }
 
 .container > div:last-of-type {
+  display: none;
   position: absolute;
   bottom: 0;
   left: 0;
