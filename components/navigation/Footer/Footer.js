@@ -6,6 +6,7 @@ import HorizontalLine from '../../UI/HorizontalLine/HorizontalLine';
 import logo from '../../../public/img/brand/logo.png';
 import youtubeIcon from '../../../public/img/icons/youtube.svg';
 import linkedinIcon from '../../../public/img/icons/linkedin.svg';
+import instagramIcon from '../../../public/img/icons/instagram.svg';
 import styles from './Footer.module.css';
 
 const LINKS = [
@@ -54,7 +55,7 @@ function FooterLogos() {
           rel="noreferrer"
           className={styles.social}
         >
-          <Image src={linkedinIcon} alt="Instagram icon" />
+          <Image src={instagramIcon} alt="Instagram icon" />
         </a>
         <a
           href="https://www.linkedin.com/company/aview-international"
