@@ -18,7 +18,7 @@ function Translators() {
       <PerksAview />
       <MakeImpact />
       <CompanyCulture />
-      <Process />
+      {/* <Process /> */}
       <ApplyToday />
       <Footer />
       <Blobs />

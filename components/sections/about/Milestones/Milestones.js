@@ -79,8 +79,8 @@ export const Cards = ({ value, suffix, text, i }) => {
 
         if (count < target) {
           // if (value < 50) {
-            setCount((count += 1));
-            setTimeout(updateCount, 500);
+          setCount((count += 1));
+          setTimeout(updateCount, 500);
           // } else {
           //   setCount((count += increment));
           //   setTimeout(updateCount, 150);
@@ -96,7 +96,7 @@ export const Cards = ({ value, suffix, text, i }) => {
     <Card>
       <div className={styles.milestone} ref={ref}>
         <h3 className={`gradient-text ${styles.title}`}>
-          {count || value}
+          {value}
           {`${suffix}+`}
         </h3>
         <p className={styles.description}>{text}</p>
