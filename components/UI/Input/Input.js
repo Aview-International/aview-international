@@ -3,7 +3,6 @@ import styles from './Input.module.css';
 import Image from 'next/image';
 import Correct from '../../../public/img/icons/correct.svg';
 import Incorrect from '../../../public/img/icons/incorrect.svg';
-import { useState } from 'react';
 
 const Input = ({
   isValid,

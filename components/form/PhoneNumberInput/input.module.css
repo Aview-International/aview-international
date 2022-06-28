@@ -1,0 +1,37 @@
+.container {
+  color: var(--primary-color);
+  text-align: left;
+  margin: 15px 0;
+}
+.container label {
+  margin: 12px 0 2px;
+  display: block;
+  line-height: 30px;
+}
+.parent input,
+.parent input:focus {
+  border: none;
+  outline: none;
+}
+.parent {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  padding: 0 1rem;
+  background-color: var(--bg-color);
+}
+.parent input {
+  color: var(--primary-color);
+  padding: 8px 15px 7px;
+  background-color: var(--bg-color);
+  font-size: 21px;
+}
+.parent > div > div > div:last-of-type {
+  border: solid var(--primary-color);
+  border-width: 0 3px 3px 0;
+  margin-left: 15px;
+  margin-bottom: 5px;
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+}
