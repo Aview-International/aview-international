@@ -44,6 +44,7 @@ body {
   scroll-behavior: smooth;
   overflow: hidden;
   min-height: 100vh;
+  position: relative;
 }
 
 a {
