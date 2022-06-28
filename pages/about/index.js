@@ -15,7 +15,7 @@ import SEO from '../../components/SEO/SEO';
 function About() {
   return (
     <>
-      <SEO title="AVIEW International | About" />
+      <SEO title="About - AVIEW" />
       <Navbar />
       <Landing />
       <AboutAview />

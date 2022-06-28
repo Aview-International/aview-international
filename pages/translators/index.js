@@ -12,7 +12,7 @@ import SEO from '../../components/SEO/SEO';
 function Translators() {
   return (
     <>
-      <SEO title="AVIEW International | Translators" />
+      <SEO title="Translators - AVIEW" />
       <Navbar />
       <FavoriteInfluencer />
       <PerksAview />

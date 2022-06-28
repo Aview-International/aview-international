@@ -16,11 +16,8 @@ function Home() {
   return (
     <>
       <SEO
-        title="AVIEW International | Home"
-        description=""
-        url=""
-        index={true}
-        showSchema={true}
+        title="Video Translation & Subtitling - AVIEW"
+        description="Translate your Social Media Content. AVIEW is a leading multi-media translation service. We help you expand your international viewership. Start Now!"
       />
       <Navbar />
       <Landing />
