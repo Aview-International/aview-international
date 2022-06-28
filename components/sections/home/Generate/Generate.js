@@ -133,11 +133,12 @@ const Generate = ({ title }) => {
         <span className="gradient-text">{title}</span>
       </h2>
       <Form
-        name="generate-requests"
+        // name="generate-requests"
         buttonText="Join Now!"
         buttonType="secondary"
         submitHandler={submitHandler}
       >
+        <input type="hidden" name="form-name" value="generate-requests" />
         <Input
           isValid={inputArray[0].validator(data.name)}
           onChange={handleChange}
