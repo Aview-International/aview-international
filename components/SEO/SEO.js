@@ -7,13 +7,14 @@ import { useRouter } from 'next/router';
  * @prop title: Page title
  *
  */
-const SEO = ({ title }) => {
+const SEO = ({ title, description }) => {
   const router = useRouter();
   const path = router.pathname;
 
   return (
     <Head>
       <title>{title}</title>
+      {description && <meta name="description" content={description} />}
       <meta name="keywords" content="Video Translation & Subtitling" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta charSet="UTF-8" />
@@ -23,10 +24,6 @@ const SEO = ({ title }) => {
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`www.aviewint.com${path}`} />
       <meta property="og:image" content="/images/og-image.png" />
-      <meta
-        property="og:description"
-        content="Translate your Social Media Content. AVIEW is a leading multi-media translation service. We help you expand your international viewership. Start Now!"
-      />
       <link rel="canonical" href={`www.aviewint.com${path}`} />
       <link
         rel="apple-touch-icon"

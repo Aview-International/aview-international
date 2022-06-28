@@ -15,7 +15,10 @@ import Blobs from '../components/UI/Blobs/Blobs';
 function Home() {
   return (
     <>
-      <SEO title="Video Translation & Subtitling - AVIEW" />
+      <SEO
+        title="Video Translation & Subtitling - AVIEW"
+        description="Translate your Social Media Content. AVIEW is a leading multi-media translation service. We help you expand your international viewership. Start Now!"
+      />
       <Navbar />
       <Landing />
       <ContentCreators />
