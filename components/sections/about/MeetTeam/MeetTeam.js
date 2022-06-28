@@ -7,26 +7,16 @@ import styles from './MeetTeam.module.css';
 
 const TEAM = [
   {
-    role: 'CoFounders',
+    role: 'Founders',
     members: [
       {
-        name: 'none',
+        name: 'Akshay Maharaj',
         description: 'none',
         picture: defaultIcon,
       },
       {
-        name: 'Lorem ipsum',
+        name: 'Garnet Delsey',
         description: 'Lorem ipsum',
-        picture: defaultIcon,
-      },
-      {
-        name: 'Lorem ipsum',
-        description: 'Lorem ipsum',
-        picture: defaultIcon,
-      },
-      {
-        name: 'none',
-        description: 'none',
         picture: defaultIcon,
       },
     ],

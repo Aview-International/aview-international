@@ -33,6 +33,22 @@
   padding: 0;
 }
 
+.gradient {
+  background: var(--secondary-gradient);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.graphic-card:hover .gradient {
+  opacity: 1;
+}
+
 @media (max-width: 1200px) {
   .graphic-card:not(.horizontal-card):last-of-type {
     grid-column-start: 1;

@@ -1,7 +1,7 @@
   
   .list h1 {
     font-size: 100px;
-    margin-top: 30px;
+    line-height: 127px;
   }
   
   .list h3 {
@@ -52,7 +52,7 @@
 
     .list h1 {
         font-size: 60px;
-        margin-top: 10px;
+        line-height: 76px;
       }
       
     .list h3 {

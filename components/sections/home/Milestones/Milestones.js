@@ -54,8 +54,8 @@ function MilestoneItem({ number, suffix, description }) {
 
         if (count < target) {
           // if (number < 50) {
-            setCount((count += 1));
-            setTimeout(updateCount, 500);
+          setCount((count += 1));
+          setTimeout(updateCount, 500);
           // } else {
           //   setCount((count += increment));
           //   setTimeout(updateCount, 150);
@@ -71,7 +71,7 @@ function MilestoneItem({ number, suffix, description }) {
   return (
     <div className={styles['milestone-item']} ref={ref}>
       <h2 className={`gradient-text ${styles['milestone-title']}`}>
-        {count || number}
+        {number}
         {suffix}
       </h2>
       <p className={styles['milestone-description']}>{description}</p>

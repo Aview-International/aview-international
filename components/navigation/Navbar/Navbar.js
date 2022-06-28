@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 import Button from '../../UI/Button/Button';
 
-import logo from '../../../public/img/brand/nav-logo.svg';
+import logo from '../../../public/img/brand/logo.png';
 import closeIcon from '../../../public/img/icons/close.svg';
 import styles from './Navbar.module.css';
 
@@ -40,7 +40,7 @@ function Navbar() {
   return (
     <header className={styles.header}>
       <NavbarLogo />
-      <NavbarLinks menuOpen={menuOpen} />
+      <NavbarLinks menuOpen={menuOpen} closeMenu={closeMenu} />
       <ContactButton />
       <MenuButton menuButtonHandler={menuButtonHandler} />
       <CloseButton menuOpen={menuOpen} menuButtonHandler={menuButtonHandler} />
@@ -68,12 +68,12 @@ function NavbarLogo() {
  *
  * @author Andrew Qiao
  */
-function NavbarLinks({ menuOpen }) {
+function NavbarLinks({ menuOpen, closeMenu }) {
   return (
     <nav className={`${styles.navbar} ${menuOpen && styles['navbar-open']}`}>
       <ul className={styles['navbar-links']}>
         {PAGES.map((page, i) => (
-          <NavbarLink key={`page-${i}`} {...page} />
+          <NavbarLink key={`page-${i}`} {...page} closeMenu={closeMenu} />
         ))}
       </ul>
     </nav>
@@ -85,7 +85,7 @@ function NavbarLinks({ menuOpen }) {
  * Seperated from the above component to enable gradient text on hover
  * @author Victor Ogunjobi
  */
-const NavbarLink = ({ name, route }) => {
+const NavbarLink = ({ name, route, closeMenu }) => {
   let { pathname } = useRouter();
   const [hover, setHover] = useState(false);
   return (
@@ -95,6 +95,7 @@ const NavbarLink = ({ name, route }) => {
       className={`${hover ? 'gradient-text' : ''}  ${
         pathname === route ? `gradient-text` : ''
       }`}
+      onClick={closeMenu}
     >
       <Link href={route}>
         <a className={styles['navbar-link']}>{name}</a>

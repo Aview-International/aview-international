@@ -18,7 +18,7 @@ const dataArray = [
   },
   {
     question: 'How large does my audience need to be?',
-    answer: `To see the greatest results, we recommend you have an average of 25,000 views per video`,
+    answer: `To see the greatest results, we recommend you have an average of 25,000 views per video.`,
     _id: 'question5',
   },
   {

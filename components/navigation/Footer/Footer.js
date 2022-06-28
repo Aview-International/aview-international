@@ -3,9 +3,10 @@ import Link from 'next/link';
 
 import HorizontalLine from '../../UI/HorizontalLine/HorizontalLine';
 
-import logo from '../../../public/img/brand/nav-logo.svg';
+import logo from '../../../public/img/brand/logo.png';
 import youtubeIcon from '../../../public/img/icons/youtube.svg';
 import linkedinIcon from '../../../public/img/icons/linkedin.svg';
+import instagramIcon from '../../../public/img/icons/instagram.svg';
 import styles from './Footer.module.css';
 
 const LINKS = [
@@ -41,12 +42,27 @@ function Footer() {
 function FooterLogos() {
   return (
     <div className={styles.logos}>
-      <Image src={logo} alt="AVIEW logo" />
+      <div className={styles.logo}>
+        <Image src={logo} alt="AVIEW logo" />
+      </div>
       <div className={styles.socials}>
-        <a href="" className={styles.social}>
+        {/* <a href="" className={styles.social}>
           <Image src={youtubeIcon} alt="YouTube icon" />
+        </a> */}
+        <a
+          href="https://www.instagram.com/aviewint/"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.social}
+        >
+          <Image src={instagramIcon} alt="Instagram icon" />
         </a>
-        <a href="" className={styles.social}>
+        <a
+          href="https://www.linkedin.com/company/aview-international"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.social}
+        >
           <Image src={linkedinIcon} alt="LinkedIn icon" />
         </a>
       </div>
