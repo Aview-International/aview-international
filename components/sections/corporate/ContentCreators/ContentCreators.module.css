@@ -1,0 +1,42 @@
+.section {
+  text-align: center;
+}
+
+.intro {
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.title {
+  margin-bottom: 80px;
+}
+
+.creator {
+  color: var(--primary-color);
+  margin-top: 17px;
+  line-height: 20px;
+  font-size: 21px;
+}
+
+.row {
+  margin-bottom: 75px;
+}
+
+@media (max-width: 768px) {
+  .intro {
+    margin-bottom: 5px;
+  }
+
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .row {
+    margin-bottom: 23px;
+  }
+
+  .creator {
+    font-size: 16px;
+  }
+}
