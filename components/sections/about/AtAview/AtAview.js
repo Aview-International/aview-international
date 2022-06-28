@@ -8,7 +8,7 @@ function AtAview() {
   return (
     <section className="section">
       <GradientFullWidth>
-        <p className={`section-title ${styles.subheading}`}>At Aview we</p>
+        <p className={`section-description ${styles.subheading}`}>At Aview we</p>
         <h2 className={`section-title ${styles.title}`}>
           Ensure your content is translated accurately, guaranteeing a positive
           return.
