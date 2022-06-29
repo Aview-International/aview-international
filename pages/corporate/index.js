@@ -9,7 +9,8 @@ import OurServices from '../../components/sections/creators/OurServices/OurServi
 import Milestones from '../../components/sections/corporate/Milestones/Milestones';
 import Testimonials from '../../components/sections/corporate/Testimonials/Testimonials';
 import WhyChooseUs from '../../components/sections/corporate/WhyChooseUs/WhyChooseUs';
-import FAQ from '../../components/sections/corporate/FAQ/FAQ';
+// import FAQ from '../../components/sections/corporate/FAQ/FAQ';
+import FAQ from '../../components/sections/home/FAQs/FAQs';
 import Form from '../../components/sections/corporate/Form/Form';
 
 function Corporate() {
