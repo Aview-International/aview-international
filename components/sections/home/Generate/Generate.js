@@ -105,7 +105,6 @@ const Generate = ({ title }) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(data);
     setHasSubmitted(true);
     try {
       if (
@@ -147,13 +146,14 @@ const Generate = ({ title }) => {
         />
         <PhoneNumberInput
           label="Phone Number"
-          onChange={(e) => {
+          isValid={data.phone?.length > 8}
+          hasSubmitted={hasSubmitted}
+          onChange={(e) =>
             setData((prevState) => ({
               ...prevState,
               phone: e,
-            }));
-            console.log(data);
-          }}
+            }))
+          }
           value={data.phone}
         />
         {inputArray.slice(1).map((item, index) => (

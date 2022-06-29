@@ -3,6 +3,9 @@
   text-align: left;
   margin: 15px 0;
 }
+.container > div {
+  position: relative;
+}
 .container label {
   margin: 12px 0 2px;
   display: block;
@@ -34,4 +37,10 @@
   width: 12px;
   height: 12px;
   opacity: 1;
+}
+.validation_icon {
+  position: absolute;
+  width: 20px;
+  right: 12px;
+  top: 25%;
 }
