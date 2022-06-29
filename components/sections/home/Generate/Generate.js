@@ -133,7 +133,7 @@ const Generate = ({ title }) => {
         <span className="gradient-text">{title}</span>
       </h2>
       <Form
-        // name="generate-requests"
+        name="generate-requests"
         buttonText="Join Now!"
         buttonType="secondary"
         submitHandler={submitHandler}
