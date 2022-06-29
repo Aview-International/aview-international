@@ -138,7 +138,7 @@ const Generate = ({ title }) => {
         buttonType="secondary"
         submitHandler={submitHandler}
       >
-        <input type="hidden" name="form-name" value="generate-requests" />
+        <input type="hidden" name="phone" value={data.phone} />
         <Input
           isValid={inputArray[0].validator(data.name)}
           onChange={handleChange}
