@@ -9,14 +9,16 @@ import CheckBox from '../../../UI/Checkbox/Checkbox';
 import Form from '../../../form/Form/Form';
 import { submitForm } from '../../../../utils/submit-form';
 import { useRouter } from 'next/router';
+import PhoneNumberInput from '../../../form/PhoneNumberInput/input';
 
 const Generate = ({ title }) => {
   const router = useRouter();
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [data, setData] = useState({
     name: '',
-    url: '',
     email: '',
+    phone: '',
+    url: '',
     languages: '',
     'Translations/Subtitles': 'No',
     Dubbing: 'No',
@@ -135,7 +137,26 @@ const Generate = ({ title }) => {
         buttonType="secondary"
         submitHandler={submitHandler}
       >
-        {inputArray.map((item, index) => (
+        <input type="hidden" name="phone" value={data.phone} />
+        <Input
+          isValid={inputArray[0].validator(data.name)}
+          onChange={handleChange}
+          hasSubmitted={hasSubmitted}
+          {...inputArray[0]}
+        />
+        <PhoneNumberInput
+          label="Phone Number"
+          isValid={data.phone?.length > 8}
+          hasSubmitted={hasSubmitted}
+          onChange={(e) =>
+            setData((prevState) => ({
+              ...prevState,
+              phone: e,
+            }))
+          }
+          value={data.phone}
+        />
+        {inputArray.slice(1).map((item, index) => (
           <Input
             key={`input_${index}`}
             isValid={item.validator(data[item.name])}

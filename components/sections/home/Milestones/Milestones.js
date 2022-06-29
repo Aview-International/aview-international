@@ -48,20 +48,20 @@ function MilestoneItem({ number, suffix, description }) {
   useEffect(() => {
     const updateCount = () => {
       if (inViewport) {
-        const speed = number * 0.07;
-        const target = number;
-        const increment = Math.trunc(target / speed);
+        const speed = 2000 / number;
+        // const target = number;
+        // const increment = Math.trunc(target / speed);
 
-        if (count < target) {
+        if (count < number) {
           // if (number < 50) {
-          setCount((count += 1));
-          setTimeout(updateCount, 500);
+          //   setCount((count += 1));
+          //   setTimeout(updateCount, 500);
           // } else {
-          //   setCount((count += increment));
-          //   setTimeout(updateCount, 150);
+          setCount((count += 2));
+          setTimeout(updateCount, 2000 / number);
           // }
         } else {
-          setCount(target);
+          setCount(number);
         }
       }
     };
@@ -71,7 +71,7 @@ function MilestoneItem({ number, suffix, description }) {
   return (
     <div className={styles['milestone-item']} ref={ref}>
       <h2 className={`gradient-text ${styles['milestone-title']}`}>
-        {number}
+        {count}
         {suffix}
       </h2>
       <p className={styles['milestone-description']}>{description}</p>

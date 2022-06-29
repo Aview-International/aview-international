@@ -127,13 +127,14 @@ const Card = ({ department, steps, requirement }) => {
               </li>
             </ul>
           </div>
-          <HorizontalLine />
+          {/* <HorizontalLine />
           <p className={`text-regular ${styles.requirement}`}>
             <span className="gradient-text">Requirements:</span>
           </p>
-          <p className="text-regular">{requirement}</p>
+          <p className="text-regular">{requirement}</p> */}
         </div>
       </Border>
     </div>
   );
 };
+

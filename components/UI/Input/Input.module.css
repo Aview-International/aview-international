@@ -1,13 +1,12 @@
 .input_container {
-  padding: 1px;
   width: 100%;
   color: var(--primary-color);
-  margin: 10px 0;
+  margin: 15px 0;
 }
 .input_label {
   display: block;
   text-align: left;
-  margin: 10px 0;
+  margin: 12px 0 2px;
   line-height: 30px;
 }
 .flex_container {
@@ -35,7 +34,6 @@
 .input {
   width: 100%;
   padding: 8px 15px 7px;
-  /* padding: 8px; */
   background: var(--bg-color);
   border: none;
   border-radius: 5px;
@@ -51,8 +49,9 @@
 }
 .validation_icon {
   position: absolute;
+  width: 20px;
   right: 12px;
-  top: 5px;
+  top: 25%;
 }
 @media (max-width: 768px) {
   .flex_container > div {

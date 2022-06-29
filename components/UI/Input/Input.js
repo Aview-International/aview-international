@@ -3,7 +3,22 @@ import styles from './Input.module.css';
 import Image from 'next/image';
 import Correct from '../../../public/img/icons/correct.svg';
 import Incorrect from '../../../public/img/icons/incorrect.svg';
-import { useState } from 'react';
+
+/**
+ * Reusable input field
+ *
+ * @prop label: Label of the input
+ * @prop onChange: Function to accept the value of the input
+ * @prop value: value of the input
+ * @prop isValid: Whether the input is valid
+ * @prop _id: ID of the input
+ * @prop placeholder: Placeholder for the input
+ * @prop name: Name of the input
+ * @prop type: Type of the input
+ * @prop hasSubmitted: Whether the input has been submitted
+ *
+ * @author Victor Ogunjobi
+ */
 
 const Input = ({
   isValid,

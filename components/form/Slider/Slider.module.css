@@ -45,7 +45,7 @@
   width: 25px;
   pointer-events: all;
   position: relative;
-  z-index: 10;
+  z-index: 1;
 }
 
 /* For Firefox browsers */
@@ -58,7 +58,7 @@
   width: 25px;
   pointer-events: all;
   position: relative;
-  z-index: 10;
+  z-index: 1;
 }
 .value {
   position: absolute;
