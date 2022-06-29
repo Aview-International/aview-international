@@ -1,0 +1,43 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  margin-top: -200px;
+  margin-bottom: 15px;
+}
+
+.description {
+  margin-bottom: 40px;
+  max-width: 480px;
+}
+
+.graphic {
+  width: 100%;
+  justify-self: end;
+}
+
+@media (max-width: 1300px) {
+  .title {
+    margin-top: -100px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .section {
+    grid-template-columns: 1fr;
+    gap: 59px;
+  }
+
+  .title {
+    margin-top: 0px;
+  }
+
+  .graphic {
+    max-width: 600px;
+    justify-self: center;
+  }
+}

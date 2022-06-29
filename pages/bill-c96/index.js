@@ -6,6 +6,7 @@ import HowWeHelp from '../../components/sections/bill-c96/HowWeHelp/HowWeHelp';
 import Preparing from '../../components/sections/bill-c96/Preparing/Preparing';
 import WhatIs from '../../components/sections/bill-c96/WhatIs/WhatIs';
 import OurServices from '../../components/sections/creators/OurServices/OurServices';
+import Wave from '../../components/sections/bill-c96/Wave/Wave';
 
 function BillC96() {
   return (
@@ -18,6 +19,7 @@ function BillC96() {
       <FreeQuote />
       <Footer />
       <Blobs />
+      <Wave />
     </>
   );
 }
