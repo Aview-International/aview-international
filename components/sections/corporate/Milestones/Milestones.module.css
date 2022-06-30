@@ -1,0 +1,75 @@
+.section-title {
+  text-align: center;
+  margin-bottom: 87px;
+}
+
+.milestone {
+    display: grid;
+    grid-template-columns: 572px 221px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 33px 0 33px;
+    min-height: 172px;
+    min-width: 100%;
+}
+
+.card_container:not(:last-of-type) {
+    margin-bottom: 50px;
+}
+
+.card_description {
+    font-size: 21px;
+    color: white;
+    line-height: 31px;
+}
+
+.card_text {
+    text-align: center;
+}
+
+.title {
+    font-size: 48px;
+    line-height: 61px;
+  }
+
+.description {
+    font-size: 24px;
+    color: white;
+    line-height: 30px;
+}
+
+@media (max-width: 960px) {
+  .milestone {
+    display: block;
+    padding: 40px 35px 35px 35px;
+    text-align: center;
+  }
+  .card_description {
+    margin-bottom: 45px;
+  }
+  .card_text {
+    max-width: 210px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .card_container {
+    max-width: 360px;
+    margin: 40px auto;
+
+  }
+  .section-title {
+    margin-bottom: 50px;
+  }
+  .title {
+    font-size: 40px;
+  }
+  .description {
+    font-size: 21px;
+  }
+  .card_description {
+    font-size: 18px;
+}
+}
