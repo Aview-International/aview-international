@@ -24,6 +24,10 @@
   padding: 108px 0 57px;
 }
 
+.shadow {
+  height: 50px;
+}
+
 .name {
   color: var(--primary-color);
   font-size: 30px;
