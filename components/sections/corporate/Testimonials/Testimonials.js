@@ -1,13 +1,10 @@
 import styles from './Testimonials.module.css';
-import Row3 from '../../../layout/Row3/Row3';
 import defaultIcon from '../../../../public/img/team/default.jpeg';
 import quoteIcon from '../../../../public/img/icons/quotationMarks.svg'
 import Card from '../../../UI/Card/Card';
 import Image from 'next/image';
-import Border from '../../../UI/Border/Border';
-import Shadow from '../../../UI/Shadow/Shadow';
 import Button from '../../../UI/Button/Button';
-
+import TestimonialCardRow from '../../../layout/TestimonialCardRow/TestimonialCardRow';
 
 const MILESTONES = [
   {
@@ -36,14 +33,14 @@ function Testimonials() {
   return (
     <section className={`section m-horizontal ${styles.section}`}>
       <h2 className={`section-title ${styles['section-title']}`}>
-        <span className="gradient-text"> Milestones Section </span>
+        <span className="gradient-text"> Testimonials </span>
       </h2>
       <div className={styles.row}>
-      <Row3>
+      <TestimonialCardRow>
       {MILESTONES.map((milestone, i) => (
         <Cards key={`milestone-${i}]`} {...milestone} />
       ))}
-      </Row3>
+      </TestimonialCardRow>
       </div>
       <Button type="primary" link="/translators#apply-today">
             Contact Us
@@ -54,28 +51,26 @@ function Testimonials() {
 
 export const Cards = ({ description, name, graphic, picture, i }) => {
   return (
-    <>
-    <Border>
-    <div className={`shadow-parent ${styles.child_container}`}>
-    <Shadow className={styles.child_shadow} />
-      <div className={styles.milestone}>
-      <div className={styles.card_info}>
+    <div className={styles.card_container}>
+    <Card>
+      <div className={styles.child_container}>
+      <div className={`card-description ${styles.card_content}`}>
       <div className={styles.graphic}>
             <Image src={graphic} />
           </div>
         <p className={styles.description}>{description}</p>
         </div>
-        <Shadow className={styles.child_shadow} />
-        <div className={styles.profile}>
+        
+        <div className={`profile ${styles.card_content}`}>
         <div className={styles.picture}>
             <Image src={picture} />
           </div>
           <p className={styles.name}>{name}</p>
+          <div className={styles.profile_background} />
           </div>
       </div>
-      </div>
-    </Border>
-    </>
+    </Card>
+    </div>
   );
 }
 
