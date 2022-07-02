@@ -1,0 +1,15 @@
+.section-title {
+    margin-bottom: 20px;
+  }
+  
+  .section-description {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 768px) {
+    .section-title {
+      margin-bottom: 10px;
+    }
+  }
+  
