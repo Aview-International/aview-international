@@ -6,6 +6,7 @@ import Card from '../../../UI/Card/Card';
 import Image from 'next/image';
 import Border from '../../../UI/Border/Border';
 import Shadow from '../../../UI/Shadow/Shadow';
+import Button from '../../../UI/Button/Button';
 
 
 const MILESTONES = [
@@ -33,15 +34,20 @@ const MILESTONES = [
 
 function Testimonials() {
   return (
-      <section className="m-horizontal section">
+    <section className={`section m-horizontal ${styles.section}`}>
       <h2 className={`section-title ${styles['section-title']}`}>
         <span className="gradient-text"> Milestones Section </span>
       </h2>
+      <div className={styles.row}>
       <Row3>
       {MILESTONES.map((milestone, i) => (
         <Cards key={`milestone-${i}]`} {...milestone} />
       ))}
       </Row3>
+      </div>
+      <Button type="primary" link="/translators#apply-today">
+            Contact Us
+      </Button>
     </section>
   );
 }

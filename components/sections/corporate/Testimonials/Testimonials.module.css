@@ -1,12 +1,15 @@
-.section-title {
+.section {
+    align-items: center;
     text-align: center;
-    margin-bottom: 87px;
+}
+
+.section-title {
+    margin-bottom: 70px;
 }
 
 .milestone {
     display: grid;
     grid-template-rows: 1fr 0.5fr;
-    text-align: center;
     justify-content: space-between;
     margin: 0 auto;
 }
@@ -22,6 +25,10 @@
     align-items:flex-start;
     margin: 30px 0 8px 0;
 }
+
+.row {
+    margin-bottom: 80px;
+  }
 
 .picture {
     width: 125px;
