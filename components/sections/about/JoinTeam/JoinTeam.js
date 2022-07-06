@@ -9,7 +9,8 @@ import styles from './JoinTeam.module.css';
 import Image from 'next/image';
 import { submitFile } from '../../../../utils/submit-form';
 import DottedBorder from '../../../UI/DottedBorder/DottedBorder';
-import Upload from '../../../../public/img/icons/uploadIcon1.svg';
+import Upload1 from '../../../../public/img/icons/uploadIcon1.svg';
+import Upload2 from '../../../../public/img/icons/uploadIcon2.svg';
 
 const JoinTeam = () => {
   const [data, setData] = useState({
@@ -19,7 +20,8 @@ const JoinTeam = () => {
     email: '',
     linkedin_url: '',
     positions: '',
-    file: '',
+    resume: '',
+    coverLetter: '',
   });
   const [valid, setValid] = useState(true);
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -132,48 +134,110 @@ const JoinTeam = () => {
           type="text"
           hasSubmitted={hasSubmitted}
         />
-        <label htmlFor="file_upload" className={styles.file_label}>
-          <input
-            id="file_upload"
-            type="file"
-            name="file"
-            accept="application/doc, application/docx, application/pdf"
-            onChange={(e) =>
-              setData((prevState) => ({
-                ...prevState,
-                file: e.target.files[0],
-              }))
-            }
-          />
-          <div className={styles.upload}>
-            <DottedBorder>
-              <Image src={Upload} alt="Upload" width={20} height={20} />
-              <p className="text-regular">Upload Resume</p>
-            </DottedBorder>
+        <div className={styles.upload_container}>
+          <div>
+            <div className={styles.upload}>
+              <DottedBorder>
+                <label htmlFor="resume" className={styles.file_label}>
+                  <input
+                    id="resume"
+                    type="file"
+                    name="resume"
+                    accept="application/doc, application/docx, application/pdf"
+                    onChange={(e) =>
+                      setData((prevState) => ({
+                        ...prevState,
+                        resume: e.target.files[0],
+                      }))
+                    }
+                  />
+                  <Image src={Upload1} alt="Upload" width={20} height={20} />
+                  <p className="text-regular">Upload Resume</p>
+                  {hasSubmitted && !data.resume && (
+                    <span className={styles.file_error}>
+                      <Image
+                        src={Incorrect}
+                        alt="Incorrect"
+                        width={35}
+                        height={35}
+                      />
+                    </span>
+                  )}
+                </label>
+              </DottedBorder>
+            </div>
+            <br />
+            {!!data.resume && (
+              <div className={styles.file_name}>
+                <p className="text-regular">
+                  {data.resume?.name.substring(0, 15)}...
+                </p>
+                <span
+                  className="gradient-text"
+                  onClick={() =>
+                    setData((prevState) => ({
+                      ...prevState,
+                      resume: undefined,
+                    }))
+                  }
+                >
+                  X
+                </span>
+              </div>
+            )}
           </div>
-          {hasSubmitted && !data.file && (
-            <span className={styles.file_error}>
-              <Image src={Incorrect} alt="Incorrect" width={35} height={35} />
-            </span>
-          )}
-        </label>
-        <br />
-        {!!data.file && (
-          <div className={styles.file_name}>
-            <p className="text-regular">{data.file?.name}</p>
-            <span
-              className="gradient-text"
-              onClick={() =>
-                setData((prevState) => ({
-                  ...prevState,
-                  file: undefined,
-                }))
-              }
-            >
-              X
-            </span>
+          <div>
+            <div className={styles.upload}>
+              <DottedBorder>
+                <label htmlFor="coverLetter" className={styles.file_label}>
+                  <input
+                    id="coverLetter"
+                    type="file"
+                    name="coverLetter"
+                    accept="application/doc, application/docx, application/pdf"
+                    onChange={(e) =>
+                      setData((prevState) => ({
+                        ...prevState,
+                        coverLetter: e.target.files[0],
+                      }))
+                    }
+                  />
+                  <Image src={Upload2} alt="Upload" width={20} height={20} />
+                  <p className="text-regular">Upload Cover Letter</p>
+                  {hasSubmitted && !data.coverLetter && (
+                    <span className={styles.file_error}>
+                      <Image
+                        src={Incorrect}
+                        alt="Incorrect"
+                        width={35}
+                        height={35}
+                      />
+                    </span>
+                  )}
+                </label>
+              </DottedBorder>
+            </div>
+            <br />
+            {!!data.coverLetter && (
+              <div className={styles.file_name}>
+                <p className="text-regular">
+                  {data.coverLetter?.name.substring(0, 15)}...
+                </p>
+                <span
+                  className="gradient-text"
+                  onClick={() =>
+                    setData((prevState) => ({
+                      ...prevState,
+                      coverLetter: undefined,
+                    }))
+                  }
+                >
+                  X
+                </span>
+              </div>
+            )}
           </div>
-        )}
+        </div>
         <br />
       </File_Form>
     </section>
