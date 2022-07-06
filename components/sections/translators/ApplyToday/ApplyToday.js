@@ -74,7 +74,7 @@ const JoinTeam = () => {
       return;
     }
     try {
-      submitFile(data);
+      await submitFile(data);
       router.push('/success');
     } catch (error) {
       console.log(error);
@@ -122,7 +122,11 @@ const JoinTeam = () => {
               }))
             }
           />
-          <input type="hidden" value={data.position} />
+          <input
+            type="hidden"
+            name="voice_acting/dubbing"
+            value={data['voice_acting/dubbing']}
+          />
           <Select
             options={selectArray[1]}
             hasSubmitted={hasSubmitted}
@@ -134,7 +138,7 @@ const JoinTeam = () => {
               }))
             }
           />
-          <input type="hidden" value={data['voice_acting/dubbing']} />
+          <input type="hidden" name="position" value={data.position} />
         </div>
         <div className={styles.upload_container}>
           <div>
