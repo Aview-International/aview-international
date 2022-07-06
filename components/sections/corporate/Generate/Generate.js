@@ -11,14 +11,15 @@ import { submitForm } from '../../../../utils/submit-form';
 import { useRouter } from 'next/router';
 import PhoneNumberInput from '../../../form/PhoneNumberInput/input';
 
-const Generate = ({ title }) => {
+const Generate = () => {
   const router = useRouter();
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [data, setData] = useState({
     name: '',
+    company_name: '',
     email: '',
     phone: '',
-    url: '',
+    website: '',
     languages: '',
     'Translations/Subtitles': 'No',
     Dubbing: 'No',
@@ -35,12 +36,20 @@ const Generate = ({ title }) => {
       placeholder: 'Your name',
     },
     {
-      validator: (value) => urlValidator(value),
-      label: 'Channel Link',
-      _id: 'channel_url',
-      name: 'url',
+      validator: (value) => value.length >= 3,
+      label: 'Company',
+      _id: 'company_name',
+      name: 'company_name',
       type: 'text',
-      placeholder: 'URL to your social media channel',
+      placeholder: 'Company name',
+    },
+    {
+      validator: (value) => urlValidator(value),
+      label: 'Company Website',
+      _id: 'company_website',
+      name: 'website',
+      type: 'text',
+      placeholder: 'URL to company website',
     },
     {
       validator: (value) => emailValidator(value),
@@ -83,12 +92,14 @@ const Generate = ({ title }) => {
         'Receive translated short form content that can be uploaded to YouTube, Instagram, TikTok and Facebook.',
     },
   ];
+
   const handleChange = (e) => {
     setData((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
   };
+
   const hanldeCheckBox = (e) => {
     if (e.target.checked) {
       setData((prevState) => ({
@@ -110,12 +121,14 @@ const Generate = ({ title }) => {
       if (
         !!(
           data.name &&
-          data.url &&
+          data.company_name &&
           emailValidator(data.email) &&
+          data.phone &&
+          data.website &&
           data.languages
         )
       ) {
-        submitForm('generate-requests', data);
+        submitForm('company-requests', data);
         router.push('/success');
       }
     } catch (error) {
@@ -129,10 +142,10 @@ const Generate = ({ title }) => {
       id="generate-aview"
     >
       <h2 className={`section-title`}>
-        <span className="gradient-text">{title}</span>
+        <span className="gradient-text">Start Generating AVIEW Today</span>
       </h2>
       <Form
-        name="generate-requests"
+        name="company-requests"
         buttonText="Join Now!"
         buttonType="secondary"
         submitHandler={submitHandler}
@@ -142,6 +155,12 @@ const Generate = ({ title }) => {
           onChange={handleChange}
           hasSubmitted={hasSubmitted}
           {...inputArray[0]}
+        />
+        <Input
+          isValid={inputArray[1].validator(data.company_name)}
+          onChange={handleChange}
+          hasSubmitted={hasSubmitted}
+          {...inputArray[1]}
         />
         <PhoneNumberInput
           label="Phone Number"
@@ -156,12 +175,6 @@ const Generate = ({ title }) => {
           value={data.phone}
         />
         <input type="hidden" name="phone" value={data.phone} />
-        <Input
-          isValid={inputArray[0].validator(data.name)}
-          onChange={handleChange}
-          hasSubmitted={hasSubmitted}
-          {...inputArray[1]}
-        />
         {inputArray.slice(2).map((item, index) => (
           <Input
             key={`input_${index}`}
