@@ -26,7 +26,7 @@ function Corporate() {
       <Testimonials />
       <WhyChooseUs />
       <FAQ corporate />
-      <Generate />
+      <Generate title="Start Generating AVIEW Today" />
       <Footer />
       <Blobs />
     </>

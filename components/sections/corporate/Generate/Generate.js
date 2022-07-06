@@ -11,7 +11,7 @@ import { submitForm } from '../../../../utils/submit-form';
 import { useRouter } from 'next/router';
 import PhoneNumberInput from '../../../form/PhoneNumberInput/input';
 
-const Generate = () => {
+const Generate = ({title}) => {
   const router = useRouter();
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [data, setData] = useState({
@@ -142,7 +142,7 @@ const Generate = () => {
       id="generate-aview"
     >
       <h2 className={`section-title`}>
-        <span className="gradient-text">Start Generating AVIEW Today</span>
+        <span className="gradient-text">{title}</span>
       </h2>
       <Form
         name="company-requests"
