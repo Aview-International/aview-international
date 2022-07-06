@@ -11,8 +11,7 @@ import Testimonials from '../../components/sections/corporate/Testimonials/Testi
 import WhyChooseUs from '../../components/sections/corporate/WhyChooseUs/WhyChooseUs';
 // import FAQ from '../../components/sections/corporate/FAQ/FAQ';
 import FAQ from '../../components/sections/home/FAQs/FAQs';
-// import Form from '../../components/sections/corporate/Form/Form';
-import Generate from '../../components/sections/home/Generate/Generate';
+import Generate from '../../components/sections/corporate/Generate/Generate';
 
 function Corporate() {
   return (
@@ -27,8 +26,7 @@ function Corporate() {
       <Testimonials />
       <WhyChooseUs />
       <FAQ corporate />
-      {/* <Form /> */}
-      <Generate title="Start Generating AVIEW Today" />
+      <Generate />
       <Footer />
       <Blobs />
     </>
