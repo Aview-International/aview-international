@@ -122,6 +122,7 @@ const JoinTeam = () => {
               }))
             }
           />
+          <input type="hidden" value={data.position} />
           <Select
             options={selectArray[1]}
             hasSubmitted={hasSubmitted}
@@ -133,6 +134,7 @@ const JoinTeam = () => {
               }))
             }
           />
+          <input type="hidden" value={data['voice_acting/dubbing']} />
         </div>
         <div className={styles.upload_container}>
           <div>

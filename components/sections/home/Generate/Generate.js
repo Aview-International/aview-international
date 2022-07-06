@@ -10,10 +10,14 @@ import Form from '../../../form/Form/Form';
 import { submitForm } from '../../../../utils/submit-form';
 import { useRouter } from 'next/router';
 import PhoneNumberInput from '../../../form/PhoneNumberInput/input';
+import Border from '../../../UI/Border/Border';
 
 const Generate = ({ title }) => {
   const router = useRouter();
+  const [langArr, setLangArr] = useState([]);
+  const [selectedLang, setSelectedLang] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [focusedInput, setFocusedInput] = useState(false);
   const [data, setData] = useState({
     name: '',
     email: '',
@@ -25,6 +29,47 @@ const Generate = ({ title }) => {
     Shorts: 'No',
   });
 
+  const languages = [
+    'English',
+    'Spanish',
+    'Arabic',
+    'Hindi',
+    'Bengali',
+    'Russian',
+    'Japanese',
+    'German',
+    'French',
+    'Portuguese',
+    'Italian',
+    'Turkish',
+    'Chinese',
+    'Korean',
+    'Indonesian',
+    'Thai',
+    'Vietnamese',
+    'Polish',
+    'Swedish',
+    'Danish',
+    'Norwegian',
+    'Finnish',
+    'Hungarian',
+    'Romanian',
+    'Czech',
+    'Slovak',
+    'Croatian',
+    'Estonian',
+    'Lithuanian',
+    'Latvian',
+    'Farsi',
+    'Urdu',
+    'Persian',
+    'Hebrew',
+    'Urdu',
+    'Yoruba',
+    'Hausa',
+    'Kurdish',
+    'Somali',
+  ];
   const inputArray = [
     {
       validator: (value) => value.length >= 3,
@@ -180,3 +225,39 @@ const Generate = ({ title }) => {
 };
 
 export default Generate;
+
+const Suggestion = ({
+  lang,
+  setSelectedLang,
+  selectedLang,
+  index,
+  langArr,
+  languages,
+}) => {
+  return (
+    <div
+      className={`text-regular ${styles.language}`}
+      onClick={() => {
+        setSelectedLang([...selectedLang, lang]);
+        langArr.splice(index, 1);
+        languages.splice(languages.indexOf(lang), 1);
+      }}
+    >
+      {lang}
+    </div>
+  );
+};
+
+const Language = ({ lang, selectedLang, setSelectedLang }) => {
+  return (
+    <div
+      className={`text-regular ${styles.language}`}
+      onClick={() => {
+        setSelectedLang(selectedLang.filter((item) => item !== lang));
+      }}
+    >
+      <span>{lang}</span>
+      <span className={`gradient-text`}>X</span>
+    </div>
+  );
+};
