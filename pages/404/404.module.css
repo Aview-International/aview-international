@@ -1,0 +1,27 @@
+.section {
+    height: 100vh;
+    position: absolute;
+    top: 300px;
+    bottom: 300px;
+    left: 300px;
+    right: 300px;
+    text-align: center;
+}
+
+.graphic {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 50px;
+    margin: 48px auto 30px auto;
+}
+
+.section-description:not(:last-of-type) {
+    margin-bottom: 25px;
+}
+
+.text {
+    margin-bottom: 40px;
+}
