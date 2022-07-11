@@ -22,7 +22,7 @@ function error404() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
       </div>
-      <Button type="primary" isOnClick={true} onClick="history.back()">
+      <Button type="primary" isRoute={true} link="/">
         Go Back
       </Button>
     </section>
