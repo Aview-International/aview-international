@@ -1,15 +1,13 @@
 .section {
-    height: 100vh;
-    position: absolute;
-    top: 200px;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    max-height: 100vh;
+    margin-top: 25vh;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .graphic {
-    min-width: 80%;
+    max-width: 60%;
     margin: 0 auto;
 }
 
@@ -24,4 +22,20 @@
 
 .text {
     margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .text {
+        margin-bottom: 30px;
+    }
+  
+    .title {
+      font-size: 32px;
+      line-height: 41px;
+    }
+  
+    .description {
+      line-height: 23px;
+      
+    }
 }
