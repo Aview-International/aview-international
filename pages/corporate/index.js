@@ -23,7 +23,7 @@ function Corporate() {
       <ContentCreators />
       <OurServices />
       <Milestones />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <WhyChooseUs />
       <FAQ corporate />
       <Generate title="Start Generating AVIEW Today" />

@@ -14,7 +14,7 @@ function Preparing() {
           Aview will ensure you are ready and prepared for the roll out of Bill
           C-96.
         </p>
-        <Button type="primary" link="#">
+        <Button type="primary" link="/bill-c96#generate-aview">
           Contact Us
         </Button>
       </div>
