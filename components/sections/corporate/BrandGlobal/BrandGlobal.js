@@ -32,7 +32,7 @@ const BrandGlobal = () => {
             Globalize your brand and media content through translations and
             dubbing.
           </p>
-          <Button type="primary" link="/translators#apply-today">
+          <Button type="primary" link="/corporate#generate-aview">
             Contact Us
           </Button>
         </div>
