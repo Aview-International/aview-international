@@ -70,6 +70,15 @@
   background-image: var(--primary-gradient);
 }
 
+.hover-gradient-text:hover {
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-image: var(--primary-gradient);
+}
+
 .section-title {
   font-size: 48px;
   color: var(--primary-color);

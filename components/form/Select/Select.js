@@ -1,7 +1,7 @@
 import Border from '../../UI/Border/Border';
 import styles from './Select.module.css';
 import Image from 'next/image';
-import Arrow from '../../../public/img/icons/select-arrow.svg';
+import Arrow from '../../../public/img/icons/dropdown-arrow.svg';
 import { useState } from 'react';
 import HorizontalLine from '../../UI/HorizontalLine/HorizontalLine';
 import OutsideClickHandler from 'react-outside-click-handler';
