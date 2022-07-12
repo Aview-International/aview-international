@@ -16,6 +16,7 @@ import styles from './Button.module.css';
  *
  * @author Andrew Qiao
  */
+
 function Button({ type, link, isOnClick, onClick, children }) {
   return isOnClick ? (
     <button className={styles[`btn-${type}`]} href="#" onClick={onClick}>

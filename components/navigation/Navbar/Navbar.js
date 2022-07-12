@@ -9,14 +9,35 @@ import Button from '../../UI/Button/Button';
 import logo from '../../../public/img/brand/logo.png';
 import closeIcon from '../../../public/img/icons/close.svg';
 import styles from './Navbar.module.css';
+import Border from '../../UI/Border/Border';
+import Arrow from '../../../public/img/icons/dropdown-arrow.svg';
+import GradientArrow from '../../../public/img/icons/gradient-arrow.svg';
+import Shadow from '../../UI/Shadow/Shadow';
 
 const PAGES = [
   { name: 'Home', route: '/' },
-  { name: 'Creators', route: '/creators' },
   { name: 'Translators', route: '/translators' },
   { name: 'About', route: '/about' },
+  { name: 'Blog', route: '/blog' },
 ];
 
+const DropdownLinksArray = [
+  {
+    name: 'Creators',
+    route: '/creators',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  },
+  {
+    name: 'Corporate',
+    route: '/corporate',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  },
+  {
+    name: 'BillC96',
+    route: '/bill-c96',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  },
+];
 /**
  * Top navbar
  *
@@ -72,7 +93,9 @@ function NavbarLinks({ menuOpen, closeMenu }) {
   return (
     <nav className={`${styles.navbar} ${menuOpen && styles['navbar-open']}`}>
       <ul className={styles['navbar-links']}>
-        {PAGES.map((page, i) => (
+        <NavbarLink closeMenu={closeMenu} {...PAGES[0]} />
+        <DropdownLinks closeMenu={closeMenu} />
+        {PAGES.slice(1).map((page, i) => (
           <NavbarLink key={`page-${i}`} {...page} closeMenu={closeMenu} />
         ))}
       </ul>
@@ -81,18 +104,53 @@ function NavbarLinks({ menuOpen, closeMenu }) {
 }
 
 /**
+ * Dropdown links in navbar
+ * @prop: closeMenu: function that closes the side bar
+ * @author Victor Ogunjobi
+ */
+const DropdownLinks = ({ closeMenu }) => {
+  const [hover, setHover] = useState(false);
+  return (
+    <li
+      className={`${styles['dropdown-container']}`}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <span className={`${hover && `gradient-text`}`}>Services</span>
+      <span className={styles['dropdown-arrow']}>
+        <Image src={hover ? GradientArrow : Arrow} alt="" layout="responsive" />
+      </span>
+      <div>
+        <Border borderRadius={'5px'}>
+          <Shadow />
+          <div className={styles['dropdown-links']}>
+            {DropdownLinksArray.map((page, i) => (
+              <div key={`dropdown-link-${i}`} onClick={closeMenu}>
+                <Link href={page.route}>
+                  <a className={`hover-gradient-text ${styles['navbar-link']}`}>
+                    {page.name}
+                  </a>
+                </Link>
+                <p>{page.description}</p>
+              </div>
+            ))}
+          </div>
+        </Border>
+      </div>
+    </li>
+  );
+};
+
+/**
  * Single link in navbar
  * Seperated from the above component to enable gradient text on hover
  * @author Victor Ogunjobi
  */
 const NavbarLink = ({ name, route, closeMenu }) => {
   let { pathname } = useRouter();
-  const [hover, setHover] = useState(false);
   return (
     <li
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      className={`${hover ? 'gradient-text' : ''}  ${
+      className={`hover-gradient-text  ${
         pathname === route ? `gradient-text` : ''
       }`}
       onClick={closeMenu}
