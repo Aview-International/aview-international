@@ -17,16 +17,12 @@ import Shadow from '../../UI/Shadow/Shadow';
 const PAGES = [
   { name: 'Home', route: '/' },
   { name: 'Translators', route: '/translators' },
+  { name: 'Creators', route: '/creators' },
   { name: 'About', route: '/about' },
   { name: 'Blog', route: '/blog' },
 ];
 
 const DropdownLinksArray = [
-  {
-    name: 'Creators',
-    route: '/creators',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
   {
     name: 'Corporate',
     route: '/corporate',
@@ -93,9 +89,11 @@ function NavbarLinks({ menuOpen, closeMenu }) {
   return (
     <nav className={`${styles.navbar} ${menuOpen && styles['navbar-open']}`}>
       <ul className={styles['navbar-links']}>
-        <NavbarLink closeMenu={closeMenu} {...PAGES[0]} />
+        {PAGES.slice(0, 3).map((page, i) => (
+          <NavbarLink key={`page-${i}`} {...page} closeMenu={closeMenu} />
+        ))}
         <DropdownLinks closeMenu={closeMenu} />
-        {PAGES.slice(1).map((page, i) => (
+        {PAGES.slice(3).map((page, i) => (
           <NavbarLink key={`page-${i}`} {...page} closeMenu={closeMenu} />
         ))}
       </ul>
@@ -109,6 +107,7 @@ function NavbarLinks({ menuOpen, closeMenu }) {
  * @author Victor Ogunjobi
  */
 const DropdownLinks = ({ closeMenu }) => {
+  let { pathname } = useRouter();
   const [hover, setHover] = useState(false);
   return (
     <li
@@ -116,9 +115,25 @@ const DropdownLinks = ({ closeMenu }) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <span className={`${hover && `gradient-text`}`}>Services</span>
+      <span
+        className={
+          hover || pathname === '/corporate' || pathname === '/bill-c96'
+            ? `gradient-text`
+            : ''
+        }
+      >
+        Corporate
+      </span>
       <span className={styles['dropdown-arrow']}>
-        <Image src={hover ? GradientArrow : Arrow} alt="" layout="responsive" />
+        <Image
+          src={
+            hover || pathname === '/corporate' || pathname === '/bill-c96'
+              ? GradientArrow
+              : Arrow
+          }
+          alt=""
+          layout="responsive"
+        />
       </span>
       <div>
         <Border borderRadius={'5px'}>
