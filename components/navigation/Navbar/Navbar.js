@@ -117,14 +117,23 @@ const DropdownLinks = ({ closeMenu }) => {
     >
       <span
         className={
-          (hover || pathname === '/corporate' || pathname === '/bill-c96') &&
-          `gradient-text`
+          hover || pathname === '/corporate' || pathname === '/bill-c96'
+            ? `gradient-text`
+            : ''
         }
       >
         Corporate
       </span>
       <span className={styles['dropdown-arrow']}>
-        <Image src={hover ? GradientArrow : Arrow} alt="" layout="responsive" />
+        <Image
+          src={
+            hover || pathname === '/corporate' || pathname === '/bill-c96'
+              ? GradientArrow
+              : Arrow
+          }
+          alt=""
+          layout="responsive"
+        />
       </span>
       <div>
         <Border borderRadius={'5px'}>
