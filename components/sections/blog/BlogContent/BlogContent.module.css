@@ -1,0 +1,43 @@
+.section {
+  color: var(--primary-color);
+}
+.section h3 {
+  font-size: 36px;
+  margin: 15px 0 30px;
+}
+.title {
+  text-align: center;
+  margin: 20px 0 100px 0;
+}
+
+.grid-container {
+  margin: 85px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 100px;
+}
+.flex-container {
+  background: var(--tertiary-gradient);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 2rem;
+  border-radius: 15px;
+}
+.story > div:first-of-type {
+  height: 180px;
+}
+.flex-container > div {
+  width: 50%;
+}
+.story {
+  width: 100%;
+  background: var(--tertiary-gradient);
+  border-radius: 15px;
+  padding: 2rem 1rem;
+}
+.story img {
+  width: 100%;
+  height: 100%;
+}
