@@ -7,6 +7,11 @@
   margin-bottom: 87px;
 }
 
+.team-group:first-of-type > div {
+  grid-template-columns: repeat(2, minmax(0, 0.25fr));
+  justify-content: center;
+}
+
 .team-group:not(:last-of-type) {
   margin-bottom: 161px;
 }
@@ -24,6 +29,11 @@
 
   .section-title {
     margin-bottom: 50px;
+  }
+
+  .team-group:first-of-type > div {
+    grid-template-columns: repeat(2, minmax(0, 0.5fr));
+    justify-content: center;
   }
 
   .team-group:not(:last-of-type) {
