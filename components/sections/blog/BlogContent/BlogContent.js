@@ -47,7 +47,7 @@ const BlogContent = () => {
 
 const OtherStories = ({ title, img, date, content, link }) => {
   return (
-    <a className={styles['other-stories']} href={link} target="_blank">
+    <a className={styles['other-stories']} href={link} target="_blank" rel="noreferrer">
       <Border>
         <div className={styles.story}>
           <div className={styles['img-container']}>
