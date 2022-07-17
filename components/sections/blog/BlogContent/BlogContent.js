@@ -1,19 +1,18 @@
 import Border from '../../../UI/Border/Border';
 import styles from './BlogContent.module.css';
 import { useEffect, useState } from 'react';
-import { getStories } from '../../../../utils';
-import Image from 'next/image';
+import { ConvertDateAndTime, getStories, ToText } from '../../../../utils';
+import Button from '../../../UI/Button/Button';
 
-const stories = ['', '', '', '', '', '', ''];
 const BlogContent = () => {
-  console.log(process.env.NEXT_PUBLIC_MEDIUM_API_KEY);
-  // const [stories, setStories] = useState([]);
+  const [stories, setStories] = useState([]);
   const fetch = async () => {
     try {
       const response = await getStories();
-      console.log(response.data.items);
       setStories(response.data.items);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -25,67 +24,45 @@ const BlogContent = () => {
       <h2 className={`section-title ${styles.title}`}>
         Enjoy our <span className="gradient-text">Blogs</span>
       </h2>
-      <HeroStory />
-      <div className={styles['grid-container']}>
+      <div className={styles['flex-container']}>
         {stories?.map((story, i) => (
           <OtherStories
             key={`story-${i}`}
             img={story.thumbnail}
             title={story.title}
+            date={story.pubDate}
+            content={story.content}
+            link={story.link}
           />
         ))}
+      </div>
+      <div className={styles.btn}>
+        <Button isOnClick type="secondary">
+          Load More
+        </Button>
       </div>
     </section>
   );
 };
 
-const HeroStory = () => {
+const OtherStories = ({ title, img, date, content, link }) => {
   return (
-    <div className={styles['hero-stories']}>
+    <a className={styles['other-stories']} href={link} target="_blank">
       <Border>
-        <div className={styles['flex-container']}>
-          <div></div>
+        <div className={styles.story}>
+          <div className={styles['img-container']}>
+            {img && <img src={img} alt="" />}
+          </div>
           <div>
-            <small className="text-regular">Date</small>
-            <h3>Blog Title</h3>
+            <small className="text-regular">{ConvertDateAndTime(date)}</small>
+            <h3>{title}</h3>
             <p className="text-regular">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra
-              varius maecenas eleifend id non vulputate enim. Egestas sed mauris
-              dictum volutpat, in.
+              {ToText(content).substring(0, 100)}...
             </p>
           </div>
         </div>
       </Border>
-    </div>
-  );
-};
-
-const OtherStories = ({ title, img, date }) => {
-  return (
-    <div className={styles['other-stories']}>
-      <Border>
-        <div className={`${styles.story}`}>
-          <div>
-            {/* <img
-              src={img}
-              alt=""
-              layout="responsive"
-              width={400}
-              height={300}
-            /> */}
-          </div>
-          <div>
-            <small className="text-regular">Date</small>
-            <h3>Blog Post</h3>
-            <p className="text-regular">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra
-              varius maecenas eleifend id non vulputate enim. Egestas sed mauris
-              dictum volutpat, in.
-            </p>
-          </div>
-        </div>
-      </Border>
-    </div>
+    </a>
   );
 };
 

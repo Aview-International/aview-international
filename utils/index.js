@@ -1,17 +1,29 @@
 import axios from 'axios';
 
 export const getStories = async () => {
-  console.log(process.env.NAME);
-  console.log(process.env.NEXT_PUBLIC_MEDIUM_API_KEY);
   const res = await axios({
     method: 'get',
-    url: `https://cors-anywhere.herokuapp.com/https://medium.com/@aviewint/latest`,
+    url: `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@aviewint`,
     headers: {
       'Content-Type': 'application/json',
-      Accept: 'application/json',
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_MEDIUM_API_KEY}`,
     },
-    proxy: true,
   });
   return res;
+};
+
+export const ToText = (node) => {
+  let tag = document.createElement('div');
+  tag.innerHTML = node;
+  node = tag.innerText;
+  return node;
+};
+
+export const ConvertDateAndTime = (date) => {
+  return new Date(date).toLocaleString('en-US', {
+    day: '2-digit',
+    month: 'short',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  });
 };
