@@ -31,7 +31,7 @@ const PhoneNumberInput = ({
           <PhoneInput
             international
             countryCallingCodeEditable={false}
-            defaultCountry="CA"
+            defaultCountry="US"
             value={value}
             onChange={onChange}
           />
