@@ -49,5 +49,6 @@
   .footer-links {
     flex-direction: column;
     gap: 20px;
+    text-align: right;
   }
 }
