@@ -5,10 +5,14 @@
   align-items: center;
   margin: 66px 5% 60px;
 }
+.links {
+  display: flex;
+  align-items: center;
+}
 
 .logo {
   width: 60px;
-  margin-right: 90px;
+  margin-right: 40px;
 }
 .dropdown-container {
   position: relative;
@@ -70,7 +74,7 @@
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 60px;
+  gap: 45px;
 }
 
 .navbar-link {
@@ -145,7 +149,7 @@
   }
   .dropdown-container > span,
   .navbar-link {
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 700;
     display: inline;
     background-clip: text;

@@ -11,10 +11,11 @@ import styles from './Footer.module.css';
 
 const LINKS = [
   { name: 'Creators', route: '/creators' },
+  { name: 'Corporate', route: '/corporate' },
   { name: 'Translators', route: '/translators' },
+  { name: 'BillC96', route: '/bill-c96' },
   { name: 'About', route: '/about' },
-  // { name: "Contact", route: "/contact" },
-  // { name: "Careers", route: "/careers" },
+  { name: 'Blog', route: '/blog' },
 ];
 
 /**
@@ -77,7 +78,7 @@ function FooterLinks() {
   return (
     <ul className={styles['footer-links']}>
       {LINKS.map((link, i) => (
-        <li key={`footer-link-${i}`}>
+        <li key={`footer-link-${i}`} className="hover-gradient-text">
           <Link href={link.route}>
             <a className={styles['footer-link']}>{link.name}</a>
           </Link>

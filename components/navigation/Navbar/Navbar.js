@@ -59,8 +59,10 @@ function Navbar() {
 
   return (
     <header className={styles.header}>
-      <NavbarLogo />
-      <NavbarLinks menuOpen={menuOpen} closeMenu={closeMenu} />
+      <div className={styles.links}>
+        <NavbarLogo />
+        <NavbarLinks menuOpen={menuOpen} closeMenu={closeMenu} />
+      </div>
       <ContactButton />
       <MenuButton menuButtonHandler={menuButtonHandler} />
       <CloseButton menuOpen={menuOpen} menuButtonHandler={menuButtonHandler} />
@@ -161,7 +163,7 @@ function NavbarLinks({ menuOpen, closeMenu }) {
 
 /**
  * Single link in navbar
- * Seperated from the above component 
+ * Seperated from the above component
  * @author Victor Ogunjobi
  */
 const NavbarLink = ({ name, route, closeMenu }) => {
