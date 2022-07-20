@@ -16,24 +16,27 @@ import Shadow from '../../UI/Shadow/Shadow';
 
 const PAGES = [
   { name: 'Home', route: '/' },
-  { name: 'Translators', route: '/translators' },
   { name: 'Creators', route: '/creators' },
+  { name: 'Translators', route: '/translators' },
+  { name: 'Corporate', route: '/corporate' },
+  { name: 'BillC96', route: '/bill-c96' },
   { name: 'About', route: '/about' },
   { name: 'Blog', route: '/blog' },
 ];
 
-const DropdownLinksArray = [
-  {
-    name: 'Corporate',
-    route: '/corporate',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    name: 'BillC96',
-    route: '/bill-c96',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-];
+// const DropdownLinksArray = [
+//   {
+//     name: 'Corporate',
+//     route: '/corporate',
+//     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+//   },
+//   {
+//     name: 'BillC96',
+//     route: '/bill-c96',
+//     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+//   },
+// ];
+
 /**
  * Top navbar
  *
@@ -92,7 +95,7 @@ function NavbarLinks({ menuOpen, closeMenu }) {
         {PAGES.slice(0, 3).map((page, i) => (
           <NavbarLink key={`page-${i}`} {...page} closeMenu={closeMenu} />
         ))}
-        <DropdownLinks closeMenu={closeMenu} />
+        {/* <DropdownLinks closeMenu={closeMenu} /> */}
         {PAGES.slice(3).map((page, i) => (
           <NavbarLink key={`page-${i}`} {...page} closeMenu={closeMenu} />
         ))}
@@ -106,59 +109,59 @@ function NavbarLinks({ menuOpen, closeMenu }) {
  * @prop: closeMenu: function that closes the side bar
  * @author Victor Ogunjobi
  */
-const DropdownLinks = ({ closeMenu }) => {
-  let { pathname } = useRouter();
-  const [hover, setHover] = useState(false);
-  return (
-    <li
-      className={`${styles['dropdown-container']}`}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      <span
-        className={
-          hover || pathname === '/corporate' || pathname === '/bill-c96'
-            ? `gradient-text`
-            : ''
-        }
-      >
-        Corporate
-      </span>
-      <span className={styles['dropdown-arrow']}>
-        <Image
-          src={
-            hover || pathname === '/corporate' || pathname === '/bill-c96'
-              ? GradientArrow
-              : Arrow
-          }
-          alt=""
-          layout="responsive"
-        />
-      </span>
-      <div>
-        <Border borderRadius={'5px'}>
-          <Shadow />
-          <div className={styles['dropdown-links']}>
-            {DropdownLinksArray.map((page, i) => (
-              <div key={`dropdown-link-${i}`} onClick={closeMenu}>
-                <Link href={page.route}>
-                  <a className={`hover-gradient-text ${styles['navbar-link']}`}>
-                    {page.name}
-                  </a>
-                </Link>
-                <p>{page.description}</p>
-              </div>
-            ))}
-          </div>
-        </Border>
-      </div>
-    </li>
-  );
-};
+// const DropdownLinks = ({ closeMenu }) => {
+//   let { pathname } = useRouter();
+//   const [hover, setHover] = useState(false);
+//   return (
+//     <li
+//       className={`${styles['dropdown-container']}`}
+//       onMouseEnter={() => setHover(true)}
+//       onMouseLeave={() => setHover(false)}
+//     >
+//       <span
+//         className={
+//           hover || pathname === '/corporate' || pathname === '/bill-c96'
+//             ? `gradient-text`
+//             : ''
+//         }
+//       >
+//         Corporate
+//       </span>
+//       <span className={styles['dropdown-arrow']}>
+//         <Image
+//           src={
+//             hover || pathname === '/corporate' || pathname === '/bill-c96'
+//               ? GradientArrow
+//               : Arrow
+//           }
+//           alt=""
+//           layout="responsive"
+//         />
+//       </span>
+//       <div>
+//         <Border borderRadius={'5px'}>
+//           <Shadow />
+//           <div className={styles['dropdown-links']}>
+//             {DropdownLinksArray.map((page, i) => (
+//               <div key={`dropdown-link-${i}`} onClick={closeMenu}>
+//                 <Link href={page.route}>
+//                   <a className={`hover-gradient-text ${styles['navbar-link']}`}>
+//                     {page.name}
+//                   </a>
+//                 </Link>
+//                 <p>{page.description}</p>
+//               </div>
+//             ))}
+//           </div>
+//         </Border>
+//       </div>
+//     </li>
+//   );
+// };
 
 /**
  * Single link in navbar
- * Seperated from the above component to enable gradient text on hover
+ * Seperated from the above component 
  * @author Victor Ogunjobi
  */
 const NavbarLink = ({ name, route, closeMenu }) => {
@@ -185,7 +188,7 @@ const NavbarLink = ({ name, route, closeMenu }) => {
 function ContactButton() {
   return (
     <div className="desktop-only">
-      <Button type="secondary" isRoute={true} link="/#generate-aview">
+      <Button type="primary" isRoute={true} link="/#generate-aview">
         Contact Us
       </Button>
     </div>
