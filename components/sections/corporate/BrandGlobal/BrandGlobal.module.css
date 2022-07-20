@@ -14,18 +14,18 @@
 }
 .icon1 {
   width: 130px;
-  top: -15%;
-  right: 14%;
+  top: -10%;
+  right: 8%;
 }
 .icon2 {
   width: 140px;
-  top: 5%;
-  right: 4%;
+  top: 9%;
+  right: -2%;
 }
 .icon3 {
   width: 120px;
   top: 37%;
-  right: 3%;
+  right: -2%;
 }
 .icon4 {
   width: 170px;
@@ -35,19 +35,16 @@
 .title {
   margin-bottom: 12px;
 }
-
 .description {
   margin-bottom: 40px;
 }
-.mission {
-  margin: 180px 0 150px;
-}
-.mission small {
-  color: var(--primary-color);
-  font-size: 21px;
-  margin-bottom: 15px;
+.landing-image > span {
   display: block;
+  max-width: 80%;
+  height: auto;
+  margin-right: auto;
 }
+
 @media (max-width: 1310px) {
   .section {
     grid-template-columns: 0.5fr 1fr;
@@ -83,10 +80,9 @@
     margin-bottom: 50px;
     margin-top: 50px;
   }
-  .section > div:last-of-type {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .landing-image > span {
+    max-width: 100%;
+    margin: auto;
   }
 }
 

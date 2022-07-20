@@ -9,7 +9,6 @@ import rippleVentures from '../../../../public/img/creators/logos/ripple-venture
 import wayfoundHealth from '../../../../public/img/creators/logos/wayfound-health.png';
 import valnetMedia from '../../../../public/img/creators/logos/valnet-media.png';
 import underknownMedia from '../../../../public/img/creators/logos/underknown-media.png';
-import Row5 from '../../../layout/Row5/Row5';
 import Image from 'next/image';
 import Button from '../../../UI/Button/Button';
 
@@ -38,14 +37,12 @@ function ContentCreators() {
         Growing our customers internationally
       </h2>
       <div className={styles.row}>
-        <Row5>
           {CREATORS.map(({ name, logo }, i) => (
             <div key={`creator-${i}`}>
               <Image src={logo} alt={name} height="125" width="125" />
               <p className={styles.creator}>{name}</p>
             </div>
           ))}
-        </Row5>
       </div>
       <Button type="primary" link="#">
         Contact Us

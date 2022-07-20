@@ -1,0 +1,17 @@
+.mission {
+  margin: 0 0 150px;
+}
+.mission small {
+  color: var(--primary-color);
+  font-size: 21px;
+  margin-bottom: 15px;
+  display: block;
+}
+.title {
+  margin-bottom: 12px;
+}
+@media (max-width: 768px) {
+  .title {
+    margin-bottom: 10px;
+  }
+}

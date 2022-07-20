@@ -6,7 +6,6 @@ import BrandIcon1 from '../../../../public/img/graphics/brand-icon1.png';
 import BrandIcon2 from '../../../../public/img/graphics/brand-icon2.png';
 import BrandIcon3 from '../../../../public/img/graphics/brand-icon3.png';
 import BrandIcon4 from '../../../../public/img/graphics/brand-icon4.png';
-import HorizontalLine from '../../../UI/HorizontalLine/HorizontalLine';
 
 const BrandGlobal = () => {
   return (
@@ -21,9 +20,9 @@ const BrandGlobal = () => {
         <span className={styles['icon3']}>
           <Image src={BrandIcon3} alt="" />
         </span>
-        <span className={styles['icon4']}>
+        {/* <span className={styles['icon4']}>
           <Image src={BrandIcon4} alt="" />
-        </span>
+        </span> */}
         <div>
           <h1 className={`section-title ${styles.title}`}>
             <span className="gradient-text">Take your brand global</span>
@@ -37,20 +36,12 @@ const BrandGlobal = () => {
           </Button>
         </div>
         <div className={styles['landing-image']}>
-          <Image src={BrandGlobalImage} alt="landing graphic" />
+          <span>
+            <Image src={BrandGlobalImage} alt="landing graphic" />
+          </span>
         </div>
       </div>
-      <div className={styles.mission}>
-        <small>
-          <span className="gradient-text">Our Mission</span>
-        </small>
-        <h1 className={`section-title ${styles.title}`}>
-          To help build content creator brands globally through translated
-          subtitles and voiceovers; a client, a language, and{' '}
-          <span className="gradient-text">Aview</span> at a time.
-        </h1>
-      </div>
-      <HorizontalLine />
+   
     </section>
   );
 };
