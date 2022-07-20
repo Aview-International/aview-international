@@ -38,14 +38,14 @@ function ContentCreators() {
         Growing our customers internationally
       </h2>
       <div className={styles.row}>
-        <Row5>
+        {/* <Row5> */}
           {CREATORS.map(({ name, logo }, i) => (
             <div key={`creator-${i}`}>
               <Image src={logo} alt={name} height="125" width="125" />
               <p className={styles.creator}>{name}</p>
             </div>
           ))}
-        </Row5>
+        {/* </Row5> */}
       </div>
       <Button type="primary" link="#">
         Contact Us

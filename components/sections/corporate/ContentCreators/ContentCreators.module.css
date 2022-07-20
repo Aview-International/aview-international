@@ -21,6 +21,14 @@
 
 .row {
   margin-bottom: 75px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  text-align: center;
+  justify-content: center;
+}
+.row > div {
+  margin: 0 20px;
 }
 
 @media (max-width: 768px) {
@@ -35,7 +43,9 @@
   .row {
     margin-bottom: 23px;
   }
-
+  .row > div {
+    margin: 0;
+  }
   .creator {
     font-size: 16px;
   }
