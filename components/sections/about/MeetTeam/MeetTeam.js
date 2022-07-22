@@ -91,7 +91,7 @@ function MeetTeam() {
         <h2
           className={`section-title gradient-text ${styles['section-title']}`}
         >
-          Meet the Team
+       Generating Aview For
         </h2>
         <TeamGrid />
       </section>

@@ -7,6 +7,8 @@ import logo from '../../../public/img/brand/logo.png';
 import youtubeIcon from '../../../public/img/icons/youtube.svg';
 import linkedinIcon from '../../../public/img/icons/linkedin.svg';
 import instagramIcon from '../../../public/img/icons/instagram.svg';
+import tiktokIcon from '../../../public/img/icons/tiktok.svg';
+import facebookIcon from '../../../public/img/icons/facebook.svg';
 import styles from './Footer.module.css';
 
 const LINKS = [
@@ -15,9 +17,36 @@ const LINKS = [
   { name: 'Translators', route: '/translators' },
   { name: 'BillC96', route: '/bill-c96' },
   { name: 'About', route: '/about' },
-  { name: 'Blog', route: '/blog' },
+  // { name: 'Blog', route: '/blog' },
 ];
 
+const SocialMediaLinks = [
+  {
+    href: 'https://www.instagram.com/aviewint/',
+    icon: instagramIcon,
+    alt: 'Instagram icon',
+  },
+  {
+    href: 'https://www.linkedin.com/company/aview-international',
+    icon: linkedinIcon,
+    alt: 'LinkedIn icon',
+  },
+  {
+    href: 'https://youtube.com',
+    icon: youtubeIcon,
+    alt: 'YouTube icon',
+  },
+  {
+    href: 'https://www.tiktok.com',
+    icon: tiktokIcon,
+    alt: 'Tiktok icon',
+  },
+  {
+    href: 'https://www.facebook.com/',
+    icon: facebookIcon,
+    alt: 'Facebook icon',
+  },
+];
 /**
  * Footer
  *
@@ -38,7 +67,7 @@ function Footer() {
 /**
  * Logos on left side of footer
  *
- * @author Andrew Qiao
+ * @author Andrew Qiao & Victor Ogunjobi
  */
 function FooterLogos() {
   return (
@@ -47,25 +76,17 @@ function FooterLogos() {
         <Image src={logo} alt="AVIEW logo" />
       </div>
       <div className={styles.socials}>
-        {/* <a href="" className={styles.social}>
-          <Image src={youtubeIcon} alt="YouTube icon" />
-        </a> */}
-        <a
-          href="https://www.instagram.com/aviewint/"
-          target="_blank"
-          rel="noreferrer"
-          className={styles.social}
-        >
-          <Image src={instagramIcon} alt="Instagram icon" />
-        </a>
-        <a
-          href="https://www.linkedin.com/company/aview-international"
-          target="_blank"
-          rel="noreferrer"
-          className={styles.social}
-        >
-          <Image src={linkedinIcon} alt="LinkedIn icon" />
-        </a>
+        {SocialMediaLinks.map((link, i) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.social}
+            key={`social-link-${i}`}
+          >
+            <Image src={link.icon} alt={link.alt} />
+          </a>
+        ))}
       </div>
     </div>
   );

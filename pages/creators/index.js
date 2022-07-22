@@ -11,6 +11,7 @@ import GrowthWithAview from '../../components/sections/creators/GrowthWithAview/
 import Footer from '../../components/navigation/Footer/Footer';
 import Blobs from '../../components/UI/Blobs/Blobs';
 import SEO from '../../components/SEO/SEO';
+import GeneratingAviewFor from '../../components/sections/creators/GeneratingAviewFor/GeneratingAviewFor';
 
 function Creators() {
   return (
@@ -23,6 +24,7 @@ function Creators() {
       <TranslationBenefits />
       <HowItWorks />
       <AnySize />
+      <GeneratingAviewFor />
       <GrowthWithAview />
       {/* <GenerateAview /> */}
       <GeneratingAview title="Generate Aview" />

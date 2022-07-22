@@ -23,7 +23,7 @@ function About() {
       <CoreValues />
       <Growth />
       <Milestones />
-      {/* <MeetTeam /> */}
+      <MeetTeam />
       <Name />
       <JoinTeam />
       <Footer />
