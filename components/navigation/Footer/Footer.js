@@ -32,7 +32,7 @@ const SocialMediaLinks = [
     alt: 'LinkedIn icon',
   },
   {
-    href: 'https://youtube.com',
+    href: 'https://youtube.com/channel/UCjBLxbcY1w0qn8UGiMR2n6w',
     icon: youtubeIcon,
     alt: 'YouTube icon',
   },
@@ -42,7 +42,7 @@ const SocialMediaLinks = [
     alt: 'Tiktok icon',
   },
   {
-    href: 'https://www.facebook.com/',
+    href: 'https://www.facebook.com/aviewinternational',
     icon: facebookIcon,
     alt: 'Facebook icon',
   },
