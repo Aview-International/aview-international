@@ -21,7 +21,7 @@ const PAGES = [
   { name: 'Corporate', route: '/corporate' },
   { name: 'BillC96', route: '/bill-c96' },
   { name: 'About', route: '/about' },
-  { name: 'Blog', route: '/blog' },
+  // { name: 'Blog', route: '/blog' },
 ];
 
 // const DropdownLinksArray = [

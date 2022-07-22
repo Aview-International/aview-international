@@ -106,56 +106,40 @@ const FAQs = ({ corporate }) => {
         : landingPageArray.map((item, i) => (
             <Questions question={item.question} key={`label-${i}`} {...item} />
           ))}
-      {corporate ? (
-        <>
-          <label htmlFor={'question7'} className={styles.questions_label}>
-            <input id={'question7'} type="checkbox" />
-            <div className={styles.questions_container}>
-              <div>
-                <h4>How much does it cost?</h4>
-                <span className={styles.minus_sign}></span>
-                <div className={styles.plus_sign}>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-              <p className={`text-regular`}>
-                AVIEW creates a pricing plan for each corporate client. We
-                ensure that you see a return on our services! If you would like
-                a quote, please click{' '}
-                <Link href="/#generate-aview">
-                  <a>here! </a>
-                </Link>
-              </p>
+      <label htmlFor={'question7'} className={styles.questions_label}>
+        <input id={'question7'} type="checkbox" />
+        <div className={styles.questions_container}>
+          <div>
+            <h4>
+              {corporate ? 'How much does it cost?' : 'How can I get started?'}
+            </h4>
+            <span className={styles.minus_sign}></span>
+            <div className={styles.plus_sign}>
+              <span></span>
+              <span></span>
             </div>
-          </label>
-          <HorizontalLine />
-        </>
-      ) : (
-        <>
-          <label htmlFor={'question7'} className={styles.questions_label}>
-            <input id={'question7'} type="checkbox" />
-            <div className={styles.questions_container}>
-              <div>
-                <h4>How can I get started?</h4>
-                <span className={styles.minus_sign}></span>
-                <div className={styles.plus_sign}>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-              <p className={`text-regular`}>
-                Click{' '}
-                <Link href="/#generate-aview">
-                  <a>here</a>
-                </Link>{' '}
-                to get started!
-              </p>
-            </div>
-          </label>
-          <HorizontalLine />
-        </>
-      )}
+          </div>
+          {corporate ? (
+            <p className={`text-regular`}>
+              AVIEW creates a pricing plan for each corporate client. We ensure
+              that you see a return on our services! If you would like a quote,
+              please click{' '}
+              <Link href="/corporate#generate-aview">
+                <a>here! </a>
+              </Link>
+            </p>
+          ) : (
+            <p className={`text-regular`}>
+              Click{' '}
+              <Link href="/#generate-aview">
+                <a>here</a>
+              </Link>{' '}
+              to get started!
+            </p>
+          )}
+        </div>
+      </label>
+      <HorizontalLine />
     </section>
   );
 };
