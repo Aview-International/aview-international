@@ -13,7 +13,7 @@ import styles from './WeTranslate.module.css';
  */
 function WeTranslate() {
   return (
-    <section className="section m-horizontal">
+    <section className={`section m-horizontal ${styles['section']}`}>
       <TextWithImage>
         <div>
           <h2 className={`section-title ${styles['section-title']}`}>
@@ -26,9 +26,9 @@ function WeTranslate() {
             brand. Our team is ready to help you gain a AVIEW on your
             competition.
           </p>
-          <div className="desktop-only">
+          <div className={styles.button}>
             <Button type="primary" isRoute={false} link="#generate-aview">
-              Go Global Now!
+            <span className={styles.textButton}>Go Global Now!</span>
             </Button>
           </div>
         </div>

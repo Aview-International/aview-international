@@ -1,14 +1,21 @@
+.section {
+  text-align: center;
+}
 .section-title {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .section-description {
-  margin-bottom: 44px;
+  margin-bottom: 32px;
 }
 
 .global-graphic {
   max-width: 70%;
   justify-self: end;
+}
+
+.textButton {
+  color: black;
 }
 
 @media (max-width: 768px) {
